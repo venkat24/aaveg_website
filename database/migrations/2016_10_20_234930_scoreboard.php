@@ -20,7 +20,6 @@ class Scoreboard extends Migration
             $table->float('jade_score');
             $table->float('opal_score');
             $table->foreign('event_id')->references('event_id')->on('events_details');
-            $table->timestamps();
         });
     }
 

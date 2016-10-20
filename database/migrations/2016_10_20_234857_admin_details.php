@@ -16,7 +16,6 @@ class AdminDetails extends Migration
             $table->increments('admin_id');
             $table->integer('admin_roll')->unique();
             $table->string('password',255);
-            $table->timestamps();
         });
     }
 

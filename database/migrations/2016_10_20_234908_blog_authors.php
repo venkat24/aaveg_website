@@ -15,7 +15,6 @@ class BlogAuthors extends Migration
         Schema::create('blog_authors', function (Blueprint $table){
             $table->increments('author_id');
             $table->string('author_name',255);
-            $table->timestamps();
         });
     }
 

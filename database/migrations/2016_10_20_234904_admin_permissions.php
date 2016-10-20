@@ -16,7 +16,6 @@ class AdminPermissions extends Migration
             $table->integer('team_id');
             $table->integer('admin_id')->unsigned();
             $table->foreign('admin_id')->references('admin_id')->on('admin_details');
-            $table->timestamps();
         });
     }
 

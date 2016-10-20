@@ -21,7 +21,6 @@ class EventsDetails extends Migration
             $table->text('event_desc');
             $table->date('event_date');
             $table->string('event_cluster', 255);
-            $table->timestamps();
         });
     }
 
