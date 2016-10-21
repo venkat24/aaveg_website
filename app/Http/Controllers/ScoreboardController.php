@@ -15,7 +15,15 @@ class ScoreboardController extends Controller
 {
     public function getFullScoreboard(Request $request) {
         try {    
-            $scoreboard = Scoreboard::get();
+            $scoreboard = Scoreboard::join('events_details',
+                                           'events_details.event_id',
+                                           '=',
+                                           'scoreboard.event_id'
+                                          )
+                                    ->select('scoreboard.*',
+                                             'events_details.event_category'
+                                            )
+                                    ->get();
             return JSONResponse::response(200,$scoreboard);
         } catch (Exception $e) {
             return JSONResponse::response(400, $e);
