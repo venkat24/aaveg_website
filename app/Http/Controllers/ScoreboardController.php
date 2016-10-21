@@ -20,13 +20,18 @@ class ScoreboardController extends Controller
                                            '=',
                                            'scoreboard.event_id'
                                           )
-                                    ->select('scoreboard.*',
-                                             'events_details.event_category'
+                                    ->select('events_details.event_name',
+                                             'events_details.event_category',
+                                             'scoreboard.*'
                                             )
                                     ->get();
-            return JSONResponse::response(200,$scoreboard);
+            $response = [];
+            foreach ($scoreboard as $value) {
+                $response[$value->event_category][] = $value;
+            }                        
+            return JSONResponse::response(200,$response);
         } catch (Exception $e) {
-            return JSONResponse::response(400, $e);
+            return JSONResponse::response(500, $e.getMessage());
         }
     }
 
