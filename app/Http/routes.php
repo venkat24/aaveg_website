@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Scoreboard routes
+Route::post('/scoreboard/getall','ScoreboardController@getFullScoreboard');
+Route::post('/scoreboard/getcategory','ScoreboardController@getCategoryScoreboard');
