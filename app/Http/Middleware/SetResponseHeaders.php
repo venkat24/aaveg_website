@@ -15,7 +15,10 @@ class SetResponseHeaders
      */
     public function handle($request, Closure $next)
     {
-        $response = $next($request);
-        return $response->header('Content-Type', 'application/json');
+        if($request->isMethod('post'))  {          
+            $response = $next($request);
+            return $response->header('Content-Type', 'application/json');
+        }
+        return $next($request);
     }
 }
