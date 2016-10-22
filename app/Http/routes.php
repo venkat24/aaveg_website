@@ -24,3 +24,7 @@ Route::post('/blog/getAllPosts','BlogController@getAllPosts');
 Route::post('/blog/getLatestPosts','BlogController@getLatestPosts');
 Route::post('/blog/getBlogById','BlogController@getBlogById');
 
+// Events routes
+Route::post('/events/getall','EventsController@getAllEvents');
+Route::post('/events/getallnames','EventsController@getAllEventNames');
+Route::post('/events/geteventbyname','EventsController@getEventByName');
