@@ -28,3 +28,7 @@ Route::post('/blog/getBlogById','BlogController@getBlogById');
 Route::post('/events/getall','EventsController@getAllEvents');
 Route::post('/events/getallnames','EventsController@getAllEventNames');
 Route::post('/events/geteventbyname','EventsController@getEventByName');
+
+//Admin login and logout
+Route:;post('/admin/login', 'Admin\AdminAuth@adminAuthentication');
+Route::post('/admin/logout', 'Admin\AdminAuth@adminLogout');
