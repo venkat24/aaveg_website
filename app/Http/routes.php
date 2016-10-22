@@ -18,3 +18,9 @@ Route::get('/', function () {
 // Scoreboard routes
 Route::post('/scoreboard/getall','ScoreboardController@getFullScoreboard');
 Route::post('/scoreboard/getcategory','ScoreboardController@getCategoryScoreboard');
+
+//Blog routes
+Route::post('/blog/getAllPosts','BlogController@getAllPosts');
+Route::post('/blog/getLatestPosts','BlogController@getLatestPosts');
+Route::post('/blog/getBlogById','BlogController@getBlogById');
+
