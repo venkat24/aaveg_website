@@ -102,4 +102,16 @@ class BlogController extends Controller
         }
     }
 
+    public function getAuthors(Request $request){
+        try {
+            $authors = BlogAuthors::select('author_name')
+                                  ->get();
+            foreach ($authors as $value) {
+                $response[] = $value->author_name;
+            }
+            return JSONResponse::response(200,$response);
+        } catch (Exception $e) {
+            return JSONResponse::response(500, $e.getMessage());
+        }
+    }
 }
