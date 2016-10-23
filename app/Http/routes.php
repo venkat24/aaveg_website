@@ -18,3 +18,8 @@ Route::get('/', function () {
 // Scoreboard routes
 Route::post('/scoreboard/getall','ScoreboardController@getFullScoreboard');
 Route::post('/scoreboard/getcategory','ScoreboardController@getCategoryScoreboard');
+
+// Events routes
+Route::post('/events/getall','EventsController@getAllEvents');
+Route::post('/events/getallnames','EventsController@getAllEventNames');
+Route::post('/events/geteventbyname','EventsController@getEventByName');
