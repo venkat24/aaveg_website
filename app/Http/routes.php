@@ -19,6 +19,11 @@ Route::get('/', function () {
 Route::post('/scoreboard/getall','ScoreboardController@getFullScoreboard');
 Route::post('/scoreboard/getcategory','ScoreboardController@getCategoryScoreboard');
 
+//Blog routes
+Route::post('/blog/getAllPosts','BlogController@getAllPosts');
+Route::post('/blog/getLatestPosts','BlogController@getLatestPosts');
+Route::post('/blog/getBlogById','BlogController@getBlogById');
+
 // Events routes
 Route::post('/events/getall','EventsController@getAllEvents');
 Route::post('/events/getallnames','EventsController@getAllEventNames');
