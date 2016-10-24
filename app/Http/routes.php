@@ -22,8 +22,9 @@ Route::post('/scoreboard/getcategory','ScoreboardController@getCategoryScoreboar
 //Blog routes
 Route::post('/blog/getAllPosts','BlogController@getAllPosts');
 Route::post('/blog/getLatestPosts','BlogController@getLatestPosts');
-Route::post('/blog/getBlogById','BlogController@getBlogById');
+Route::post('/blog/getBlogByTitle','BlogController@getBlogByTitle');
 Route::post('/blog/getauthors','BlogController@getAuthors');
+Route::post('/blog/getBlogTitles', 'BlogController@getBlogTitles');
 
 // Events routes
 Route::post('/events/getall','EventsController@getAllEvents');
