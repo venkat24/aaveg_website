@@ -38,3 +38,6 @@ Route::post('/events/geteventbyname','EventsController@getEventByName');
 //Admin login and logout
 Route:;post('/admin/login', 'Admin\AdminAuth@adminAuthentication');
 Route::post('/admin/logout', 'Admin\AdminAuth@adminLogout');
+
+// Admin events
+Route::post('/admin/events/newevent', 'Admin\Events@newEvent'); 
