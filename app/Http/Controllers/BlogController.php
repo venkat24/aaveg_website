@@ -69,11 +69,11 @@ class BlogController extends Controller
         }
     }
 
-    //function to return a particular blog based on blog_id
-    public function getBlogById(Request $request)   {
+    //function to return a particular blog based on blog_title
+    public function getBlogByTitle(Request $request)   {
         try {
            $validator = Validator::make($request->all(), [
-                'blog_id' => 'required|integer'
+                'blog_title' => 'required|string'
             ]);
 
             if($validator->fails()) {
@@ -81,7 +81,7 @@ class BlogController extends Controller
                 return JSONResponse::response(400, $message);
             } 
 
-            $blog_id = $request->input('blog_id');
+            $blog_title = $request->input('blog_title');
             $blog_post = Blog::join('blog_authors',
                                          'blog_authors.author_id', '=', 'blog.author_id')
                                         ->select(
@@ -91,7 +91,7 @@ class BlogController extends Controller
                                             'blog.subtitle',
                                             'blog.content',
                                             'blog.updated_at')
-                                        ->where('blog.blog_id','=', $blog_id)
+                                        ->where('blog.title','=', $blog_title)
                                         ->where('blog.active', '=', 1)
                                         ->get();
             return JSONResponse::response(200, $blog_post);
@@ -111,6 +111,17 @@ class BlogController extends Controller
             }
             return JSONResponse::response(200,$response);
         } catch (Exception $e) {
+            return JSONResponse::response(500, $e.getMessage());
+        }
+    }
+
+    //function to get all blog titles
+    public function getBlogTitles(Request $request) {
+        try {
+            $blog_titles = Blog::lists('title');
+            return JSONResponse::response(200, $blog_titles);
+        } catch (Exception $e) {
+            Log::error($e.getMessage()." ".$e.getLine());
             return JSONResponse::response(500, $e.getMessage());
         }
     }
