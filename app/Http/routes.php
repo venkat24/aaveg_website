@@ -37,3 +37,4 @@ Route::post('/admin/logout', 'Admin\AdminAuth@adminLogout');
 
 // Admin events
 Route::post('/admin/events/newevent', 'Admin\Events@newEvent'); 
+Route::post('/admin/blog/newpost', 'Admin\PanelBlog@newPost'); 

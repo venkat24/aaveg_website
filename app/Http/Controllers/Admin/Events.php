@@ -18,14 +18,14 @@ class Events extends Controller
     public function newEvent(Request $request){
         try {    
             $validator = Validator::make($request->all(), [
-                'event_name'        => 'required',
+                'event_name'        => 'required|string',
                 'event_start_time'  => 'required',
                 'event_end_time'    => 'required',
-                'event_venue'       => 'required',
-                'event_desc'        => 'required',
+                'event_venue'       => 'required|string',
+                'event_desc'        => 'required|string',
                 'event_date'        => 'required',
-                'event_cluster'     => 'required',
-                'event_category'    => 'required'
+                'event_cluster'     => 'required|string',
+                'event_category'    => 'required|string'
             ]);
             if($validator->fails()) {
                 $message = "Invalid parameters";
