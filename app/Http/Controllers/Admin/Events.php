@@ -47,7 +47,7 @@ class Events extends Controller
                 return JSONResponse::response(400,"Failure");
             }
         }  catch (Exception $e) {
-            return JSONResponse::response(500, $e.getMessage());
+            return JSONResponse::response(500, $e->getMessage());
         }
     }
 }

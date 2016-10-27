@@ -64,8 +64,8 @@ class AdminAuth extends Controller
             //the return statement for all errors
             return JSONResponse::response($status_code, $response);             
         } catch (Exception $e) {
-            Log::error($e.getMessage()." ".$e.getLine());
-            return JSONResponse::response(500, $e.getMessage());
+            Log::error($e->getMessage()." ".$e->getLine());
+            return JSONResponse::response(500, $e->getMessage());
         }
     }
 
@@ -80,8 +80,8 @@ class AdminAuth extends Controller
             Session::flush();
             return JSONResponse::response($status_code,$response);
         } catch (Exception $e) {
-            Log::error($e.getMessage()." ".$e.getLine());
-            return JSONResponse::response(500, $e.getMessage());
+            Log::error($e->getMessage()." ".$e->getLine());
+            return JSONResponse::response(500, $e->getMessage());
         }
         
     }
