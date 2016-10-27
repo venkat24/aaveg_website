@@ -31,8 +31,8 @@ class BlogController extends Controller
                                     ->get();
             return JSONResponse::response(200, $blog_posts);                        
         } catch (Exception $e) {
-            Log::error($e.getMessage()." ".$e.getLine());
-            return JSONResponse::response(500, $e.getMessage());
+            Log::error($e->getMessage()." ".$e->getLine());
+            return JSONResponse::response(500, $e->getMessage());
         }
     }
 
@@ -57,15 +57,23 @@ class BlogController extends Controller
                                             'blog.title',
                                             'blog.subtitle',
                                             'blog.content',
+                                            'blog.image_path',
                                             'blog.updated_at')
                                         ->where('blog.active', '=', 1)
                                         ->orderBy('blog.updated_at','desc')
                                         ->take($post_count)
                                         ->get();
+            //return base64 encoded string for all images
+            foreach($latest_posts as $blog_post)    {
+                $path = storage_path('app/'.$blog_post->image_path);
+                $type = pathinfo($path, PATHINFO_EXTENSION);
+                $img_data = file_get_contents($path);
+                $blog_post->image_path = 'data:image/'.$type.';base64,'.base64_encode($img_data);
+            }
             return JSONResponse::response(200, $latest_posts);                            
         } catch (Exception $e) {
-            Log::error($e.getMessage()." ".$e.getLine());
-            return JSONResponse::response(500, $e.getMessage());
+            Log::error($e->getMessage()." ".$e->getLine());
+            return JSONResponse::response(500, $e->getMessage());
         }
     }
 
@@ -90,28 +98,31 @@ class BlogController extends Controller
                                             'blog.title',
                                             'blog.subtitle',
                                             'blog.content',
+                                            'blog.image_path',
                                             'blog.updated_at')
                                         ->where('blog.title','=', $blog_title)
                                         ->where('blog.active', '=', 1)
-                                        ->get();
+                                        ->first();
+            //return base64 encoded string for image
+            $path = storage_path('app/'.$blog_post->image_path);
+            $type = pathinfo($path, PATHINFO_EXTENSION);
+            $img_data = file_get_contents($path);
+            $blog_post->image_path = 'data:image/'.$type.';base64,'.base64_encode($img_data);
+
             return JSONResponse::response(200, $blog_post);
 
         } catch (Exception $e) {
-            Log::error($e.getMessage()." ".$e.getLine());
-            return JSONResponse::response(500, $e.getMessage());
+            Log::error($e->getMessage()." ".$e->getLine());
+            return JSONResponse::response(500, $e->getMessage());
         }
     }
 
     public function getAuthors(Request $request){
         try {
-            $authors = BlogAuthors::select('author_name')
-                                  ->get();
-            foreach ($authors as $value) {
-                $response[] = $value->author_name;
-            }
-            return JSONResponse::response(200,$response);
+            $authors = BlogAuthors::lists('author_name');
+            return JSONResponse::response(200,$authors);
         } catch (Exception $e) {
-            return JSONResponse::response(500, $e.getMessage());
+            return JSONResponse::response(500, $e->getMessage());
         }
     }
 
@@ -121,8 +132,8 @@ class BlogController extends Controller
             $blog_titles = Blog::lists('title');
             return JSONResponse::response(200, $blog_titles);
         } catch (Exception $e) {
-            Log::error($e.getMessage()." ".$e.getLine());
-            return JSONResponse::response(500, $e.getMessage());
+            Log::error($e->getMessage()." ".$e->getLine());
+            return JSONResponse::response(500, $e->getMessage());
         }
     }
 }
