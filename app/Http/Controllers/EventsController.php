@@ -24,7 +24,7 @@ class EventsController extends Controller
             }
             return JSONResponse::response(200,$response);
         } catch (Exception $e){
-            return JSONResponse::response(500,$e.getMessage());
+            return JSONResponse::response(500,$e->getMessage());
         }
     }
 
@@ -40,7 +40,7 @@ class EventsController extends Controller
             }
             return JSONResponse::response(200,$response);
         } catch (Exception $e){
-            return JSONResponse::response(500,$e.getMessage());
+            return JSONResponse::response(500,$e->getMessage());
         }
     }
 
@@ -62,7 +62,7 @@ class EventsController extends Controller
             }
             return JSONResponse::response(200,$event);
         } catch (Exception $e){
-            return JSONResponse::response(500,$e.getMessage());
+            return JSONResponse::response(500,$e->getMessage());
         }
     }
 }

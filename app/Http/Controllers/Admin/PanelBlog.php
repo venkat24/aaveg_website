@@ -53,6 +53,7 @@ class PanelBlog extends Controller
             $blog_data->title = $title;
             $blog_data->subtitle = $subtitle;
             $blog_data->content = $content;
+            $blog_data->image_path = $filename;
             $blog_data->active = $active;
             $blog_data->save();
 
@@ -60,8 +61,8 @@ class PanelBlog extends Controller
 
             return JSONResponse::response(200, 'Success');
         } catch (Exception $e) {
-            Log::error($e.getMessage()." ".$e.getLine());
-            return JSONResponse::response(500, $e.getMessage());
+            Log::error($e->getMessage()." ".$e->getLine());
+            return JSONResponse::response(500, $e->getMessage());
         }
     }
 }
