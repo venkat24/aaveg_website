@@ -77,11 +77,11 @@ class BlogController extends Controller
         }
     }
 
-    //function to return a particular blog based on blog_title
-    public function getBlogByTitle(Request $request)   {
+    //function to return a particular blog based on blog_id
+    public function getBlogById(Request $request)   {
         try {
            $validator = Validator::make($request->all(), [
-                'blog_title' => 'required|string'
+                'blog_id' => 'required|string'
             ]);
 
             if($validator->fails()) {
@@ -89,7 +89,7 @@ class BlogController extends Controller
                 return JSONResponse::response(400, $message);
             } 
 
-            $blog_title = $request->input('blog_title');
+            $blog_id = $request->input('blog_id');
             $blog_post = Blog::join('blog_authors',
                                          'blog_authors.author_id', '=', 'blog.author_id')
                                         ->select(
@@ -100,7 +100,7 @@ class BlogController extends Controller
                                             'blog.content',
                                             'blog.image_path',
                                             'blog.updated_at')
-                                        ->where('blog.title','=', $blog_title)
+                                        ->where('blog.blog_id','=', $blog_id)
                                         ->where('blog.active', '=', 1)
                                         ->first();
             //return base64 encoded string for image
@@ -117,6 +117,7 @@ class BlogController extends Controller
         }
     }
 
+    //function to return all author names
     public function getAuthors(Request $request){
         try {
             $authors = BlogAuthors::lists('author_name');
