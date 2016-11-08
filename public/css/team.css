@@ -1,0 +1,26 @@
+.profile-image {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	transition: all .2s ease-in-out;
+}
+.profile-image:hover {
+	-webkit-filter: none;
+	filter: none;
+	transform: scale(1.1);
+}
+.single-person {
+	margin: 40px;
+	width:  200px;
+    display: inline-block;
+    float: left;
+}
+.profile-image {
+	width: 190px;
+	height: 190px;
+}
+.container {
+	text-align: center;
+}
+h2, h4 {
+    text-align: center;
+}
