@@ -6,27 +6,24 @@ function getBlog() {
 	var template = Handlebars.compile(source);
 	
 	var id=4;
-	var blog_name="New Blog";
-	var route = SITE_BASE_URL + '/admin/events/getBlogByTitle/' + id;
+	var id=1;
+	var route = SITE_BASE_URL + '/blog/getBlogById/';
 	var method = 'POST';
 	var body = {
-		// "blog_id" : id,
-		"title" : blog_name
+		"blog_id" : id
 	}
-	console.log(body);
-
 	var request = $.ajax({
 		url: route,
 		method: method,
 		data: body
 	});
 	request.done(function(data){
-		if(data.message == "Success") {
-			var context = data;
-			var html = template(context);
-			location.reload();
+		if(data.status_code == 200) {
+			console.log(data.message.content);
+			var html = template(data);
+			$('#main-container').append(html);
 		} else {
-			alert('Insertion Failed');
+			alert('Failed');
 		}
 	});
 }

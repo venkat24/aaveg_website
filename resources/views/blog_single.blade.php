@@ -39,7 +39,7 @@
 </head>
 <body>
 	<script type="text/javascript">
-	   var SITE_BASE_URL = "{{ url('/')}}"; //Change this line to env
+	   var SITE_BASE_URL = "{{ url('/')}}";
 	</script>
 	<script type="text/template" id="blog-template">
 	<header class="blue-grey lighten-1">
@@ -56,13 +56,13 @@
 		<div id="title-block">
 			<img src="{{asset('deadpool.jpg')}}" class="responsive-img main-image">
 		</div>
-			<h1>TITLE OF THE ARTICLE</h1>
-			<h3>This is a little bit more elaborate subtitle of the aricle.</h3>
 			<div class="row">
 					<div class="col s12">
 						<div class="container">
+			<h1>@{{message.title}}</h1>
+			<h3>@{{message.subtitle}}</h3>
 							<div class="flow-text content" id="main-content">
-								@{{message.content}}
+								@{{{message.content}}}
 							</div>
 						</div>
 					</div>
@@ -73,7 +73,10 @@
 	</div>
 	</div>
 	</script>
+	<div id="main-container"></div>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+	<script type="text/javascript" src="{{asset('js/blog_single.js')}}"></script>
 </body>
 </html>
