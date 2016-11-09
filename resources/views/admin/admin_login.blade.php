@@ -43,13 +43,13 @@
     <center>
       <div class="section"></div>
       <img src="{{ asset('images/aaveglogocoloured.png') }}" width="300px">
-      <h5 class="teal-text text-accent-4"><b>Admin Login</b></h5>
+      <h5 class="teal-text text-accent-4 flow-text"><b>Admin Login</b></h5>
       <div class="section"></div>
 
       <div class="container">
         <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
 
-          <form class="col s12" method="post" action="javascript: location.href = (SITE_BASE_URL + '/admin/login')">
+          <div class="col s12">
             <div class='row'>
               <div class='col s12'>
               </div>
@@ -68,19 +68,19 @@
                 <label for='password'>Password</label>
               </div>
               <label style='float: right;'>
-                                <a class='teal-text' href='#!'><b>Forgot Password?</b></a>
+                                <a class='teal-text' href='https://www.facebook.com/acelect24'><b>Forgot Password?</b></a>
                             </label>
             </div>
             <br />
             <center>
               <div class='row'>
-                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect cyan darken-3' id="login_button">Login</button>
+                <button name='btn_login' class='col s12 btn btn-large waves-effect cyan darken-3' onclick="login()">Login</button>
               </div>
                 <div class="progress" id="loading" style="display:none">
                     <div class="indeterminate"></div>
                 </div>
             </center>
-          </form>
+          </div>
         </div>
       </div>
     </center>
@@ -91,11 +91,12 @@
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script type="text/javascript" src="{{asset('js/admin_login.js')}}"></script>
 </body>
       <footer class="page-footer teal accent-4">
           <div class="footer-copyright">
             <div class="container center">
-            <a class="grey-text text-lighten-4 center" href="#!">Made with ❤ by Aaveg Web Team</a>
+            <a class="grey-text text-lighten-4 center" target="_blank" href="https://www.facebook.com/profile.php?id=100010424946860&fref=ts">Made with ❤ by Aaveg Web Team</a>
             </div>
           </div>
         </footer>
