@@ -7,6 +7,7 @@
 @section('scripts')
     <script type="text/javascript" src="{{asset('js/scoreboard.js')}}"></script>
 @endsection
+@section('main')
 <script type="text/template" id="display">
   <table class="table table-hover table-striped">
     <h1>Culturals</h1>
@@ -125,5 +126,4 @@
     </p>
   </div>
 </div>
-@section('main')
 @endsection
