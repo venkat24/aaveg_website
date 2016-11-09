@@ -9,7 +9,6 @@
 @endsection
 
 @section('main')
-<div class="container" id="main-container">
 
 <script type="text/template" id="display-core">
 <h1>CORE</h1>
@@ -23,17 +22,6 @@
 </br>
 </script>
 
-<script type="text/template" id="display-ecore">
-</br>
-<h1>E-CORE</h1>
-  @{{#each core}}
-  <div class="single-person"> 
-      <img src="@{{image}}" class="img-circle profile-image">
-      <h2>@{{name}}</h2>
-      <h4>@{{post}}</h4>
-  </div>
-@{{/each}}
-</script>
-
+<div class="container" id="main-container" style="display:block">
 </div>
 @endsection

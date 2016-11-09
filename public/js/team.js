@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	setCore();
-	//setECore();
+	// setECore();
 });
 function setCore() {
 	var source = $('#display-core').html();
@@ -36,6 +36,36 @@ function setCore() {
 			"name":  "Arun Prakash",
 			"post":  "Head, Design",
 			"image": base_url + "ADP.jpg"
+		},
+		{
+			"name":  "Pious Sharma",
+			"post":  "Manager",
+			"image": base_url + "Pious.jpg"
+		},
+		{
+			"name":  "Rajive Kumar",
+			"post":  "Manager",
+			"image": base_url + "Rajive.jpg"
+		},
+		{
+			"name":  "Sandhya K",
+			"post":  "Manager",
+			"image": base_url + "Sandhya.jpg"
+		},
+		{
+			"name":  "Venkatraman",
+			"post":  "Manager",
+			"image": base_url + "Venkatraman.jpg"
+		},
+		{
+			"name":  "Gunanidhi",
+			"post":  "Manager",
+			"image": base_url + "Guna.jpg"
+		},
+		{
+			"name":  "Vishwa Sai",
+			"post":  "Manager",
+			"image": base_url + "Vishwa.jpg"
 		},
 	];
 	var info={};
