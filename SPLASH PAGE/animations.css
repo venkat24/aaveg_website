@@ -1,0 +1,213 @@
+html, body{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: url("Assets/backdrop.png") no-repeat;
+	background-size: 100% 100%;
+}
+
+div#clouds {
+	height: 50%;
+	border-bottom: 1px dashed gray;
+}
+
+/*#clouds img {
+	width: 100px;
+	height: 70px;
+}
+
+to change nth child 
+to add z-indices
+
+#clouds div {
+	position: absolute;
+	right: -300px;
+	-webkit-animation: cloud-move linear infinite;
+	animation: cloud-move linear infinite;
+}
+
+#clouds div:first-child {
+	top: 40%;
+	-webkit-animation-duration: 25s;
+	-webkit-animation-delay: 3s;
+	animation-duration: 25s;
+	animation-delay: 3s;
+}
+
+#clouds div:nth-child(2) {
+	top: 22%;
+	-webkit-animation-duration: 32s;
+	-webkit-animation-delay: 9s;
+	animation-duration: 32s;
+	animation-delay: 9s;
+}
+
+#clouds div:last-child {
+	top: 5%;
+	-webkit-animation-duration: 20s;
+	-webkit-animation-delay: 8.1s;
+	animation-duration: 20s;
+	animation-delay: 8.1s;
+}
+
+@-webkit-keyframes cloud-move {
+	to {right: 100%;}
+}
+@keyframes cloud-move {
+	to {right: 100%;}
+}*/
+
+/*#bottom div.road {
+	position: absolute;
+	left: 50%;
+	-webkit-filter: opacity(0%);
+	-webkit-transform: scale(1, 0.9);
+	-ms-transform: scale(1, 0.9);
+	-webkit-animation: roadFadeIn 1s ease-out 2.6s;
+	-webkit-animation-fill-mode: forwards;
+	filter: opacity(0%);
+	transform: scale(1, 0.9);
+	animation: roadFadeIn 1s ease-out 2.6s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes roadFadeIn {
+	to {
+		-webkit-filter: opacity(100%);
+		-webkit-transform: scale(1, 1);
+		-ms-transform: scale(1, 1);
+		filter: opacity(100%);
+		transform: scale(1, 1);
+	}
+}
+
+.road img {
+	position: relative;
+	left: -50%;
+}
+
+div#center {
+	text-align: center;
+	width: 100%;
+	height: 100px;
+}
+
+#center div {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	z-index: -3;
+	-webkit-animation: towerPopIn 1s cubic-bezier(0.215, 0.910, 0.355, 1.000) 5s;
+	-webkit-animation-fill-mode: forwards;
+	animation: towerPopIn 0.9s cubic-bezier(0.215, 0.910, 0.355, 1.000) 5s;
+	animation-fill-mode: forwards;
+}
+
+#center div img {
+	position: relative;
+	left: -50%;
+}
+
+@-webkit-keyframes towerPopIn {
+	50% { top: -10%; }
+	67% { top: 10%; }
+	82% { top: 0%; }
+	100% { top: 7%; }
+}
+@keyframes towerPopIn {
+	50% { top: -10%; }
+	67% { top: 10%; }
+	82% { top: 0%; }
+	100% { top: 7%; }	
+}
+*/
+
+div#bottom {
+	height: 30%;
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	border: 1px dashed gray;
+}
+
+#bottom .bush img{
+	position: absolute;
+	bottom: -300%;
+	-webkit-animation: bush-pop-in 0.7s cubic-bezier(0.215, 0.911, 0.355, 1.000) 1.5s;
+	-webkit-animation-fill-mode: forwards;
+	animation: bush-pop-in 0.7s cubic-bezier(0.215, 0.911, 0.355, 1.000) 1.5s;
+	animation-fill-mode: forwards;
+}
+
+#left-bush img{
+	left: -2%;
+}
+
+
+#right-bush img {
+	right: -2%;
+	transform: rotateY(180deg);
+}
+
+#bottom #road {
+	position: absolute;
+	left: 50%;
+	bottom: -5%;
+	z-index: -100;
+}
+
+#road img {
+	position: relative;
+	left: -50%;
+	/*from {*/
+		-webkit-filter: opacity(0%);
+		-webkit-transform: scale(1, 0.9);
+		-ms-transform: scale(1, 0.9);
+		filter: opacity(0%);
+		transform: scale(1, 0.9);
+	/*}*/
+	-webkit-animation: road-fade-in 1s ease-out 2.6s;
+	-webkit-animation-fill-mode: forwards;
+	animation: road-fade-in 1s ease-out 2.6s;
+	animation-fill-mode: forwards;
+	
+}
+
+@-webkit-keyframes bush-pop-in {
+	50% { bottom: 10%; }
+	67% { bottom: -10%; }
+	82% { bottom: 0%; }
+	100% { bottom: -10%; }
+}
+@keyframes bush-pop-in {
+	50% { bottom: 10%; }
+	67% { bottom: -10%; }
+	82% { bottom: 0%; }
+	100% { bottom: -10%; }
+}
+
+
+@-webkit-keyframes road-fade-in {
+	to {
+		-webkit-filter: opacity(100%);
+		-webkit-transform: scale(1, 1);
+		-ms-transform: scale(1, 1);
+		filter: opacity(100%);
+		transform: scale(1, 1);
+	}
+}
+@keyframes road-fade-in {
+	to {
+		-webkit-filter: opacity(100%);
+		-webkit-transform: scale(1, 1);
+		-ms-transform: scale(1, 1);
+		filter: opacity(100%);
+		transform: scale(1, 1);
+	}
+}
