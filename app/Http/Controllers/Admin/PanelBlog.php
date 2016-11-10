@@ -24,11 +24,11 @@ class PanelBlog extends Controller
                 'title'         => 'required|string',
                 'subtitle'      => 'required|string',
                 'content'       => 'required|string',
-                'active'        => 'required|integer',
+                'active'        => 'required|string',
                 'image'         => 'required'
             ]);
             if($validator->fails()) {
-                $message = "Invalid parameters";
+                $message = "Invalid parameters";    //$validator->errors()->all();
                 return JSONResponse::response(400, $message);
             }
 
@@ -54,7 +54,7 @@ class PanelBlog extends Controller
             $blog_data->subtitle = $subtitle;
             $blog_data->content = $content;
             $blog_data->image_path = $filename;
-            $blog_data->active = $active;
+            $blog_data->active = ($active === 'on')?1:0;
             $blog_data->save();
 
             $image->move(storage_path('app'), $filename);
