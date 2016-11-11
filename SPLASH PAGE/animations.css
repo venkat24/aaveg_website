@@ -12,93 +12,156 @@ body {
 	background-size: 100% 100%;
 }
 
+@media (max-width: 1100px) {
+	body {
+		background-size: 1100px 100%;
+		background-position: 50% 0;
+	}
+}
+
 div#clouds {
 	height: 50%;
-	border-bottom: 1px dashed gray;
 }
 
 /*Tower*/
 
-.center {
+div#main {
 	position: absolute;
-	left: 50%;
+	bottom: 125px;
+	width: 100%;
+	height: 50%;
+	z-index: -200;
 }
 
-div#tower #base {
+#main #base {
 	position: absolute;
-	bottom: 20%;
+	bottom: 0%;
 	height: 25%;
 	width: 100%;
 }
 
 #base img {
+	position: absolute;
+	bottom: 0%;
 	width: 100%;
-	height: 100%;
+	height: 170px;
 }
 
-div#tower #central-block {
-	bottom: 20%;
-	width: 100%;
-	height: 33%;
-}
-
-#central-block img {
+#main #tower {
 	position: relative;
-	left: -7.5%;
-	width: 15%;
+	left: 50%;
+	width: 100%;
 	height: 100%;
 }
 
-div#tower #spire {
-	bottom: 50%;
+#tower #tower-container {
+	position: absolute;
+	width: 560px;
+	height: 100%;
+	left: -280px;
+	bottom: 0%;
+	text-align: center;
+}
+
+.center {
+	position: absolute;
 	width: 100%;
-	height: 40%;
+}
+
+.block img{
+	box-shadow: 0px 0px 25px;
+}
+
+#central-block, #left-block, #right-block, #admin-entry {
+	bottom: -4px;
+}
+
+#central-block img{
+	width: 148.8px;
+	height: 200px;
+}
+
+#admin-entry img{
+	width: 124px;
+	height: 72px;
+}
+
+#tower-container #box-outline {
+	bottom: 80px;
+}
+
+#box-outline img {
+	width: 116px;
+	height: 96px;
+}
+
+#tower-container #left-block {
+	left: -142.4px;
+}
+
+#admin-windows-left {
+	bottom: 8px;
+	left: -142.4px;
+}
+
+#tower-container #right-block {
+	right: -142.4px;
+}
+
+#admin-windows-right {
+	bottom: 8px;
+	right: -142.4px;
+}
+
+#left-block img, #right-block img {
+	width: 136px;
+	height: 220px;
+}
+
+#admin-windows-left img, #admin-windows-right img {
+	width: 120px;
+	height: 192px;
+}
+
+#tower-container #spire {
+	bottom: 172px;
+	z-index: -300;
 }
 
 #spire img {
-	position: relative;
-	left: -5%;
-	width: 10%;
-	height: 100%;
+	width: 120px;
+	height: 296px;
 }
 
-div#tower #decor {
-	bottom: 55.5%;
-	width: 100%;
-	height: 35%;
+
+#tower-container #decor {
+	bottom: 212px;
 }
 
 #decor img {
-	position: relative;
-	left: -3.5%;
-	width: 7%;
-	height: 100%;
+	width: 108px;
+	height: 264px;
 }
 
-div#tower #face {
-	bottom: 72.59%;
-	width: 100%;
-	height: 16%;
+
+#tower-container #face {
+	bottom: 336.8px;
+	left: -1px;
 }
 
 #face img {
-	position: relative;
-	left: -2.8%;
-	width: 5.5%;
-	height: 100%;
+	width: 88px;
+	height: 128px;
 }
 
-div#tower #dials {
-	bottom: 74%;
-	width: 100%;
-	height: 4%;
+
+#tower-container #dials {
+	bottom: 356px;
 }
 
 #dials img {
-	position: relative;
-	left: -2%;
-	width: 4%;
-	height: 100%;
+	width: 48px;
+	height: 24px;
 }
 
 /*#clouds img {
@@ -185,16 +248,19 @@ div#center {
 */
 
 div#bottom {
-	height: 30%;
 	width: 100%;
 	position: absolute;
+	height: 125px;
 	bottom: 0px;
-	border: 1px dashed gray;
+}
+
+.bush {
+	height: 80%;
 }
 
 #bottom .bush img{
 	position: absolute;
-	bottom: -300%;
+	bottom: -400px;
 	-webkit-animation: bush-pop-in 0.7s cubic-bezier(0.215, 0.911, 0.355, 1.000) 1.5s;
 	-webkit-animation-fill-mode: forwards;
 	animation: bush-pop-in 0.7s cubic-bezier(0.215, 0.911, 0.355, 1.000) 1.5s;
@@ -210,29 +276,31 @@ div#bottom {
 	transform: rotateY(180deg);
 }
 
+@-webkit-keyframes bush-pop-in {
+	50% { bottom: 60px; }
+	67% { bottom: -40px; }
+	82% { bottom: 0px; }
+	100% { bottom: -40px; }
+}
+@keyframes bush-pop-in {
+	50% { bottom: 60px; }
+	67% { bottom: -40px; }
+	82% { bottom: 0px; }
+	100% { bottom: -40px; }
+}
+
 #bottom #road {
 	position: absolute;
 	left: 50%;
-	bottom: -5%;
+	bottom: 0%;
 	z-index: -100;
-}
-
-@-webkit-keyframes bush-pop-in {
-	50% { bottom: 10%; }
-	67% { bottom: -10%; }
-	82% { bottom: 0%; }
-	100% { bottom: -10%; }
-}
-@keyframes bush-pop-in {
-	50% { bottom: 10%; }
-	67% { bottom: -10%; }
-	82% { bottom: 0%; }
-	100% { bottom: -10%; }
+	height: 150px;
 }
 
 #road img {
 	position: relative;
 	left: -50%;
+	height: inherit;
 	/*from {*/
 		-webkit-filter: opacity(0%);
 		-webkit-transform: scale(1, 0.9);
@@ -265,3 +333,103 @@ div#bottom {
 		transform: scale(1, 1);
 	}
 }
+
+/*/*div#main {
+	position: absolute;
+	bottom: 20%;
+	width: 100%;
+	height: 50%;
+	border: 1px solid red;
+}
+
+#main #base {
+	position: absolute;
+	bottom: 0%;
+	height: 25%;
+	width: 100%;
+}
+
+#base img {
+	position: absolute;
+	bottom: 0%;
+	width: 100%;
+	height: 153px;
+}
+
+#main #tower {
+	position: relative;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+}
+
+#tower #tower-container {
+	position: absolute;
+	width: 630px;
+	height: 100%;
+	left: -315px;
+	bottom: 0%;
+	border: 1px dotted black;
+	text-align: center;
+}
+
+#tower-container #central-block {
+	position: absolute;
+	bottom: 0%;
+	width: 100%;
+}
+
+#central-block img {
+	width: 180px;
+	height: 207px;
+}
+
+
+#tower-container #spire {
+	position: absolute;
+	bottom: 198px;
+	width: 100%;
+}
+
+#spire img {
+	width: 153px;
+	height: 315px;
+}
+
+
+#tower-container #decor {
+	position: absolute;
+	bottom: 225px;
+	width: 100%;
+}
+
+#decor img {
+	width: 130.5px;
+	height: 297px;
+}
+
+
+
+#tower-container #face {
+	position: absolute;
+	bottom: 365.4px;
+	left: -0.9px;
+	width: 100%;
+}
+
+#face img {
+	width: 99px;
+	height: 144px;
+}
+
+
+#tower-container #dials {
+	position: absolute;
+	bottom: 387px;
+	width: 100%;
+}
+
+#dials img {
+	width: 54px;
+	height: 27px;
+}*/
