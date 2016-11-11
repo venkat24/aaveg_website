@@ -17,6 +17,90 @@ div#clouds {
 	border-bottom: 1px dashed gray;
 }
 
+/*Tower*/
+
+.center {
+	position: absolute;
+	left: 50%;
+}
+
+div#tower #base {
+	position: absolute;
+	bottom: 20%;
+	height: 25%;
+	width: 100%;
+}
+
+#base img {
+	width: 100%;
+	height: 100%;
+}
+
+div#tower #central-block {
+	bottom: 20%;
+	width: 100%;
+	height: 33%;
+}
+
+#central-block img {
+	position: relative;
+	left: -7.5%;
+	width: 15%;
+	height: 100%;
+}
+
+div#tower #spire {
+	bottom: 50%;
+	width: 100%;
+	height: 40%;
+}
+
+#spire img {
+	position: relative;
+	left: -5%;
+	width: 10%;
+	height: 100%;
+}
+
+div#tower #decor {
+	bottom: 55.5%;
+	width: 100%;
+	height: 35%;
+}
+
+#decor img {
+	position: relative;
+	left: -3.5%;
+	width: 7%;
+	height: 100%;
+}
+
+div#tower #face {
+	bottom: 72.59%;
+	width: 100%;
+	height: 16%;
+}
+
+#face img {
+	position: relative;
+	left: -2.8%;
+	width: 5.5%;
+	height: 100%;
+}
+
+div#tower #dials {
+	bottom: 74%;
+	width: 100%;
+	height: 4%;
+}
+
+#dials img {
+	position: relative;
+	left: -2%;
+	width: 4%;
+	height: 100%;
+}
+
 /*#clouds img {
 	width: 100px;
 	height: 70px;
@@ -61,37 +145,9 @@ to add z-indices
 }
 @keyframes cloud-move {
 	to {right: 100%;}
-}*/
-
-/*#bottom div.road {
-	position: absolute;
-	left: 50%;
-	-webkit-filter: opacity(0%);
-	-webkit-transform: scale(1, 0.9);
-	-ms-transform: scale(1, 0.9);
-	-webkit-animation: roadFadeIn 1s ease-out 2.6s;
-	-webkit-animation-fill-mode: forwards;
-	filter: opacity(0%);
-	transform: scale(1, 0.9);
-	animation: roadFadeIn 1s ease-out 2.6s;
-	animation-fill-mode: forwards;
 }
 
-@keyframes roadFadeIn {
-	to {
-		-webkit-filter: opacity(100%);
-		-webkit-transform: scale(1, 1);
-		-ms-transform: scale(1, 1);
-		filter: opacity(100%);
-		transform: scale(1, 1);
-	}
-}
-
-.road img {
-	position: relative;
-	left: -50%;
-}
-
+/*
 div#center {
 	text-align: center;
 	width: 100%;
@@ -149,7 +205,6 @@ div#bottom {
 	left: -2%;
 }
 
-
 #right-bush img {
 	right: -2%;
 	transform: rotateY(180deg);
@@ -160,6 +215,19 @@ div#bottom {
 	left: 50%;
 	bottom: -5%;
 	z-index: -100;
+}
+
+@-webkit-keyframes bush-pop-in {
+	50% { bottom: 10%; }
+	67% { bottom: -10%; }
+	82% { bottom: 0%; }
+	100% { bottom: -10%; }
+}
+@keyframes bush-pop-in {
+	50% { bottom: 10%; }
+	67% { bottom: -10%; }
+	82% { bottom: 0%; }
+	100% { bottom: -10%; }
 }
 
 #road img {
@@ -178,20 +246,6 @@ div#bottom {
 	animation-fill-mode: forwards;
 	
 }
-
-@-webkit-keyframes bush-pop-in {
-	50% { bottom: 10%; }
-	67% { bottom: -10%; }
-	82% { bottom: 0%; }
-	100% { bottom: -10%; }
-}
-@keyframes bush-pop-in {
-	50% { bottom: 10%; }
-	67% { bottom: -10%; }
-	82% { bottom: 0%; }
-	100% { bottom: -10%; }
-}
-
 
 @-webkit-keyframes road-fade-in {
 	to {
