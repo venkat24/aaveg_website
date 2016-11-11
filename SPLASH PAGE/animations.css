@@ -19,12 +19,101 @@ body {
 	}
 }
 
-div#clouds {
-	height: 50%;
+.cloud img {
+	width: 100px;
+	height: 70px;
 }
 
-/*Tower*/
 
+.cloud {
+	position: absolute;
+	right: -300px;
+	-webkit-animation: cloud-move linear infinite;
+	animation: cloud-move linear infinite;
+	z-index: -500;
+}
+
+#top .cloud:first-child {
+	top: 40%;
+	-webkit-animation-duration: 25s;
+	-webkit-animation-delay: 3s;
+	animation-duration: 25s;
+	animation-delay: 3s;
+}
+
+#top .cloud:nth-child(2) {
+	top: 22%;
+	-webkit-animation-duration: 32s;
+	-webkit-animation-delay: 9s;
+	animation-duration: 32s;
+	animation-delay: 9s;
+}
+
+#top .cloud:nth-child(3) {
+	top: 5%;
+	-webkit-animation-duration: 20s;
+	-webkit-animation-delay: 8.1s;
+	animation-duration: 20s;
+	animation-delay: 8.1s;
+}
+
+@-webkit-keyframes cloud-move {
+	to {right: 100%;}
+}
+@keyframes cloud-move {
+	to {right: 100%;}
+}
+
+
+div#top {
+	width: 100%;
+	height: 100%;
+}
+
+#top #logo {
+	position: absolute;
+	left: 50%;
+	width: inherit;
+	height: inherit;
+}
+
+#logo-container {
+	position: absolute;
+	left: -195px;
+	bottom: 280px;
+	padding: 50px;
+/*	background: rgba(255, 255, 255, 0.3);
+	border-radius: 50px;
+	box-shadow: 0px 0px 40px;*/
+}
+
+#logo-container img {
+	width: 300px;
+	/*from {*/
+		-webkit-filter: opacity(0%);
+		filter: opacity(0%);
+		-webkit-transform: scale(0.9);
+		-ms-transform: scale(0.9);
+		transform: scale(0.9);
+	/*}*/
+	-webkit-animation: fade-in 2s ease-out 5.8s;
+	-webkit-animation-fill-mode: forwards;
+	animation: fade-in 2s ease-out 5.8s;
+	animation-fill-mode: forwards;
+}
+
+@media (min-height: 850px) {
+	#logo-container {
+		left: -245px;
+		bottom: 650px;
+	}
+	#logo-container img {
+		width: 400px;
+	}
+}
+
+
+/*Tower*/
 div#main {
 	position: absolute;
 	bottom: 125px;
@@ -304,52 +393,6 @@ div#main {
 	100% { bottom: 356px; }
 }
 
-/*#clouds img {
-	width: 100px;
-	height: 70px;
-}
-
-to change nth child 
-to add z-indices
-
-#clouds div {
-	position: absolute;
-	right: -300px;
-	-webkit-animation: cloud-move linear infinite;
-	animation: cloud-move linear infinite;
-}
-
-#clouds div:first-child {
-	top: 40%;
-	-webkit-animation-duration: 25s;
-	-webkit-animation-delay: 3s;
-	animation-duration: 25s;
-	animation-delay: 3s;
-}
-
-#clouds div:nth-child(2) {
-	top: 22%;
-	-webkit-animation-duration: 32s;
-	-webkit-animation-delay: 9s;
-	animation-duration: 32s;
-	animation-delay: 9s;
-}
-
-#clouds div:last-child {
-	top: 5%;
-	-webkit-animation-duration: 20s;
-	-webkit-animation-delay: 8.1s;
-	animation-duration: 20s;
-	animation-delay: 8.1s;
-}
-
-@-webkit-keyframes cloud-move {
-	to {right: 100%;}
-}
-@keyframes cloud-move {
-	to {right: 100%;}
-}
-*/
 
 div#bottom {
 	width: 100%;
@@ -360,6 +403,7 @@ div#bottom {
 
 #bottom .bush img{
 	position: absolute;
+	z-index: 200;
 }
 
 #left-bush img{
@@ -446,12 +490,13 @@ div#bottom {
 
 #bottom #boy {
 	position: absolute;
-	left: 51%;
+	left: 50%;
 	bottom: 70px;
-	z-index: 100;
 }
 
 #boy img {
+	position: relative;
+	left: -55px;
 	width: 110px;
 	height: 216px;
 	animation-delay: 5.1s;
