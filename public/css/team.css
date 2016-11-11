@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+
 .profile-image {
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
@@ -9,14 +13,39 @@
 	transform: scale(1.1);
 }
 .single-person {
-	margin: 40px;
-	width:  200px;
+	margin: 30px;
+	width:  220px;
     display: inline-block;
     float: left;
 }
 .profile-image {
-	width: 190px;
-	height: 190px;
+	width: 200px;
+	height: 200px;
+}
+
+.profile-image-team:hover {
+	-webkit-filter: none;
+	filter: none;
+	transform: scale(1.25);
+}
+.single-person-team {
+	margin: 30px;
+	width:  160px;
+    display: inline-block;
+    float: left;
+}
+.profile-image-team {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	transition: all .2s ease-in-out;
+	border-radius: 100px;
+	margin: 0 auto;
+	text-align: center;
+	width: 180px;
+	height: 180px;
+}
+.code {
+font-family: 'VT323', monospace;
 }
 .container {
 	text-align: center;

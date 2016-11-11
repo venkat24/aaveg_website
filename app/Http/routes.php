@@ -10,9 +10,38 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
 Route::get('/', function () {
-    return view('welcome');
+    return view('splash');
+});
+Route::get('/team', function () {
+    return view('team');
+});
+Route::get('/blog', function () {
+    return view('blog');
+});
+Route::get('/blog/single/', function () {
+    return view('blog_single');
+});
+Route::get('/scoreboard', function () {
+    return view('scoreboard');
+});
+Route::get('/admin', function () {
+    return view('admin.admin_login');
+});
+Route::get('/admin/login', function () {
+    return view('admin.admin_login');
+});
+Route::get('/admin/home', function () {
+    return view('admin.admin_home');
+});
+Route::get('/admin/scoreboard/newscore', function () {
+    return view('admin.admin_scoreboard');
+});
+Route::get('/admin/events/newevent', function () {
+    return view('admin.admin_events_new');
+});
+Route::get('/admin/blog/newpost', function () {
+    return view('admin.admin_blog_newpost');
 });
 
 // Scoreboard routes
@@ -22,7 +51,7 @@ Route::post('/scoreboard/getcategory','ScoreboardController@getCategoryScoreboar
 //Blog routes
 Route::post('/blog/getAllPosts','BlogController@getAllPosts');
 Route::post('/blog/getLatestPosts','BlogController@getLatestPosts');
-Route::post('/blog/getBlogByTitle','BlogController@getBlogByTitle');
+Route::post('/blog/getBlogById/','BlogController@getBlogById');
 Route::post('/blog/getauthors','BlogController@getAuthors');
 Route::post('/blog/getBlogTitles', 'BlogController@getBlogTitles');
 
