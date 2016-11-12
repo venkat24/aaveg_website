@@ -52,8 +52,12 @@
       <div class="modal-body">
         Chairperson - <b>SM Aseer</b><br />
         +91 9790065037<br /><br />
+        Treasurer - <b>Kritesh Patel</b><br />
+        +91 9940865611<br /><br />
         Head, OC - <b>Jagannivashan M</b><br />
         +91 7299306577<br /><br />
+        Head, OC - <b>Navya Shaji</b><br />
+        +91 7598426755<br /><br />
         Head, Content - <b>Gautham Kumar</b><br />
         +91 9787139231<br /><br />
         Head, Design - <b>Arun Prakash R</b><br />
