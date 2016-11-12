@@ -1,6 +1,31 @@
-$(document).ready(function () {
-	getScoreboard();
-});
+var culturals = {
+	diamond: 0,
+	coral: 0,
+	jade: 0,
+	agate: 0,
+	opal: 0,
+};
+
+var misc = {
+	diamond: 0,
+	coral: 0,
+	jade: 0,
+	agate: 0,
+	opal: 0,
+};
+
+var sports = {
+	diamond: 0,
+	coral: 0,
+	jade: 0,
+	agate: 0,
+	opal: 0,
+};
+setTimeout(function() {
+	$(document).ready(function () {
+		getScoreboard();
+	});
+},20);
 function getScoreboard() {
 	var route = SITE_BASE_URL + '/scoreboard/getall';
 	var method = 'POST';
@@ -18,29 +43,6 @@ function getScoreboard() {
 }
 
 function setScores(info) {
-	var culturals = {
-		diamond: 0,
-		coral: 0,
-		jade: 0,
-		agate: 0,
-		opal: 0,
-	};
-
-	var misc = {
-		diamond: 0,
-		coral: 0,
-		jade: 0,
-		agate: 0,
-		opal: 0,
-	};
-
-	var sports = {
-		diamond: 0,
-		coral: 0,
-		jade: 0,
-		agate: 0,
-		opal: 0,
-	};
 
 	if(info.message["Culturals"]) {
 		for (var i = info.message["Culturals"].length - 1; i >= 0; i--)
@@ -64,8 +66,6 @@ function setScores(info) {
 			sports.jade+=info.message["Sports"][i]["jade_score"];
 		for (var i = info.message["Sports"].length - 1; i >= 0; i--) 
 			sports.agate+=info.message["Sports"][i]["agate_score"];
-		for (var i = info.message["Sports"].length - 1; i >= 0; i--) 
-			sports.opal+=info.message["Sports"][i]["opal_score"];
 	}
 
 	if(info.message["Miscellaneous"]) {
@@ -87,4 +87,46 @@ function setScores(info) {
 	var template = Handlebars.compile(source);
 	var html = template(info);
 	$('#main-container').append(html);
+	charts(culturals);
+}
+function charts(culturals) {
+	var ctx = document.getElementById("myChart");
+	var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Diamond", "Coral", "Jade", "Agate", "Opal"],
+        datasets: [{
+            label: 'Points',
+            data: [culturals["diamond"],culturals["coral"],culturals["jade"],culturals["agate"],culturals["opal"]],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1,
+            scaleFontColor: "#ff0000",
+        }]
+    },
+    options: {
+
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
 }
