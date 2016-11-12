@@ -2,17 +2,29 @@
 
 @section('links')
     <link rel="stylesheet" type="text/css" href="{{asset('css/splash.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Merienda+One|Pacifico" rel="stylesheet">
 @endsection
 
 @section('scripts')
     <script type="text/javascript" src="{{asset('js/splash.js')}}"></script>
 @endsection
 
+@section("main")
 <div id="top">
 	<div class="cloud"> <img alt="cloud" src="{{asset('splash-assets/cloud.png')}}"> </div>
 	<div class="cloud"> <img alt="cloud" src="{{asset('splash-assets/cloud.png')}}"> </div>
 	<div class="cloud"> <img alt="cloud" src="{{asset('splash-assets/cloud.png')}}"> </div>
-	<div id="logo"><div id="logo-container">  <img alt="logo" src="{{asset('splash-assets/logo.png')}}">  </div></div>
+	<div id="logo"><div id="logo-container">  <img alt="logo" src="{{asset('splash-assets/logo.png')}}">  </div> </div>
+	<div id="tagline1">
+		<div id="tagline-container1">
+			A Quest
+		</div>
+	</div>
+	<div id="tagline2">
+		<div id="tagline-container2">
+			for the Crest
+		</div>
+	</div>
 </div>
 
 <div id="main">
@@ -56,3 +68,4 @@
 		<img id="bush1" alt="bush" src="{{asset('splash-assets/bush1.png')}}">
 	</div>
 </div>
+@endsection

@@ -71,7 +71,7 @@ body{
 	   <h1>404</h1>
 	    <p>Error occured! - File not Found</p>
   	      <div class="sub">
-	        <p><a href="#">Back</a></p>
+	        <p><a href="/">Back</a></p>
 	      </div>
         </div>
 	</div>

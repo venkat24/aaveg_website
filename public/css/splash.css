@@ -98,6 +98,7 @@ div#top {
 	left: -195px;
 	bottom: 280px;
 	padding: 50px;
+	transition: 2s;
 /*	background: rgba(255, 255, 255, 0.3);
 	border-radius: 50px;
 	box-shadow: 0px 0px 40px;*/
@@ -118,10 +119,41 @@ div#top {
 	animation-fill-mode: forwards;
 }
 
-#logo-container {
-	transition: 2s;
+#top #tagline1 {
+	position: absolute;
+	left: 50%;
+	width: inherit;
+	height: inherit;
 }
 
+#tagline-container1 {
+	visibility: hidden;
+	font-size: 70px;
+	font-family: 'Berkshire Swash', cursive;
+	position: absolute;
+	left: -420px;
+	bottom: 440px;
+	transition: 2s;
+	text-shadow: 3px 3px #000000;
+}
+
+#top #tagline2 {
+	position: absolute;
+	left: 50%;
+	width: inherit;
+	height: inherit;
+}
+
+#tagline-container2 {
+	visibility: hidden;
+	font-size: 70px;
+	font-family: 'Berkshire Swash', cursive;
+	position: absolute;
+	left: 140px;
+	bottom: 440px;
+	transition: 2s;
+	text-shadow: 3px 3px #000000;
+}
 
 @media (min-height: 850px) {
 	#logo-container {

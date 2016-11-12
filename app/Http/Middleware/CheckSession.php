@@ -22,10 +22,15 @@ class checkSession
         if($admin_id)
             return $next($request);
         else {
-            $status_code = 450; //status_code for session flush
-            $message = "You have been logged out";
+            $status_code = 401; //unauthorized
+            $message = "Session expired. Please login again.";
             Log::info('Logged out');
-            return JSONResponse::response($status_code, $message);
+            //for post routes, throw a 401
+            if($request->isMethod('post')) {
+                return JSONResponse::response($status_code, $message);
+            }
+            //for get routes, redirect to login page
+            return redirect('/admin/login');
         }
     }
 }
