@@ -24,6 +24,9 @@ var sports = {
 $(document).ready(function () {
 	getScoreboard();
 });
+function setCap(str) {
+	$('#caption').html(str);
+}
 function getScoreboard() {
 	var route = SITE_BASE_URL + '/scoreboard/getall';
 	var method = 'POST';
