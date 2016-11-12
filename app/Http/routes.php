@@ -31,17 +31,23 @@ Route::get('/admin', function () {
 Route::get('/admin/login', function () {
     return view('admin.admin_login');
 });
-Route::get('/admin/home', function () {
-    return view('admin.admin_home');
-});
-Route::get('/admin/scoreboard/newscore', function () {
-    return view('admin.admin_scoreboard');
-});
-Route::get('/admin/events/newevent', function () {
-    return view('admin.admin_events_new');
-});
-Route::get('/admin/blog/newpost', function () {
-    return view('admin.admin_blog_newpost');
+
+Route::group(['middleware' => 'checkSession'], function() {
+	Route::get('/admin/home', function () {
+	    return view('admin.admin_home');
+	});
+	Route::get('/admin/scoreboard/newscore', function () {
+	    return view('admin.admin_scoreboard');
+	});
+	Route::get('/admin/events/newevent', function () {
+	    return view('admin.admin_events_new');
+	});
+	Route::get('/admin/blog/newpost', function () {
+	    return view('admin.admin_blog_newpost');
+	});
+	// Admin events
+	Route::post('/admin/events/newevent', 'Admin\Events@newEvent'); 
+	Route::post('/admin/blog/newpost', 'Admin\PanelBlog@newPost'); 
 });
 
 // Scoreboard routes
@@ -68,7 +74,3 @@ Route::post('/events/geteventbyname','EventsController@getEventByName');
 //Admin login and logout
 Route:;post('/admin/login', 'Admin\AdminAuth@adminAuthentication');
 Route::post('/admin/logout', 'Admin\AdminAuth@adminLogout');
-
-// Admin events
-Route::post('/admin/events/newevent', 'Admin\Events@newEvent'); 
-Route::post('/admin/blog/newpost', 'Admin\PanelBlog@newPost'); 
