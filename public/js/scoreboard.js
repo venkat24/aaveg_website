@@ -21,11 +21,9 @@ var sports = {
 	agate: 0,
 	opal: 0,
 };
-setTimeout(function() {
-	$(document).ready(function () {
-		getScoreboard();
-	});
-},20);
+$(document).ready(function () {
+	getScoreboard();
+});
 function getScoreboard() {
 	var route = SITE_BASE_URL + '/scoreboard/getall';
 	var method = 'POST';
