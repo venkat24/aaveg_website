@@ -56,7 +56,7 @@ function setCore() {
 		{
 			"name":  "Pious Sharma",
 			"post":  "Manager",
-			"image": base_url + "IMG_6047.jpg"
+			"image": base_url + "Pious.jpg"
 		},
 		{
 			"name":  "Rajive Kumar",
@@ -101,7 +101,7 @@ function setWeb() {
 			"image": base_url + "IMG_6073.jpg"
 		},
 		{
-			"name":  "Deep",
+			"name":  "Simbu",
 			"post":  "Web Developer",
 			"image": base_url + "Deep.jpg"
 		},
@@ -116,12 +116,12 @@ function setWeb() {
 			"image": base_url + "Ajay.jpg"
 		},
 		{
-			"name":  "Sundar",
+			"name":  "Sundari",
 			"post":  "Web Developer",
 			"image": base_url + "Sundar.jpg"
 		},
 		{
-			"name":  "ADP",
+			"name":  "Danial",
 			"post":  "Designer",
 			"image": base_url + "IMG_6024.jpg"
 		},
@@ -188,6 +188,11 @@ function setTeam() {
 			"post":  "Organizer",
 			"image": base_url + "IMG_5828.jpg"
 		},
+		// {
+		// 	"name":  "Nandini",
+		// 	"post":  "Organizer",
+		// 	"image": base_url + "IMG_9000.jpg"
+		// },
 		{
 			"name":  "Niharika",
 			"post":  "Organizer",
