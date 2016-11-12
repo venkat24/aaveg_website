@@ -121,11 +121,12 @@
     <p class="lead">This is where the heart of Aaveg lies. All of the wins and losses, triumphs and disasters, joys and sorrows are encapsulated in the numbers below. Wishing all the freshers the best of luck in achieving glory and making their hostels proud.</p>
     <hr class="my-2">
   </div>
+  <h3 style="text-align: center" id="caption">Culturals</h3>
   <canvas id="myChart" width="400" height="100"></canvas>
   <br><br>
-  <button type="button" class="btn btn-default col-sm-4" onclick="charts(culturals)">Culturals</button>
-  <button type="button" class="btn btn-default col-sm-4" onclick="charts(sports)">Sports</button>
-  <button type="button" class="btn btn-default col-sm-4" onclick="charts(misc)">Miscellaneous</button>
+  <button type="button" class="btn btn-default col-sm-4" onclick="setCap('Culturals');charts(culturals)">Culturals</button>
+  <button type="button" class="btn btn-default col-sm-4" onclick="setCap('Sports');charts(sports)">Sports</button>
+  <button type="button" class="btn btn-default col-sm-4" onclick="setCap('Miscellaneous');charts(misc)">Miscellaneous</button>
   <br><br><br>
 </div>
 @endsection
