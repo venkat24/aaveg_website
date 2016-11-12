@@ -31,7 +31,7 @@
       <h5>@{{post}}</h4>
   </div>
 @{{/each}}
-</br>
+
 </script>
 <script type="text/template" id="display-web">
 <h1 class="code">WEB TEAM</h1>
@@ -46,6 +46,28 @@
 </script>
 
 
-<div class="container" id="main-container" style="display:block">
+<div class="container" id="main-container">
+  <br><br><br>
+  <div class="jumbotron">
+    <h1 class="display-3">The Team!</h1>
+    <p class="lead">Behind every great success is a team, filled with passion and dreams. Aaveg is no different in this regard. So here's a little overview of the different teams and their members. Meet the Aaveg Family.</p>
+    <hr class="my-2">
+    <p><b>Core:</b> They put the fun in fundamental whilst acting as Aaveg's torch bearers.</p>
+    <!-- <hr class="my-2"> -->
+    <p><b>OC: </b>Pulling strings and getting the act together is their forte. Just don't ask for spam.</p>
+    <!-- <hr class="my-2"> -->
+    <p><b>Design:</b> Designed to get your attention, with their amazing posters and artwork. No modern art here.</p>
+    <!-- <hr class="my-2"> -->
+    <p><b>Content:</b> The minds behind the pen. Just don't get them started on puns and punish yourself.</p>
+    <p><b>Web Ops:</b> Well, You're reading all this right? Cool.</p><br>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" target="_blank" href="https://www.facebook.com/aaveg.nitt" role="button">Visit us on Facebook!</a>
+    </p>
+  </div>
 </div>
+<footer class="footer" style="background-color: black;">
+      <div class="container">
+        <p class="text-muted code" style="font-size:20px">Made with ❤ by Aaveg Web Team</p>
+      </div>
+</footer>
 @endsection

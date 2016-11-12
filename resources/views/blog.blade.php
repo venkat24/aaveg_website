@@ -1,6 +1,7 @@
 @extends('blog_base')
 @section('main')
-<div class="main-content">
+<!-- This is all dummy content -->
+<!-- <div class="main-content">
 <div class="container">
 	<div class="row" style="padding-top:20px;">
 		<div class="col s12 l9">
@@ -106,6 +107,11 @@
 	</div>
 </div>
 </div>
+</div> -->
+<div class="container">
+	<div class="valign-wrapper">
+		<h1 class="coming-soon center-align">Coming Soon!</h1>
+	</div>
 </div>
 @endsection
 @section('scripts')
