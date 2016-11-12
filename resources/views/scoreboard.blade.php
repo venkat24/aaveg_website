@@ -120,10 +120,6 @@
     <h1 class="display-3">The Standings!</h1>
     <p class="lead">This is where the heart of Aaveg lies. All of the wins and losses, triumphs and disasters, joys and sorrows are encapsulated in the numbers below. Wishing all the freshers the best of luck in achieving glory and making their hostels proud.</p>
     <hr class="my-2">
-    <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </p>
   </div>
   <canvas id="myChart" width="400" height="100"></canvas>
   <br><br>
