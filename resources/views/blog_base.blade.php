@@ -46,7 +46,7 @@
 	<header class="indigo lighten-1">
 		<div class="container position-relative">
 			<div class="single-logo center-align">
-				<a href="#">
+				<a href="/">
 					<img src="{{asset('aavegbloglogo.png')}}" width="400">
 				</a>
 			</div>
@@ -56,7 +56,7 @@
 	@yield('main')
 	
 	<div id="main-container"></div>
- 	<footer class="page-footer">
+<!--  	<footer class="page-footer">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
@@ -76,10 +76,10 @@
       </div>
       <div class="footer-copyright">
         <div class="container">
-        ©2016 <a class="grey-text text-lighten-4 center-align" href="/admin/login">Aaveg</a>
+        ©2016<a class="grey-text text-lighten-4 center-align" href="/admin/login"> </a>Aaveg
         <a class="grey-text text-lighten-4 right" href="#!">Archives</a>
         </div>
       </div>
-    </footer>
+    </footer> -->
 </body>
 </html>

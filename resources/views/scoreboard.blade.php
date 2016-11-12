@@ -5,10 +5,12 @@
 @endsection
 
 @section('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.js"></script>
     <script type="text/javascript" src="{{asset('js/scoreboard.js')}}"></script>
 @endsection
 @section('main')
 <script type="text/template" id="display">
+  <br><br><br>
   <table class="table table-hover table-striped">
     <h1>Culturals</h1>
     <thead class="thead-default">
@@ -44,7 +46,7 @@
     </table>
     </br>
 
-
+    <br><br><br>
     <table class="table table-hover table-striped">
     <h1>Sports</h1>
     <thead class="thead-default">
@@ -54,7 +56,6 @@
         <th>Coral</th>
         <th>Jade</th>
         <th>Agate</th>
-        <th>Opal</th>
       </tr>
     </thead>
     <tbody>
@@ -65,7 +66,6 @@
         <td>@{{coral_score}}</td>
         <td>@{{jade_score}}</td>
         <td>@{{agate_score}}</td>
-        <td>@{{opal_score}}</td>
       </tr>
     @{{/each}}
       <tr>
@@ -74,13 +74,12 @@
         <td>@{{message.sports_total.coral}}</td>
         <td>@{{message.sports_total.jade}}</td>
         <td>@{{message.sports_total.agate}}</td>
-        <td>@{{message.sports_total.opal}}</td>
       </tr>
     </tbody>
     </table>
     </br>
     
-
+    <br><br><br>
     <table class="table table-hover table-striped">
     <h1>Miscellaneous</h1>
     <thead class="thead-default">
@@ -116,14 +115,21 @@
   </table>
 </script>
 <div class="container" id="main-container">
+  <br><br><br>
   <div class="jumbotron">
     <h1 class="display-3">The Standings!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <p class="lead">This is where the heart of Aaveg lies. All of the wins and losses, triumphs and disasters, joys and sorrows are encapsulated in the numbers below. Wishing all the freshers the best of luck in achieving glory and making their hostels proud.</p>
     <hr class="my-2">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
     <p class="lead">
       <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </p>
   </div>
+  <canvas id="myChart" width="400" height="100"></canvas>
+  <br><br>
+  <button type="button" class="btn btn-default col-sm-4" onclick="charts(culturals)">Culturals</button>
+  <button type="button" class="btn btn-default col-sm-4" onclick="charts(sports)">Sports</button>
+  <button type="button" class="btn btn-default col-sm-4" onclick="charts(misc)">Miscellaneous</button>
+  <br><br><br>
 </div>
 @endsection
