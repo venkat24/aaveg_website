@@ -53,7 +53,7 @@
     <p class="lead">Behind every great success is a team, filled with passion and dreams. Aaveg is no different in this regard. So here's a little overview of the different teams and their members. <br><br>
     We thank <a target="_blank" href="https://www.facebook.com/blurrindia/">Blurr India</a> for these incredible photos! Meet the Aaveg Family.</p>
     <hr class="my-2">
-    <p><b>Faculty Advisor:</b>Sreekanth Sir is the engine of the Aaveg train, our perpetual motivation and support to keep moving forward!</p>
+    <p><b>Faculty Advisor:</b> Sreekanth Sir is the engine of the Aaveg train, our perpetual motivation and support to keep moving forward!</p>
     <!-- <hr class="my-2"> -->
     <p><b>Core:</b> They put the fun in fundamental whilst acting as Aaveg's torch bearers.</p>
     <!-- <hr class="my-2"> -->
