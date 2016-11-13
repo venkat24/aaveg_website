@@ -14,7 +14,7 @@
 	<div class="cloud"> <img alt="cloud" src="{{asset('splash-assets/cloud.png')}}"> </div>
 	<div class="cloud"> <img alt="cloud" src="{{asset('splash-assets/cloud.png')}}"> </div>
 	<div class="cloud"> <img alt="cloud" src="{{asset('splash-assets/cloud.png')}}"> </div>
-	<div id="logo"><div id="logo-container">  <img alt="logo" src="{{asset('splash-assets/logo.png')}}">  </div> </div>
+	<div id="logo"><div id="logo-container">  <img alt="logo" onclick="$('audio')[0].play();" src="{{asset('splash-assets/logo.png')}}">  </div> </div>
 	<div id="tagline1">
 		<div id="tagline-container1">
 			A Quest
@@ -45,6 +45,8 @@
 			<div id="decor" class="center svg"> <img alt="decor" src="{{asset('splash-assets/clock-tower-decoration.png')}}"> </div>
 			<div id="face" class="center svg"> <img alt="face" src="{{asset('splash-assets/tower-face.png')}}"> </div>
 			<div id="dials" class="center svg"> <img alt="dials" src="{{asset('splash-assets/dials.png')}}"> </div>
+			<div id="dials2" class="center svg"> <img alt="dials2" src="{{asset('splash-assets/dials2.png')}}"> </div>
+			<audio id="audio" src="{{asset('splash-assets/clocksound.ogg')}}" ></audio>
 		</div>
 	</div>
 </div>

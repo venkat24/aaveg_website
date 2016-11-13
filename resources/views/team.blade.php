@@ -38,8 +38,8 @@
   @{{#each core}}
   <div class="single-person"> 
       <img src="@{{image}}" class="img-circle profile-image web-image">
-      <h2 class="code">@{{name}}</h2>
-      <h4 class="code">@{{post}}</h4>
+      <h2 class="code code-font">@{{name}}</h2>
+      <h4 class="code code-font">@{{post}}</h4>
   </div>
 @{{/each}}
 </br>
@@ -50,8 +50,11 @@
   <br><br><br>
   <div class="jumbotron">
     <h1 class="display-3">The Team!</h1>
-    <p class="lead">Behind every great success is a team, filled with passion and dreams. Aaveg is no different in this regard. So here's a little overview of the different teams and their members. Meet the Aaveg Family.</p>
+    <p class="lead">Behind every great success is a team, filled with passion and dreams. Aaveg is no different in this regard. So here's a little overview of the different teams and their members. <br><br>
+    We thank <a target="_blank" href="https://www.facebook.com/blurrindia/">Blurr India</a> for these incredible photos! Meet the Aaveg Family.</p>
     <hr class="my-2">
+    <p><b>Faculty Advisor:</b>Sreekanth Sir is the engine of the Aaveg train, our perpetual motivation and support to keep moving forward!</p>
+    <!-- <hr class="my-2"> -->
     <p><b>Core:</b> They put the fun in fundamental whilst acting as Aaveg's torch bearers.</p>
     <!-- <hr class="my-2"> -->
     <p><b>OC: </b>Pulling strings and getting the act together is their forte. Just don't ask for spam.</p>
@@ -63,6 +66,12 @@
     <p class="lead">
       <a class="btn btn-primary btn-lg" target="_blank" href="https://www.facebook.com/aaveg.nitt" role="button">Visit us on Facebook!</a>
     </p>
+  </div>
+  <div id="facad-container">
+    <img class="profile-image img-circle" src="{{asset('profile-images/sreekanth_sir.jpg')}}">
+      <h1>Dr. Sreekanth</h2>
+      <h2>Advisor</h2>
+      <br><br>
   </div>
 </div>
 <footer class="footer" style="background-color: black;">

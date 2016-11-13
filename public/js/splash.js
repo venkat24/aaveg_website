@@ -5,7 +5,15 @@ $(window).load(function() {
   setTimeout(function() {
     drawTagline2();
   }, 8000);
+  setTimeout(function() {
+    playAudio();
+  }, 4000);
 });
+
+function playAudio(){
+  var audio = $("#audio")[0];
+  audio.play();
+} 
 
 function drawTagline1() {
   $('#tagline-container1').css("visibility","visible");
