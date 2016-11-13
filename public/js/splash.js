@@ -5,6 +5,10 @@ $(window).load(function() {
   setTimeout(function() {
     drawTagline2();
   }, 8000);
+  function playAudio(){
+    var audio = $("#audio")[0];
+    audio.play();
+  } 
 });
 
 function drawTagline1() {
