@@ -1,27 +1,33 @@
-## Laravel PHP Framework
+# Aaveg Website
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
-
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
-
-## Official Documentation
-
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+###Bugs and Changes :
+- Scoreboard :
+  - Overlapping and inerfering instances of the scoreboard graph
+  - Scores displayed in decimal, change to integer
+  - Change Miscellaneous to Spectrum
+- Team:
+  - Change Web Team Names to normal names and have nicknames on hover
+  - Add remaining people left out in the OC and Design team
+- General:
+  - Remove Admin Login from the Nav
+  - Scoreboard is for some reason always active in Nav. Fix that
+  - Modify 404 Page
+- Splash Page:
+  - Add media query to move bushed out of the way when on narrower screens
+  - Add media query to snap navbar into mobile mode when on mobile screens
+  - Add media query to change position/hide the tagline when on narrower screens
+  - Shorten the "Pride of India" ausio clip
+  - Add separate buildings for the hostels/event pages. Use the same pop-up animation as the admin block buildings
+- Blog:
+  - Write Ajax requests to fill the contents of the blog main page
+  - Add backlinks
+  - Add Content links to different posts on the bottom bar
+  - Modify colour scheme
+  - Add Author panes on each page
+  - Add content for the more links pane
+- Events:
+  - Pending...
+- About Aaveg:
+  - Pending...
+  
+  
