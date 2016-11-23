@@ -91,8 +91,12 @@ function setScores(info) {
 	charts(culturals);
 }
 function charts(culturals) {
-	var ctx = document.getElementById("myChart");
-	var myChart = new Chart(ctx, {
+	$('#myChart').remove();
+	$('#chart-container').append('<canvas id="myChart" width="400" height="100"></canvas>');
+	var canvas = document.getElementById("myChart");
+	var context = canvas.getContext('2d');
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	var myChart = new Chart(canvas, {
     type: 'bar',
     data: {
         labels: ["Diamond", "Coral", "Jade", "Agate", "Opal"],
