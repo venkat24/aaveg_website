@@ -119,7 +119,9 @@
   <div class="jumbotron">
     <h1 class="display-3">The Standings!</h1>
     <p class="lead">This is where the heart of Aaveg lies. All of the wins and losses, triumphs and disasters, joys and sorrows are encapsulated in the numbers below. Wishing all the freshers the best of luck in achieving glory and making their hostels proud.</p>
-    <hr class="my-2">
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" target="_blank" href="https://www.facebook.com/aaveg.nitt/app/190322544333196" role="button">Check out Last Year's Scoreboard!</a>
+    </p>
   </div>
   <h3 style="text-align: center" id="caption">Culturals Cup</h3>
   <div id="chart-container">
