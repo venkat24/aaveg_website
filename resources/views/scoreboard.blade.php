@@ -12,7 +12,7 @@
 <script type="text/template" id="display">
   <br><br><br>
   <table class="table table-hover table-striped">
-    <h1>Culturals</h1>
+    <h1>Culturals Cup</h1>
     <thead class="thead-default">
       <tr>
         <th>Event Name</th>
@@ -48,7 +48,7 @@
 
     <br><br><br>
     <table class="table table-hover table-striped">
-    <h1>Sports</h1>
+    <h1>Sports Cup</h1>
     <thead class="thead-default">
       <tr>
         <th>Event Name</th>
@@ -81,7 +81,7 @@
     
     <br><br><br>
     <table class="table table-hover table-striped">
-    <h1>Miscellaneous</h1>
+    <h1>Spectrum Cup</h1>
     <thead class="thead-default">
       <tr>
         <th>Event Name</th>
@@ -121,14 +121,14 @@
     <p class="lead">This is where the heart of Aaveg lies. All of the wins and losses, triumphs and disasters, joys and sorrows are encapsulated in the numbers below. Wishing all the freshers the best of luck in achieving glory and making their hostels proud.</p>
     <hr class="my-2">
   </div>
-  <h3 style="text-align: center" id="caption">Culturals</h3>
+  <h3 style="text-align: center" id="caption">Culturals Cup</h3>
   <div id="chart-container">
     <canvas id="myChart" width="400" height="100"></canvas>
   </div>
   <br><br>
-  <button type="button" class="btn btn-default col-sm-4" onclick="setCap('Culturals');charts(culturals)">Culturals</button>
-  <button type="button" class="btn btn-default col-sm-4" onclick="setCap('Sports');charts(sports)">Sports</button>
-  <button type="button" class="btn btn-default col-sm-4" onclick="setCap('Miscellaneous');charts(misc)">Miscellaneous</button>
+  <button type="button" class="btn btn-default col-sm-4" onclick="setCap('Culturals Cup');charts(culturals)">Culturals</button>
+  <button type="button" class="btn btn-default col-sm-4" onclick="setCap('Sports Cup');charts(sports)">Sports</button>
+  <button type="button" class="btn btn-default col-sm-4" onclick="setCap('Spectrum Cup');charts(misc)">Spectrum</button>
   <br><br><br>
 </div>
 @endsection
