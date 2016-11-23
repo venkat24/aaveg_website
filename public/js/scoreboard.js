@@ -47,39 +47,39 @@ function setScores(info) {
 
 	if(info.message["Culturals"]) {
 		for (var i = info.message["Culturals"].length - 1; i >= 0; i--)
-			culturals.diamond+=info.message["Culturals"][i]["diamond_score"];
+			culturals.diamond+=parseInt(info.message["Culturals"][i]["diamond_score"]);
 		for (var i = info.message["Culturals"].length - 1; i >= 0; i--)
-			culturals.coral+=info.message["Culturals"][i]["coral_score"];
+			culturals.coral+=parseInt(info.message["Culturals"][i]["coral_score"]);
 		for (var i = info.message["Culturals"].length - 1; i >= 0; i--)
-			culturals.jade+=info.message["Culturals"][i]["jade_score"];
+			culturals.jade+=parseInt(info.message["Culturals"][i]["jade_score"]);
 		for (var i = info.message["Culturals"].length - 1; i >= 0; i--)
-			culturals.agate+=info.message["Culturals"][i]["agate_score"];
+			culturals.agate+=parseInt(info.message["Culturals"][i]["agate_score"]);
 		for (var i = info.message["Culturals"].length - 1; i >= 0; i--)
-			culturals.opal+=info.message["Culturals"][i]["opal_score"];
+			culturals.opal+=parseInt(info.message["Culturals"][i]["opal_score"]);
 	}
 
 	if(info.message["Sports"]) {
 		for (var i = info.message["Sports"].length - 1; i >= 0; i--) 
-			sports.diamond+=info.message["Sports"][i]["diamond_score"];
+			sports.diamond+=parseInt(info.message["Sports"][i]["diamond_score"]);
 		for (var i = info.message["Sports"].length - 1; i >= 0; i--) 
-			sports.coral+=info.message["Sports"][i]["coral_score"];
+			sports.coral+=parseInt(info.message["Sports"][i]["coral_score"]);
 		for (var i = info.message["Sports"].length - 1; i >= 0; i--) 
-			sports.jade+=info.message["Sports"][i]["jade_score"];
+			sports.jade+=parseInt(info.message["Sports"][i]["jade_score"]);
 		for (var i = info.message["Sports"].length - 1; i >= 0; i--) 
-			sports.agate+=info.message["Sports"][i]["agate_score"];
+			sports.agate+=parseInt(info.message["Sports"][i]["agate_score"]);
 	}
 
 	if(info.message["Miscellaneous"]) {
 		for (var i = info.message["Miscellaneous"].length - 1; i >= 0; i--) 
-			misc.diamond+=info.message["Miscellaneous"][i]["diamond_score"];
+			misc.diamond+=parseInt(info.message["Miscellaneous"][i]["diamond_score"]);
 		for (var i = info.message["Miscellaneous"].length - 1; i >= 0; i--) 
-			misc.coral+=info.message["Miscellaneous"][i]["coral_score"];
+			misc.coral+=parseInt(info.message["Miscellaneous"][i]["coral_score"]);
 		for (var i = info.message["Miscellaneous"].length - 1; i >= 0; i--) 
-			misc.jade+=info.message["Miscellaneous"][i]["jade_score"];
+			misc.jade+=parseInt(info.message["Miscellaneous"][i]["jade_score"]);
 		for (var i = info.message["Miscellaneous"].length - 1; i >= 0; i--) 
-			misc.agate+=info.message["Miscellaneous"][i]["agate_score"];
+			misc.agate+=parseInt(info.message["Miscellaneous"][i]["agate_score"]);
 		for (var i = info.message["Miscellaneous"].length - 1; i >= 0; i--) 
-			misc.opal+=info.message["Miscellaneous"][i]["opal_score"];	
+			misc.opal+=parseInt(info.message["Miscellaneous"][i]["opal_score"]);	
 	}
 	info.message["culturals_total"]=culturals;
 	info.message["sports_total"]=sports;
