@@ -38,7 +38,6 @@
         <li><a href="/team">The Team</a></li>
         <li><a target="_blank" href="http://facebook.com/aaveg.nitt">Facebook Page</a></li>
         <li><a type="button" data-toggle="modal" data-target="#myModal">Contact Us</a></li>
-        <li><a href="/admin/login">Admin Login</a></li>
       </ul>
     </div>
   </div>
