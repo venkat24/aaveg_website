@@ -1,0 +1,29 @@
+$(document).ready(function() {
+  $('select').material_select();
+});
+
+function uploadBlog() {
+	var route = SITE_BASE_URL + '/admin/blog/newpost';
+	var method = 'POST';
+	
+	var body = new FormData($("#new_post_form")[0]);
+
+	var request = $.ajax({
+		url: route,
+		method: method,
+		type: "POST",
+		processData: false,
+		contentType: false,
+		enctype: 'multipart/form-data',
+		data: body
+	});
+	request.done(function(data){
+		if(data.status_code == 200) {
+			Materialize.toast('Post Added!', 4000, 'rounded');
+			//location.reload();
+		} else {
+			Materialize.toast('Upload Failed!', 4000, 'rounded');
+			console.log(data.status_code + " " + data.message);
+		}
+	});
+}
