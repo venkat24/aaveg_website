@@ -30,14 +30,14 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/scoreboard">Scoreboard<span class="sr-only">(current)</span></a></li>
+        <li><a href="/about">About Aaveg<span class="sr-only"></span></a></li>
+        <li><a href="/scoreboard">Scoreboard<span class="sr-only"></span></a></li>
         <li><a href="/blog">Blog</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/team">The Team</a></li>
         <li><a target="_blank" href="http://facebook.com/aaveg.nitt">Facebook Page</a></li>
         <li><a type="button" data-toggle="modal" data-target="#myModal">Contact Us</a></li>
-        <li><a href="/admin/login">Admin Login</a></li>
       </ul>
     </div>
   </div>

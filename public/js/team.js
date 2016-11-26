@@ -96,32 +96,32 @@ function setWeb() {
 	var base_url = SITE_BASE_URL + '/profile-images/'
 	var core = [
 		{
-			"name":  "Jumbo",
+			"name":  "Venkatraman",
 			"post":  "Web Developer",
 			"image": base_url + "IMG_6073.jpg"
 		},
 		{
-			"name":  "Simbu",
+			"name":  "Deep",
 			"post":  "Web Developer",
 			"image": base_url + "Deep.jpg"
 		},
 		{
-			"name":  "Kutti",
+			"name":  "Gautham",
 			"post":  "App Developer",
 			"image": base_url + "IMG_6058.jpg"
 		},
 		{
-			"name":  "Kadabra",
+			"name":  "Ajay",
 			"post":  "App Developer",
 			"image": base_url + "Ajay.jpg"
 		},
 		{
-			"name":  "Sundari",
+			"name":  "Sundar",
 			"post":  "Web Developer",
 			"image": base_url + "Sundar.jpg"
 		},
 		{
-			"name":  "Danial",
+			"name":  "ADP",
 			"post":  "Designer",
 			"image": base_url + "IMG_6024.jpg"
 		},
