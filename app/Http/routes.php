@@ -35,7 +35,7 @@ Route::get('/admin/login', function () {
     return view('admin.admin_login');
 });
 
-Route::group(['middleware' => 'checkSession'], function() {
+//Route::group(['middleware' => 'checkSession'], function() {
 	Route::get('/admin/home', function () {
 	    return view('admin.admin_home');
 	});
@@ -51,11 +51,12 @@ Route::group(['middleware' => 'checkSession'], function() {
 	// Admin events
 	Route::post('/admin/events/newevent', 'Admin\Events@newEvent'); 
 	Route::post('/admin/blog/newpost', 'Admin\PanelBlog@newPost'); 
-});
+//});
 
 // Scoreboard routes
 Route::post('/scoreboard/getall','ScoreboardController@getFullScoreboard');
 Route::post('/scoreboard/getcategory','ScoreboardController@getCategoryScoreboard');
+Route::post('/scoreboard/geteventscores','ScoreboardController@getEventScores');
 
 // Events routes
 Route::post('/events/getall','EventsController@getAllEvents');
