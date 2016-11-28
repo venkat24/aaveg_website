@@ -51,7 +51,7 @@ Route::get('/admin/login', function () {
 	// Admin events
 	Route::post('/admin/events/newevent', 'Admin\Events@newEvent'); 
 	Route::post('/admin/blog/newpost', 'Admin\PanelBlog@newPost');
-	Route::post('/admin/scoreboard/newscore', 'Admin\UpdateScoreboard@newScore');
+	Route::post('/admin/scoreboard/newscore', 'Admin\UpdateScoreboard@updateScores');
 //});
 
 // Scoreboard routes
