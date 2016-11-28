@@ -33,12 +33,7 @@
 	</div>
 	<div class="row">
 		<div class="input-field col s6">
-			<select id="author_name" name="author_name">
-				<option value="" disabled selected>Author</option>
-				<option value="Gautham">Gautham</option>
-				<option value="Tamil Lits">The</option>
-				<option value="Dramatics">Ultimate</option>
-				<option value="Sports">God</option>
+			<select id="author-name" name="author_name">
 			</select>
 			<label for="author_name">Author</label>
 		</div>
@@ -46,7 +41,7 @@
 	<div class="file-field input-field">
 		<div class="btn">
 			<span>Image</span>
-			<input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+			<input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
 			<input name="image" type="file" id="image">
 		</div>
 		<div class="file-path-wrapper">
@@ -75,5 +70,10 @@
 		</button>
 	</div>
 </div>
+<script type="text/template" id="author-name-dropdown">
+@{{#each message}}
+	<option value="@{{this}}">@{{this}}</option>
+@{{/each}}
+</script>
 <script type="text/javascript" src="{{asset('js/new_post.js')}}"></script>
 @endsection

@@ -35,21 +35,21 @@ class ScoreboardController extends Controller
         }
     }
 
-    public function getCategoryScoreboard(Request $request) {
+    public function getEventScores(Request $request) {
         $validator = Validator::make($request->all(),[
-            'category' => 'required|in:Culturals,Sports,Miscellaneous'
+            'event_name' => 'required'
         ]);
         if($validator->fails()) {
             $status_code = 400;
-            $error_message = "Invalid Category Specified";
+            $error_message = "No Event Specified";
             return JSONResponse::response($status_code,$error_message);
         }
-        $category = $request->input('category');
+        $event_name = $request->input('event_name');
         $scoreboard = Scoreboard::join('events_details',
                                        'events_details.event_id',
                                        '=',
                                        'scoreboard.event_id')
-                                ->where('event_category','=',$category)
+                                ->where('event_name','=',$event_name)
                                 ->get();
         return JSONResponse::response(200,$scoreboard);
     }

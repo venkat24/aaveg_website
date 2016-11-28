@@ -14,9 +14,10 @@
   <br><br><br>
   <div class="jumbotron">
     <h1 class="display-3">Aaveg - An Adventure!</h1>
-    <p class="lead">Behind every great success is a team, filled with passion and dreams. Aaveg is no different in this regard. So here's a little overview of the different teams and their members. <br><br>
-    Take a look at some of last year's snapshots!</p>
+    <p class="lead">Aaveg has crossed a hundred milestones to get where it is today, and it continues to grow exponentially. Starting out as a mere idea, the fest has transformed into an icon of the fresher life.<br><br>
+    The website symbolizes yet another cat in the bag for this extravaganza, and it doesn't like Aaveg's growth will be slowing anytime soon!</p>
     <hr class="my-2">
+    <p>Take a look at some of last year's snapshots!</p>
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -85,6 +86,10 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<br><br>
+    <p class="lead" style="text-align: center;">
+      <a class="btn btn-primary btn-lg" target="_blank" href="https://www.facebook.com/pg/aaveg.nitt/photos/" role="button">View all Photos</a>
+    </p>
   </div>
 </div>
 @endsection
