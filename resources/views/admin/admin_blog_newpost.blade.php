@@ -46,7 +46,7 @@
 	<div class="file-field input-field">
 		<div class="btn">
 			<span>Image</span>
-			<input type="hidden" name="MAX_FILE_SIZE" value="300000" />
+			<input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
 			<input name="image" type="file" id="image">
 		</div>
 		<div class="file-path-wrapper">
