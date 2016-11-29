@@ -22,7 +22,7 @@ Route::get('/team', function () {
 Route::get('/blog', function () {
     return view('blog');
 });
-Route::get('/blog/single/', function () {
+Route::get('/blog/single/{blog_id}', function () {
     return view('blog_single');
 });
 Route::get('/scoreboard', function () {
@@ -35,7 +35,7 @@ Route::get('/admin/login', function () {
     return view('admin.admin_login');
 });
 
-//Route::group(['middleware' => 'checkSession'], function() {
+Route::group(['middleware' => 'checkSession'], function() {
 	Route::get('/admin/home', function () {
 	    return view('admin.admin_home');
 	});
@@ -52,7 +52,7 @@ Route::get('/admin/login', function () {
 	Route::post('/admin/events/newevent', 'Admin\Events@newEvent'); 
 	Route::post('/admin/blog/newpost', 'Admin\PanelBlog@newPost');
 	Route::post('/admin/scoreboard/newscore', 'Admin\UpdateScoreboard@updateScores');
-//});
+});
 
 // Scoreboard routes
 Route::post('/scoreboard/getall','ScoreboardController@getFullScoreboard');
