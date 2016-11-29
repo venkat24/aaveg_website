@@ -3,24 +3,36 @@
 <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre|Oswald|Raleway" rel="stylesheet">
 @endsection
 @section('main')
-<div class="main-content">
-	<div class="container">
-		<div id="title-block">
-			<img src="{{asset('deadpool.jpg')}}" class="responsive-img main-image">
-		</div>
-			<div class="row">
-					<div class="col s12">
-						<div class="container">
-			<h1>@{{message.title}}</h1>
-			<h3>@{{message.subtitle}}</h3>
-							<div class="flow-text content" id="main-content">
-								@{{{message.content}}}
-							</div>
-						</div>
+<script type="text/template" id="content-template">		
+<div id="title-block">
+	<img src="@{{message.image_path}}" class="responsive-img main-image">
+</div>
+	<div class="row">
+			<div class="col s12 l8">
+					<h1>@{{message.title}}</h1>
+					<h3>@{{message.subtitle}}</h3>
+					<div class="flow-text content" id="main-content">
+					</div><br>
+          <div class="flow-text"><i>@{{message.author_name}}</i></div>
+			</div>
+			<div class="col s12 l3 offset-l1">
+				<div class="card-panel indigo lighten-4">
+					<div class="profile-image-container">
+					<div class="center-align flow-text">@{{message.author_name}}</div><br>
+					<div class="container">
+						<img src='@{{message.author_captions.image_path}}' class="responsive-img circle">
 					</div>
-				</div>
+					<br>
+					</div>
+          <span class="gray-text">@{{message.author_captions.caption}}</span>
+        </div>
 			</div>
 		</div>
+	</div>
+</div>
+</script>
+<div class="main-content">
+	<div class="container" id="content-container">
 	</div>
 </div>
 @endsection
