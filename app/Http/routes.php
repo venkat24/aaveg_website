@@ -25,6 +25,9 @@ Route::get('/blog', function () {
 Route::get('/blog/single/{blog_id}', function () {
     return view('blog_single');
 });
+Route::get('/blog/archives', function () {
+    return view('blog_archives');
+});
 Route::get('/scoreboard', function () {
     return view('scoreboard');
 });
