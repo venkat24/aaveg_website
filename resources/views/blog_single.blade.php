@@ -15,12 +15,12 @@
 					</div><br>
           <div class="flow-text"><i>@{{message.author_name}}</i></div>
 			</div>
-			<div class="col s12 l3 offset-l1">
+			<div class="col s4 offset-s4 l3 offset-l1">
 				<div class="card-panel indigo lighten-4">
 					<div class="profile-image-container">
 					<div class="center-align flow-text">@{{message.author_name}}</div><br>
-					<div class="container">
-						<img src='@{{message.author_captions.image_path}}' class="responsive-img circle">
+					<div class="container center-align">
+						<img src='@{{message.author_captions.image_path}}' class="center-align responsive-img circle" style="max-width:200px;">
 					</div>
 					<br>
 					</div>
