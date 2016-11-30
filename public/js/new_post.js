@@ -21,7 +21,7 @@ function uploadBlog() {
 	request.done(function(data){
 		if(data.status_code == 200) {
 			Materialize.toast('Post Added!', 4000, 'rounded');
-			//location.reload();
+			location.reload();
 		} else {
 			Materialize.toast('Upload Failed!', 4000, 'rounded');
 			console.log(data.status_code + " " + data.message);
