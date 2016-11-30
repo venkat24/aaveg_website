@@ -65,7 +65,7 @@ Route::post('/scoreboard/geteventscores','ScoreboardController@getEventScores');
 //Blog routes
 Route::post('/blog/getAllPosts','BlogController@getAllPosts');
 Route::post('/blog/getLatestPosts','BlogController@getLatestPosts');
-Route::post('/blog/getBlogById/','BlogController@getBlogById');
+Route::post('/blog/getBlogById','BlogController@getBlogById');
 Route::post('/blog/getauthors','BlogController@getAuthors');
 Route::post('/blog/getBlogTitles', 'BlogController@getBlogTitles');
 
