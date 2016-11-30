@@ -409,16 +409,6 @@ function setTeam() {
 			"image": base_url + "IMG_6082.jpg"
 		},
 		{
-			"name":  "Hari Krishnan",
-			"post":  "Organizer",
-			"image": base_url + "IMG_5991.jpg"
-		},
-		{
-			"name":  "Akash",
-			"post":  "Organizer",
-			"image": base_url + "IMG_5995.jpg"
-		},
-		{
 			"name":  "Bhavana",
 			"post":  "Organizer",
 			"image": base_url + "IMG_5880.jpg"
@@ -429,9 +419,19 @@ function setTeam() {
 			"image": base_url + "IMG_5962.jpg"
 		},
 		{
+			"name":  "Anirudh",
+			"post":  "Organizer",
+			"image": base_url + "IMG_6006.jpg"
+		},
+		{
 			"name":  "Rakshith",
 			"post":  "Organizer",
 			"image": base_url + "IMG_6005.jpg"
+		},
+		{
+			"name":  "Rithvik",
+			"post":  "Organizer",
+			"image": base_url + "IMG_5983.jpg"
 		},
 		{
 			"name":  "Praveen",
@@ -464,9 +464,14 @@ function setTeam() {
 			"image": base_url + "IMG_5930.jpg"
 		},
 		{
-			"name":  "Yashwanth",
+			"name":  "Yeshwanth",
 			"post":  "Organizer",
 			"image": base_url + "IMG_5977.jpg"
+		},
+		{
+			"name":  "Ashwin",
+			"post":  "Organizer",
+			"image": base_url + "IMG_9003.jpg"
 		},
 	];
 	team=shuffle(team);

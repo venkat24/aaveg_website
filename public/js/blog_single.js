@@ -26,19 +26,19 @@ function getBlog() {
 				},
 				"Tanvi Kumar" : {
 					"image_path" : base_url + "IMG_5802.jpg",
-					"caption"	 : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut leo a nibh efficitur hendrerit. Vivamus a rhoncus diam, quis ullamcorper nisi. Curabitur mollis quis nunc at ultrices. Quisque ex dui, tempus et dignissim venenatis, rutrum vitae dui."
+					"caption"	 : "Blogger. Day dreamer. Approachable, outgoing, tall wheatish person. Writes to express. Also, I'm fluffy."
 				},
 				"Avinash Tadavarthy" : {
 					"image_path" : base_url + "IMG_5804.jpg",
-					"caption"	 : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut leo a nibh efficitur hendrerit. Vivamus a rhoncus diam, quis ullamcorper nisi. Curabitur mollis quis nunc at ultrices. Quisque ex dui, tempus et dignissim venenatis, rutrum vitae dui."
+					"caption"	 : "A Telugu speaking chennaiite who is independent, curious, ever-hungry and a bit too lazy. Give me any song, I can dance for it. Give me any topic, I will write about it."
 				},
 				"Anirudh Banerjee" : {
 					"image_path" : base_url + "IMG_5808.jpg",
-					"caption"	 : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut leo a nibh efficitur hendrerit. Vivamus a rhoncus diam, quis ullamcorper nisi. Curabitur mollis quis nunc at ultrices. Quisque ex dui, tempus et dignissim venenatis, rutrum vitae dui."
+					"caption"	 : "Lazy. Optimistic. Meticulous. Pedantic. Fascinating. I am a multicultural Bengali who loves everything under the sun as long as it isn't in LHC."
 				},
 				"Mathirush S" : {
 					"image_path" : base_url + "IMG_5812.jpg",
-					"caption"	 : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut leo a nibh efficitur hendrerit. Vivamus a rhoncus diam, quis ullamcorper nisi. Curabitur mollis quis nunc at ultrices. Quisque ex dui, tempus et dignissim venenatis, rutrum vitae dui."
+					"caption"	 : "Lost in the Patterns of Music, Sport and Life. A Man of Few Words. Quoraholic but still stuck in Eternal Sonder. Also, mildly OCD."
 				},
 				"Kiran Krishnan" : {
 					"image_path" : base_url + "IMG_5811.jpg",
