@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 function getBlog() {
-	var route = SITE_BASE_URL + '/blog/getBlogById/';
+	var route = SITE_BASE_URL + '/blog/getBlogById';
 	var method = 'POST';
 	var base_url = SITE_BASE_URL + '/profile-images/';
 	var currpath = window.location.pathname.split('/');
