@@ -62,13 +62,13 @@
 		      <img src="{{ asset('images/aaveglogo.png') }}" width="150px" style="margin:5px;" onclick="location.href = SITE_BASE_URL + '/home'">
 		      <ul id="nav-mobile" class="right hide-on-med-and-down">
 		      @foreach(Session::get('permissions', []) as $permission)
-		      	@if($permission===1)
+		      	@if($permission==1)
 		        <li><a class="dropdown-button" href="#!" data-activates="oc-dropdown">Events</a></li>
 		       	@endif
-		      	@if($permission===2)
+		      	@if($permission==2)
 		        <li><a class="dropdown-button" href="#!" data-activates="content-dropdown">Blog</a></li>
 		       	@endif
-		      	@if($permission===3)
+		      	@if($permission==3)
 				<li><a href="/admin/scoreboard/newscore">Scoreboard</a></li>
 		       	@endif
 		      @endforeach
