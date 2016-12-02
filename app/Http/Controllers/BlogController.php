@@ -27,7 +27,7 @@ class BlogController extends Controller
                                         'blog.subtitle',
                                         'blog.updated_at')
                                     ->where('blog.active', '=', 1)
-                                    ->orderBy('blog.updated_at','desc')
+                                    ->orderBy('blog.created_at','desc')
                                     ->get();
             return JSONResponse::response(200, $blog_posts);                        
         } catch (Exception $e) {
@@ -60,7 +60,7 @@ class BlogController extends Controller
                                             'blog.image_path',
                                             'blog.updated_at')
                                         ->where('blog.active', '=', 1)
-                                        ->orderBy('blog.updated_at','desc')
+                                        ->orderBy('blog.created_at','desc')
                                         ->take($post_count)
                                         ->get();
             //return base64 encoded string for all images
