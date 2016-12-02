@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Aaveg Documentation</title>
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/highlight.tomorrow-night.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+
+        <header class="navbar navbar-default navbar-fixed-top">
+
+            <a class="navbar-brand" href="/">
+                Aaveg Documentation
+                <small class="hidden-xs hidden-sm">
+                    This is the default subtitle!
+                </small>
+            </a>
+
+            
+        </header>
+
+        <main class="container">
+            <div class="row">
+
+                
+                <section class="col-sm-12">
+                    <h1 id="route-documentation">Route Documentation</h1>
+<h2 id="notes">Notes</h2>
+<ul>
+<li>All routes must be hit with the base <code>https://aaveg.net</code>. Note the <code>https</code>.</li>
+<li>Every response is a JSON object, with two keys - <code>status_code</code> and <code>message</code></li>
+<li>Status codes follow standard HTTP code conventions - a <code>200</code> is a successful hit, and a <code>4XX</code> is an error.</li>
+</ul>
+<h3 id="get-routes">GET Routes</h3>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code></td>
+<td>Splash page</td>
+</tr>
+<tr>
+<td><code>/scoreboard</code></td>
+<td>Scoreboard page</td>
+</tr>
+<tr>
+<td><code>/about</code></td>
+<td>About Aaveg page</td>
+</tr>
+<tr>
+<td><code>/team</code></td>
+<td>Team page</td>
+</tr>
+<tr>
+<td><code>/admin</code> or <code>/admin/login</code></td>
+<td>Admin Login</td>
+</tr>
+<tr>
+<td><code>/blog</code></td>
+<td>Blog page</td>
+</tr>
+<tr>
+<td><code>/blog/single/{blog_id}</code></td>
+<td>View blog with given <code>blog_id</code></td>
+</tr>
+<tr>
+<td><code>/blog/archives</code></td>
+<td>View all blog posts</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="post-scoreboardgetall">POST /scoreboard/getall</h3>
+<blockquote>
+<p>Returns scores along with event details, grouped by cup </p>
+</blockquote>
+<h4 id="parameters">Parameters</h4>
+<pre><code>none</code></pre>
+<h4 id="response">Response</h4>
+<pre><code>{
+  "status_code": Integer,
+  "message": {
+    "Culturals": [
+      {
+        "event_name": String,
+        "event_category": String,
+        "event_id": Integer,
+        "diamond_score": Float,
+        "agate_score": Float,
+        "coral_score": Float,
+        "jade_score": Float,
+        "opal_score": Float
+      },
+    ],
+    "Sports": [
+      {
+        "event_name": String,
+        "event_category": String,
+        "event_id": In,
+        "diamond_score": Float,
+        "agate_score": Float,
+        "coral_score": Float,
+        "jade_score": Float,
+        "opal_score": Float
+      },
+    ],
+    "Miscellaneous": [
+      {
+        "event_name": String,
+        "event_category": String,
+        "event_id": Integer,
+        "diamond_score": Float,
+        "agate_score": Float,
+        "coral_score": Float,
+        "jade_score": Float,
+        "opal_score": Float
+      },
+    ]
+  }
+}</code></pre>
+<hr />
+<h3 id="post-scoreboardgeteventscores">POST /scoreboard/geteventscores</h3>
+<blockquote>
+<p>Returns scores along with event details, given <code>event_name</code></p>
+</blockquote>
+<h4 id="parameters-1">Parameters</h4>
+<pre><code>{
+    "event_name" : String
+}</code></pre>
+<h4 id="response-1">Response</h4>
+<pre><code>{
+  "status_code": Integer,
+  "message": [
+    {
+      "event_id": Integer,
+      "diamond_score": Float,
+      "agate_score": Float,
+      "coral_score": Float,
+      "jade_score": Float,
+      "opal_score": Float,
+      "event_name": String,
+      "event_start_time": String-&gt;"hh:mm:ss",
+      "event_end_time": String-&gt;"hh:mm:ss",
+      "event_venue": String,
+      "event_desc": String,
+      "event_date": String-&gt;"yyyy-mm-dd",
+      "event_cluster": String,
+      "event_category": String
+    }
+  ]
+}</code></pre>
+<hr />
+<h2 id="event-routes">Event Routes</h2>
+<h3 id="post-eventsgetall">POST /events/getall</h3>
+<blockquote>
+<p>Returns event details of all events, grouped by cluster</p>
+</blockquote>
+<h4 id="parameters-2">Parameters</h4>
+<pre><code>none</code></pre>
+<h4 id="response-2">Response</h4>
+<pre><code>{
+  "status_code": Integer,
+  "message": {
+    String-&gt;Cluster : [
+      {
+          "event_id": Integer,
+          "event_name" : String,
+          "event_start_time": String-&gt;"hh:mm:ss",
+          "event_end_time": String-&gt;"hh:mm:ss",
+          "event_venue": String,
+          "event_desc": String,
+          "event_date": String-&gt;"yyyy-mm-dd",
+          "event_cluster": String,
+          "event_category": String
+      },
+    ]
+  }
+}</code></pre>
+<hr />
+<h3 id="post-eventsgetallnames">POST /events/getallnames</h3>
+<blockquote>
+<p>Returns event names of all events</p>
+</blockquote>
+<h4 id="parameters-3">Parameters</h4>
+<pre><code>none</code></pre>
+<h4 id="response-3">Response</h4>
+<pre><code>{
+  "status_code": Integer,
+  "message": [
+    String,
+  ]
+}</code></pre>
+<hr />
+<h3 id="post-eventsgeteventbyname">POST /events/geteventbyname</h3>
+<blockquote>
+<p>Returns event details of a single event given <code>event_name</code></p>
+</blockquote>
+<h4 id="parameters-4">Parameters</h4>
+<pre><code>{
+    "event_name" : String
+}</code></pre>
+<h4 id="response-4">Response</h4>
+<pre><code>{
+  "status_code": Integer,
+  "message": {
+          "event_id": Integer,
+          "event_name" : String,
+          "event_start_time": String-&gt;"hh:mm:ss",
+          "event_end_time": String-&gt;"hh:mm:ss",
+          "event_venue": String,
+          "event_desc": String,
+          "event_date": String-&gt;"yyyy-mm-dd",
+          "event_cluster": String,
+          "event_category": String
+      },
+}</code></pre>
+<hr />
+<h2 id="blog-routes">Blog Routes</h2>
+<h3 id="post-bloggetallposts">POST /blog/getAllPosts</h3>
+<blockquote>
+<p>Returns all blog posts</p>
+</blockquote>
+<h4 id="parameters-5">Parameters</h4>
+<pre><code>none</code></pre>
+<h4 id="response-5">Response</h4>
+<pre><code>{
+  "status_code": Integer,
+  "message": [
+        {
+          "blog_id": Integer,
+          "author_name": String,
+          "title": String-&gt;HTML,
+          "subtitle": String,
+          "updated_at": String-&gt;"yyyy-mm-mm hh:mm:ss"
+        },
+    ]
+}</code></pre>
+<hr />
+<h3 id="post-bloggetlatestposts">POST /blog/getLatestPosts</h3>
+<blockquote>
+<p>Returns latest n blog posts, given <code>post_count</code></p>
+</blockquote>
+<h4 id="parameters-6">Parameters</h4>
+<pre><code>{
+    "post_count": Integer
+}</code></pre>
+<h4 id="response-6">Response</h4>
+<pre><code>{
+  "status_code": Integer,
+  "message": [
+        {
+          "blog_id": Integer,
+          "author_name": String,
+          "title": String-&gt;HTML,
+          "subtitle": String,
+          "updated_at": String-&gt;"yyyy-mm-mm hh:mm:ss"
+        },
+    ]
+}</code></pre>
+<hr />
+<h3 id="post-bloggetblogbyid">POST /blog/getBlogById</h3>
+<blockquote>
+<p>Returns blog post of the given <code>blog_id</code></p>
+</blockquote>
+<h4 id="parameters-7">Parameters</h4>
+<pre><code>{
+    "blog_id": Integer
+}</code></pre>
+<h4 id="response-7">Response</h4>
+<pre><code>{
+  "status_code": Integer,
+  "message": {
+      "blog_id": Integer,
+      "author_name": String,
+      "title": String-&gt;HTML,
+      "subtitle": String,
+      "updated_at": String-&gt;"yyyy-mm-mm hh:mm:ss"
+    }
+}</code></pre>
+<hr />
+<h3 id="post-bloggetauthors">POST /blog/getauthors</h3>
+<blockquote>
+<p>Returns list of authors</p>
+</blockquote>
+<h4 id="parameters-8">Parameters</h4>
+<pre><code>none</code></pre>
+<h4 id="response-8">Response</h4>
+<pre><code>{
+  "status_code": Integer,
+  "message": [
+      String,
+    ]
+}</code></pre>
+<hr />
+<h3 id="post-bloggetblogtitles">POST /blog/getBlogTitles</h3>
+<blockquote>
+<p>Returns list of post titles</p>
+</blockquote>
+<h4 id="parameters-9">Parameters</h4>
+<pre><code>none</code></pre>
+<h4 id="response-9">Response</h4>
+<pre><code>{
+  "status_code": Integer,
+  "message": [
+      String,
+    ]
+}</code></pre>
+                </section>
+
+            </div>
+        </main>
+
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//yandex.st/highlightjs/7.5/highlight.min.js"></script>
+
+        <script>
+            $(function() {
+                $("section>h1").wrap('<div class="page-header" />');
+                // Syntax highlighting
+                hljs.initHighlightingOnLoad();
+            });
+        </script>
+
+    </body>
+</html>
