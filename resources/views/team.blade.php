@@ -70,7 +70,7 @@
   <div id="facad-container">
     <img class="profile-image img-circle" src="{{asset('profile-images/sreekanth_sir.jpg')}}">
       <h1>Dr. Sreekanth</h2>
-      <h2>Advisor</h2>
+      <h2>Faculty Advisor</h2>
       <br><br>
   </div>
 </div>
