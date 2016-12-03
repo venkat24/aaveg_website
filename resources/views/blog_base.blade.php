@@ -43,13 +43,10 @@
 			width: 100%;
 		}
 		.overflow {
-			overflow: hidden;
-			display:         box;
-			display: -webkit-box;
-			        line-clamp: 3;
-			-webkit-line-clamp: 3;
-			        box-orient: vertical;
-			-webkit-box-orient: vertical;
+		    width: 250px;
+		    white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
 		}
 	</style>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
@@ -59,6 +56,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 	<script type="text/javascript" src="{{asset('js/blog_base.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/jquery.dotdotdot.min.js')}}"></script>
 	@yield('scripts')
 	<title>
 		AavegBlog
