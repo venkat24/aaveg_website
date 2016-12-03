@@ -20,12 +20,16 @@ function getBlogPosts() {
 			var main_pane = data.message.shift();
 
 			var source = $('#main-pane').html();
-			var template = Handlebars.compile(source);
+			var template = Handlebars.compile(source,{
+				noEscape: true
+			});
 		    var html = template(main_pane);
 		    $('#main-pane-container').append(html);
 
 		    source = $('#blog-panes').html();
-			template = Handlebars.compile(source);
+			template = Handlebars.compile(source,{
+				noEscape: true
+			});
 		    html = template(data);
 		    $('#blog-panes-container').append(html);
 		} else {
