@@ -48,7 +48,7 @@ Path                       | Description
           {
             "event_name": String,
             "event_category": String,
-            "event_id": In,
+            "event_id": Integer,
             "diamond_score": Float,
             "agate_score": Float,
             "coral_score": Float,
@@ -197,7 +197,8 @@ Path                       | Description
             {
               "blog_id": Integer,
               "author_name": String,
-              "title": String->HTML,
+              "title": String,
+              "content": String->HTML,
               "subtitle": String,
               "updated_at": String->"yyyy-mm-mm hh:mm:ss"
             },
@@ -222,7 +223,8 @@ Path                       | Description
             {
               "blog_id": Integer,
               "author_name": String,
-              "title": String->HTML,
+              "title": String,
+              "content": String->HTML,
               "subtitle": String,
               "updated_at": String->"yyyy-mm-mm hh:mm:ss"
             },
@@ -246,7 +248,8 @@ Path                       | Description
       "message": {
           "blog_id": Integer,
           "author_name": String,
-          "title": String->HTML,
+          "title": String,
+          "content": String->HTML,
           "subtitle": String,
           "updated_at": String->"yyyy-mm-mm hh:mm:ss"
         }
