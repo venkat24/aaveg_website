@@ -44,8 +44,11 @@
 		}
 		.overflow {
 			overflow: hidden;
+			display:         box;
 			display: -webkit-box;
+			        line-clamp: 3;
 			-webkit-line-clamp: 3;
+			        box-orient: vertical;
 			-webkit-box-orient: vertical;
 		}
 	</style>
