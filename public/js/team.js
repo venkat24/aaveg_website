@@ -5,15 +5,15 @@ $(document).ready(function () {
 	$(".web-image").hover(function () {
 		var headers = $(".code");
 		for (var i = headers.length - 1; i >= 0; i--) {
-			headers[i].style.transition = "all 1.5s";
-			headers[i].style.color="lightgreen";
+			headers[i].style.transition = "all 0.3s";
+			headers[i].style.color="#45C938";
 		}
 
 	});
 	$(".web-image").mouseleave(function () {
 		var headers = $(".code");
 		for (var i = headers.length - 1; i >= 0; i--) {
-			headers[i].style.transition = "all 1.5s";
+			headers[i].style.transition = "all 1s";
 			headers[i].style.color="white";
 		}
 	});
@@ -188,11 +188,6 @@ function setTeam() {
 			"post":  "Organizer",
 			"image": base_url + "IMG_5828.jpg"
 		},
-		// {
-		// 	"name":  "Nandini",
-		// 	"post":  "Organizer",
-		// 	"image": base_url + "IMG_9000.jpg"
-		// },
 		{
 			"name":  "Niharika",
 			"post":  "Organizer",
@@ -419,11 +414,6 @@ function setTeam() {
 			"image": base_url + "IMG_5962.jpg"
 		},
 		{
-			"name":  "Anirudh",
-			"post":  "Organizer",
-			"image": base_url + "IMG_6006.jpg"
-		},
-		{
 			"name":  "Rakshith",
 			"post":  "Organizer",
 			"image": base_url + "IMG_6005.jpg"
@@ -473,6 +463,46 @@ function setTeam() {
 			"post":  "Organizer",
 			"image": base_url + "IMG_9003.jpg"
 		},
+		{
+			"name":  "Surya",
+			"post":  "Organizer",
+			"image": base_url + "surya.jpg"
+		},
+		{
+			"name":  "Thanushree",
+			"post":  "Organizer",
+			"image": base_url + "thanushree.jpg"
+		},
+		{
+			"name":  "Sridharshini",
+			"post":  "Designer",
+			"image": base_url + "sridharshini.jpg"
+		},
+		{
+			"name":  "Shobana",
+			"post":  "Designer",
+			"image": base_url + "shobana.jpg"
+		},
+		{
+			"name":  "Saicharan",
+			"post":  "Organizer",
+			"image": base_url + "saicharan.jpg"
+		},
+		{
+			"name":  "Harsh Raj",
+			"post":  "Organizer",
+			"image": base_url + "harshraj.jpg"
+		},
+		{
+			"name":  "Karthikeyan",
+			"post":  "Organizer",
+			"image": base_url + "karthikeyan.jpg"
+		},
+		{
+			"name":  "Nandini",
+			"post":  "Organizer",
+			"image": base_url + "nandini.jpg"
+		},
 	];
 	team=shuffle(team);
 	var info={};
@@ -481,13 +511,18 @@ function setTeam() {
 	$('#main-container').append(html);
 }
 function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-  while (0 !== currentIndex) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
+  // var currentIndex = array.length, temporaryValue, randomIndex;
+  // while (0 !== currentIndex) {
+  //   randomIndex = Math.floor(Math.random() * currentIndex);
+  //   currentIndex -= 1;
+  //   temporaryValue = array[currentIndex];
+  //   array[currentIndex] = array[randomIndex];
+  //   array[randomIndex] = temporaryValue;
+  // }
+  array.sort(function(a, b) {
+    var textA = a.name.toUpperCase();
+    var textB = b.name.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+  });
   return array;
 }
