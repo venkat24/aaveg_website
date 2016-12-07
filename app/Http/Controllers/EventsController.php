@@ -28,6 +28,16 @@ class EventsController extends Controller
         }
     }
 
+    // Events are grouped NOT into clusters
+    public function getAllEventsUngrouped(Request $request){
+        try {
+            $events_raw = EventsDetails::get();
+            return JSONResponse::response(200,$events_raw);
+        } catch (Exception $e){
+            return JSONResponse::response(500,$e->getMessage());
+        }
+    }
+    
     // Returns an array of only the event names
     // Used for generating a dropdown list of events
     public function getAllEventNames(Request $request){
