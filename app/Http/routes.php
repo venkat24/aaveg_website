@@ -71,6 +71,7 @@ Route::post('/blog/getBlogTitles', 'BlogController@getBlogTitles');
 
 // Events routes
 Route::post('/events/getall','EventsController@getAllEvents');
+Route::post('/events/getallungrouped','EventsController@getAllEventsUngrouped');
 Route::post('/events/getallnames','EventsController@getAllEventNames');
 Route::post('/events/geteventbyname','EventsController@getEventByName');
 
