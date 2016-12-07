@@ -59,6 +59,7 @@ Route::group(['middleware' => 'checkSession'], function() {
 
 // Scoreboard routes
 Route::post('/scoreboard/getall','ScoreboardController@getFullScoreboard');
+Route::post('/scoreboard/getallungrouped','ScoreboardController@getFullScoreboardUngrouped');
 Route::post('/scoreboard/getcategory','ScoreboardController@getCategoryScoreboard');
 Route::post('/scoreboard/geteventscores','ScoreboardController@getEventScores');
 

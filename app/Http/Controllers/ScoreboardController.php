@@ -35,6 +35,24 @@ class ScoreboardController extends Controller
         }
     }
 
+    public function getFullScoreboardUngrouped(Request $request) {
+        try {    
+            $scoreboard = Scoreboard::join('events_details',
+                                           'events_details.event_id',
+                                           '=',
+                                           'scoreboard.event_id'
+                                          )
+                                    ->select('events_details.event_name',
+                                             'events_details.event_category',
+                                             'scoreboard.*'
+                                            )
+                                    ->get();
+            return JSONResponse::response(200,$scoreboard);
+        } catch (Exception $e) {
+            return JSONResponse::response(500, $e->getMessage());
+        }
+    }
+
     public function getEventScores(Request $request) {
         $validator = Validator::make($request->all(),[
             'event_name' => 'required'
