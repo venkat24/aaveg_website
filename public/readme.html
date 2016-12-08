@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Aaveg Documentation</title>
+        <title>Aaveg API Documentation</title>
 
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -16,7 +16,7 @@
         <header class="navbar navbar-default navbar-fixed-top">
 
             <a class="navbar-brand" href="/">
-                Aaveg Documentation
+                Aaveg API Documentation
                 <small class="hidden-xs hidden-sm">
                     This is the default subtitle!
                 </small>
@@ -130,6 +130,29 @@
   }
 }</code></pre>
 <hr />
+<h3 id="post-scoreboardgetallungrouped">POST /scoreboard/getallungrouped</h3>
+<blockquote>
+<p>Returns scores as an array</p>
+</blockquote>
+<h4 id="parameter">Parameter</h4>
+<pre><code>none</code></pre>
+<h4 id="response-1">Response</h4>
+<pre><code>{
+  "status_code": Integer,
+  "message": [
+    {
+      "event_name": String,
+      "event_category": String,
+      "event_id": Integer,
+      "diamond_score": Float,
+      "agate_score": Float,
+      "coral_score": Float,
+      "jade_score": Float,
+      "opal_score": Float
+    }
+  ]
+}</code></pre>
+<hr />
 <h3 id="post-scoreboardgeteventscores">POST /scoreboard/geteventscores</h3>
 <blockquote>
 <p>Returns scores along with event details, given <code>event_name</code></p>
@@ -138,7 +161,7 @@
 <pre><code>{
     "event_name" : String
 }</code></pre>
-<h4 id="response-1">Response</h4>
+<h4 id="response-2">Response</h4>
 <pre><code>{
   "status_code": Integer,
   "message": [
@@ -168,7 +191,7 @@
 </blockquote>
 <h4 id="parameters-2">Parameters</h4>
 <pre><code>none</code></pre>
-<h4 id="response-2">Response</h4>
+<h4 id="response-3">Response</h4>
 <pre><code>{
   "status_code": Integer,
   "message": {
@@ -188,13 +211,37 @@
   }
 }</code></pre>
 <hr />
+<h3 id="post-eventsgetallungrouped">POST /events/getallungrouped</h3>
+<blockquote>
+<p>Returns event details of all events, as an array</p>
+</blockquote>
+<h4 id="parameters-3">Parameters</h4>
+<pre><code>none</code></pre>
+<h4 id="response-4">Response</h4>
+<pre><code>{
+  "status_code": Integer,
+  "message": [
+      {
+          "event_id": Integer,
+      "event_name" : String,
+      "event_start_time": String-&gt;"hh:mm:ss",
+      "event_end_time": String-&gt;"hh:mm:ss",
+      "event_venue": String,
+      "event_desc": String,
+      "event_date": String-&gt;"yyyy-mm-dd",
+      "event_cluster": String,
+      "event_category": String
+    },
+  ]
+}</code></pre>
+<hr />
 <h3 id="post-eventsgetallnames">POST /events/getallnames</h3>
 <blockquote>
 <p>Returns event names of all events</p>
 </blockquote>
-<h4 id="parameters-3">Parameters</h4>
+<h4 id="parameters-4">Parameters</h4>
 <pre><code>none</code></pre>
-<h4 id="response-3">Response</h4>
+<h4 id="response-5">Response</h4>
 <pre><code>{
   "status_code": Integer,
   "message": [
@@ -206,11 +253,11 @@
 <blockquote>
 <p>Returns event details of a single event given <code>event_name</code></p>
 </blockquote>
-<h4 id="parameters-4">Parameters</h4>
+<h4 id="parameters-5">Parameters</h4>
 <pre><code>{
     "event_name" : String
 }</code></pre>
-<h4 id="response-4">Response</h4>
+<h4 id="response-6">Response</h4>
 <pre><code>{
   "status_code": Integer,
   "message": {
@@ -231,9 +278,9 @@
 <blockquote>
 <p>Returns all blog posts</p>
 </blockquote>
-<h4 id="parameters-5">Parameters</h4>
+<h4 id="parameters-6">Parameters</h4>
 <pre><code>none</code></pre>
-<h4 id="response-5">Response</h4>
+<h4 id="response-7">Response</h4>
 <pre><code>{
   "status_code": Integer,
   "message": [
@@ -252,11 +299,11 @@
 <blockquote>
 <p>Returns latest n blog posts, given <code>post_count</code></p>
 </blockquote>
-<h4 id="parameters-6">Parameters</h4>
+<h4 id="parameters-7">Parameters</h4>
 <pre><code>{
     "post_count": Integer
 }</code></pre>
-<h4 id="response-6">Response</h4>
+<h4 id="response-8">Response</h4>
 <pre><code>{
   "status_code": Integer,
   "message": [
@@ -275,11 +322,11 @@
 <blockquote>
 <p>Returns blog post of the given <code>blog_id</code></p>
 </blockquote>
-<h4 id="parameters-7">Parameters</h4>
+<h4 id="parameters-8">Parameters</h4>
 <pre><code>{
     "blog_id": Integer
 }</code></pre>
-<h4 id="response-7">Response</h4>
+<h4 id="response-9">Response</h4>
 <pre><code>{
   "status_code": Integer,
   "message": {
@@ -296,9 +343,9 @@
 <blockquote>
 <p>Returns list of authors</p>
 </blockquote>
-<h4 id="parameters-8">Parameters</h4>
+<h4 id="parameters-9">Parameters</h4>
 <pre><code>none</code></pre>
-<h4 id="response-8">Response</h4>
+<h4 id="response-10">Response</h4>
 <pre><code>{
   "status_code": Integer,
   "message": [
@@ -310,9 +357,9 @@
 <blockquote>
 <p>Returns list of post titles</p>
 </blockquote>
-<h4 id="parameters-9">Parameters</h4>
+<h4 id="parameters-10">Parameters</h4>
 <pre><code>none</code></pre>
-<h4 id="response-9">Response</h4>
+<h4 id="response-11">Response</h4>
 <pre><code>{
   "status_code": Integer,
   "message": [
