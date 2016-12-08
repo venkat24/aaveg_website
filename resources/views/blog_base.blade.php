@@ -60,7 +60,7 @@
 	<script type="text/javascript" src="{{asset('js/jquery.dotdotdot.min.js')}}"></script>
 	@yield('scripts')
 	<title>
-		AavegBlog
+		Aaveg Blog
 	</title>
 </head>
 <body>
