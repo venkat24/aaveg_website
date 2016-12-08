@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Aaveg</title>
     <link rel="stylesheet" type="text/css" href="{{asset('css/base.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="shortcut icon" type="text/css" href="{{asset('favicon.png')}}">
