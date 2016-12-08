@@ -3,6 +3,7 @@
 <head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <link rel="shortcut icon" type="text/css" href="{{asset('favicon.png')}}">
   <style>
     body {
       display: flex;
