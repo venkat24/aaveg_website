@@ -75,6 +75,32 @@ Path                       | Description
 ----------
 
 
+### POST /scoreboard/getallungrouped
+> Returns scores as an array
+ 
+####Parameter
+    none
+
+####Response
+    {
+      "status_code": Integer,
+      "message": [
+        {
+          "event_name": String,
+          "event_category": String,
+          "event_id": Integer,
+          "diamond_score": Float,
+          "agate_score": Float,
+          "coral_score": Float,
+          "jade_score": Float,
+          "opal_score": Float
+        }
+      ]
+    }
+
+
+----------
+
 ### POST /scoreboard/geteventscores
 > Returns scores along with event details, given `event_name`
  
@@ -106,7 +132,6 @@ Path                       | Description
       ]
     }
 
-
 ----------
 
 
@@ -136,9 +161,32 @@ Path                       | Description
       }
     }
 
-
 ----------
 
+### POST /events/getallungrouped
+> Returns event details of all events, as an array
+
+####Parameters
+    none
+####Response
+    {
+      "status_code": Integer,
+      "message": [
+          {
+              "event_id": Integer,
+          "event_name" : String,
+          "event_start_time": String->"hh:mm:ss",
+          "event_end_time": String->"hh:mm:ss",
+          "event_venue": String,
+          "event_desc": String,
+          "event_date": String->"yyyy-mm-dd",
+          "event_cluster": String,
+          "event_category": String
+        },
+      ]
+    }
+
+----------
 
 ### POST /events/getallnames
 > Returns event names of all events
