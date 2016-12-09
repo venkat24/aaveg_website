@@ -22,17 +22,26 @@
 			<option value="" disabled selected>Cluster</option>
 			<option value="English Lits">English Lits</option>
 			<option value="Tamil Lits">Tamil Lits</option>
+			<option value="Hindi Lits">Hindi Lits</option>
+			<option value="Telugu Lits">Telugu Lits</option>
 			<option value="Dramatics">Dramatics</option>
+			<option value="Dance">Dance</option>
+			<option value="Music">Music</option>
+			<option value="Art">Art</option>
 			<option value="Sports">Sports</option>
+			<option value="Gaming">Gaming</option>
+			<option value="Writing">Writing</option>
+			<option value="Gaming">Gaming</option>
+			<option value="Miscellaneous">Miscellaneous</option>
 		</select>
 		<label for="event_cluster">Event Cluster</label>
 	</div>
 	<div class="input-field col s6">
 		<select id="event_category">
-			<option value="Category" disabled selected>Cup</option>
+			<option value="Cup" disabled selected>Cup</option>
 			<option value="Culturals">Culturals</option>
 			<option value="Sports">Sports</option>
-			<option value="Miscellaneous">Miscellaneous</option>
+			<option value="Spectrum">Spectrum</option>
 		</select>
 		<label for="event_category">Event Cup</label>
 	</div>

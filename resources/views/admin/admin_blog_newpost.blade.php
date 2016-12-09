@@ -1,11 +1,10 @@
 @extends('admin.admin_base')
         
 @section('links')
-<link rel="stylesheet" href="{{asset('trumbowyg/dist/ui/trumbowyg.min.css')}}">
 @endsection
 
 @section('scripts')
-<script src="{{asset('trumbowyg/dist/trumbowyg.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/new_post.js')}}"></script>
 @endsection
 
 @section('main')
@@ -75,5 +74,4 @@
 	<option value="@{{this}}">@{{this}}</option>
 @{{/each}}
 </script>
-<script type="text/javascript" src="{{asset('js/new_post.js')}}"></script>
 @endsection
