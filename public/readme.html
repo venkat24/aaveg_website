@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Aaveg API Documentation</title>
+        <title>Aaveg Documentation</title>
 
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -16,7 +16,7 @@
         <header class="navbar navbar-default navbar-fixed-top">
 
             <a class="navbar-brand" href="/">
-                Aaveg API Documentation
+                Aaveg Documentation
                 <small class="hidden-xs hidden-sm">
                     This is the default subtitle!
                 </small>
@@ -83,7 +83,7 @@
 <hr />
 <h3 id="post-scoreboardgetall">POST /scoreboard/getall</h3>
 <blockquote>
-<p>Returns scores along with event details, grouped by cup </p>
+<p>Returns scores along with event details, grouped by cup</p>
 </blockquote>
 <h4 id="parameters">Parameters</h4>
 <pre><code>none</code></pre>
@@ -290,7 +290,7 @@
           "title": String,
           "content": String-&gt;HTML,
           "subtitle": String,
-          "updated_at": String-&gt;"yyyy-mm-mm hh:mm:ss"
+          "created_at": String-&gt;"yyyy-mm-mm hh:mm:ss"
         },
     ]
 }</code></pre>
@@ -312,40 +312,79 @@
           "author_name": String,
           "title": String,
           "content": String-&gt;HTML,
+          "image_path": String-&gt;Base64,
           "subtitle": String,
-          "updated_at": String-&gt;"yyyy-mm-mm hh:mm:ss"
+          "created_at": String-&gt;"yyyy-mm-mm hh:mm:ss"
         },
     ]
 }</code></pre>
 <hr />
 <h3 id="post-bloggetblogbyid">POST /blog/getBlogById</h3>
 <blockquote>
-<p>Returns blog post of the given <code>blog_id</code></p>
+<p>Returns blog post of the given <code>blog_id</code> (functions like before)</p>
+<p>When <code>blog_id_end</code> is supplied, returns an array of blog posts</p>
+<p>When <code>blog_id_end</code> is supplied, returns an array of blog posts</p>
+<p><code>only_image</code> parameter only matters when you DON'T specify <code>blog_id_end</code></p>
+<p><code>only_image</code>: &quot;yes&quot; -&gt; Nothing but image is returned</p>
+<p><code>only_image</code> : &quot;no&quot;  -&gt; Everything BUT the image is returned</p>
+<p><code>only_image</code> : empty -&gt; Everything is returned</p>
 </blockquote>
 <h4 id="parameters-8">Parameters</h4>
 <pre><code>{
     "blog_id": Integer
+    "blog_id_end": Integer-&gt;Optional
+    "only_image": String-&gt;Optional
 }</code></pre>
 <h4 id="response-9">Response</h4>
-<pre><code>{
+<pre><code>When only blog_id is supplied :
+{
   "status_code": Integer,
   "message": {
       "blog_id": Integer,
       "author_name": String,
       "title": String,
       "content": String-&gt;HTML,
+      "image_path": String-&gt;Base64,
       "subtitle": String,
-      "updated_at": String-&gt;"yyyy-mm-mm hh:mm:ss"
+      "created_at": String-&gt;"yyyy-mm-mm hh:mm:ss"
     }
+}
+
+When blog_id_end is also supplied :
+{
+  "status_code": Integer,
+  "message": [
+      {
+        "blog_id": Integer,
+        "author_name": String,
+        "title": String,
+        "subtitle": String,
+        "created_at": String-&gt;"yyyy-mm-mm hh:mm:ss"
+      },
+    ]
+}</code></pre>
+<hr />
+<h3 id="post-bloggetallblogids">POST /blog/getAllBlogIds</h3>
+<blockquote>
+<p>Returns list of blog ids</p>
+</blockquote>
+<h4 id="parameters-9">Parameters</h4>
+<pre><code>none</code></pre>
+<h4 id="response-10">Response</h4>
+<pre><code>{
+  "status_code": Integer,
+  "message": [
+      Integer,
+    ]
 }</code></pre>
 <hr />
 <h3 id="post-bloggetauthors">POST /blog/getauthors</h3>
 <blockquote>
 <p>Returns list of authors</p>
 </blockquote>
-<h4 id="parameters-9">Parameters</h4>
+<h4 id="parameters-10">Parameters</h4>
 <pre><code>none</code></pre>
-<h4 id="response-10">Response</h4>
+<h4 id="response-11">Response</h4>
 <pre><code>{
   "status_code": Integer,
   "message": [
@@ -357,9 +396,9 @@
 <blockquote>
 <p>Returns list of post titles</p>
 </blockquote>
-<h4 id="parameters-10">Parameters</h4>
+<h4 id="parameters-11">Parameters</h4>
 <pre><code>none</code></pre>
-<h4 id="response-11">Response</h4>
+<h4 id="response-12">Response</h4>
 <pre><code>{
   "status_code": Integer,
   "message": [

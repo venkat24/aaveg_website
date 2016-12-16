@@ -52,7 +52,7 @@ Route::group(['middleware' => 'checkSession'], function() {
 	    return view('admin.admin_blog_newpost');
 	});
 	// Admin events
-	Route::post('/admin/events/newevent', 'Admin\Events@newEvent'); 
+	Route::post('/admin/events/newevent', 'Admin\Events@newEvent');
 	Route::post('/admin/blog/newpost', 'Admin\PanelBlog@newPost');
 	Route::post('/admin/scoreboard/newscore', 'Admin\UpdateScoreboard@updateScores');
 });
@@ -70,6 +70,7 @@ Route::post('/events/geteventbyname','EventsController@getEventByName');
 
 //Blog routes
 Route::post('/blog/getAllPosts','BlogController@getAllPosts');
+Route::post('/blog/getAllBlogIds','BlogController@getAllBlogIds');
 Route::post('/blog/getLatestPosts','BlogController@getLatestPosts');
 Route::post('/blog/getBlogById','BlogController@getBlogById');
 Route::post('/blog/getauthors','BlogController@getAuthors');
