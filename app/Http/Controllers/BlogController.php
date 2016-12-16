@@ -98,7 +98,7 @@ class BlogController extends Controller
     //function to return a particular blog based on blog_id
     //if blog_id_end is supplied, it returns an array of blogs lying in that range
     public function getBlogById(Request $request)   {
-        // try {
+        try {
             $validator = Validator::make($request->all(), [
                'blog_id' => 'required|integer',
                'blog_id_end' => 'integer'
@@ -167,10 +167,10 @@ class BlogController extends Controller
                 return JSONResponse::response(200, $final_blog_posts);
           }
 
-        // } catch (Exception $e) {
-        //     Log::error($e->getMessage()." ".$e->getLine());
-        //     return JSONResponse::response(500, $e->getMessage());
-        // }
+        } catch (Exception $e) {
+            Log::error($e->getMessage()." ".$e->getLine());
+            return JSONResponse::response(500, $e->getMessage());
+        }
     }
 
     //function to return all author names

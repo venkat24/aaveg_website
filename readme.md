@@ -286,12 +286,24 @@ Path                       | Description
 
 ### POST /blog/getBlogById
 > Returns blog post of the given `blog_id` (functions like before)
-> When blog_id_end is supplied, returns an array of blog posts
+
+> When `blog_id_end` is supplied, returns an array of blog posts
+
+> When `blog_id_end` is supplied, returns an array of blog posts
+
+> `only_image` parameter only matters when you DON'T specify `blog_id_end`
+
+> `only_image`: "yes" -> Nothing but image is returned
+
+> `only_image` : "no"  -> Everything BUT the image is returned
+
+> `only_image` : empty -> Everything is returned
 
 ####Parameters
     {
         "blog_id": Integer
         "blog_id_end": Integer->Optional
+        "only_image": String->Optional
     }
 ####Response
     When only blog_id is supplied :
@@ -316,8 +328,6 @@ Path                       | Description
             "blog_id": Integer,
             "author_name": String,
             "title": String,
-            "content": String->HTML,
-            "image_path": String->Base64,
             "subtitle": String,
             "created_at": String->"yyyy-mm-mm hh:mm:ss"
           },
