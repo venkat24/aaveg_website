@@ -1,4 +1,4 @@
-# Route Documentation 
+# Route Documentation
 ## Notes
  - All routes must be hit with the base `https://aaveg.net`. Note the `https`.
  - Every response is a JSON object, with two keys - `status_code` and `message`
@@ -16,14 +16,14 @@ Path                       | Description
 `/admin` or `/admin/login` | Admin Login
 `/blog`                    | Blog page
 `/blog/single/{blog_id}`   | View blog with given `blog_id`
-`/blog/archives`           | View all blog posts 
+`/blog/archives`           | View all blog posts
 
 
 ----------
 
 
 ### POST /scoreboard/getall
-> Returns scores along with event details, grouped by cup 
+> Returns scores along with event details, grouped by cup
 
 ####Parameters
     none
@@ -77,7 +77,7 @@ Path                       | Description
 
 ### POST /scoreboard/getallungrouped
 > Returns scores as an array
- 
+
 ####Parameter
     none
 
@@ -103,7 +103,7 @@ Path                       | Description
 
 ### POST /scoreboard/geteventscores
 > Returns scores along with event details, given `event_name`
- 
+
 ####Parameters
     {
         "event_name" : String
@@ -248,7 +248,7 @@ Path                       | Description
               "title": String,
               "content": String->HTML,
               "subtitle": String,
-              "updated_at": String->"yyyy-mm-mm hh:mm:ss"
+              "created_at": String->"yyyy-mm-mm hh:mm:ss"
             },
         ]
     }
@@ -273,8 +273,9 @@ Path                       | Description
               "author_name": String,
               "title": String,
               "content": String->HTML,
+              "image_path": String->Base64,
               "subtitle": String,
-              "updated_at": String->"yyyy-mm-mm hh:mm:ss"
+              "created_at": String->"yyyy-mm-mm hh:mm:ss"
             },
         ]
     }
@@ -284,13 +285,16 @@ Path                       | Description
 
 
 ### POST /blog/getBlogById
-> Returns blog post of the given `blog_id`
+> Returns blog post of the given `blog_id` (functions like before)
+> When blog_id_end is supplied, returns an array of blog posts
 
 ####Parameters
     {
         "blog_id": Integer
+        "blog_id_end": Integer->Optional
     }
 ####Response
+    When only blog_id is supplied :
     {
       "status_code": Integer,
       "message": {
@@ -298,9 +302,42 @@ Path                       | Description
           "author_name": String,
           "title": String,
           "content": String->HTML,
+          "image_path": String->Base64,
           "subtitle": String,
-          "updated_at": String->"yyyy-mm-mm hh:mm:ss"
+          "created_at": String->"yyyy-mm-mm hh:mm:ss"
         }
+    }
+
+    When blog_id_end is also supplied :
+    {
+      "status_code": Integer,
+      "message": [
+          {
+            "blog_id": Integer,
+            "author_name": String,
+            "title": String,
+            "content": String->HTML,
+            "image_path": String->Base64,
+            "subtitle": String,
+            "created_at": String->"yyyy-mm-mm hh:mm:ss"
+          },
+        ]
+    }
+
+
+----------
+
+### POST /blog/getAllBlogIds
+> Returns list of blog ids
+
+####Parameters
+    none
+####Response
+    {
+      "status_code": Integer,
+      "message": [
+          Integer,
+        ]
     }
 
 

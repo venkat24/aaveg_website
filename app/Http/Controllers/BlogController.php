@@ -17,7 +17,7 @@ class BlogController extends Controller
 {
     //function to return all the blog posts(except the post content)
     public function getAllPosts(Request $request)   {
-        try {       
+        try {
             $blog_posts = Blog::join('blog_authors',
                                      'blog_authors.author_id', '=', 'blog.author_id')
                                     ->select(
@@ -25,11 +25,29 @@ class BlogController extends Controller
                                         'blog_authors.author_name',
                                         'blog.title',
                                         'blog.subtitle',
-                                        'blog.updated_at')
+                                        'blog.created_at')
                                     ->where('blog.active', '=', 1)
                                     ->orderBy('blog.created_at','desc')
                                     ->get();
-            return JSONResponse::response(200, $blog_posts);                        
+            return JSONResponse::response(200, $blog_posts);
+        } catch (Exception $e) {
+            Log::error($e->getMessage()." ".$e->getLine());
+            return JSONResponse::response(500, $e->getMessage());
+        }
+    }
+
+    //function to return all the blog Ids in rev-chron order
+    public function getAllBlogIds(Request $request)   {
+        try {
+            $blog_raw = Blog::select('blog_id')
+                            ->where('blog.active', '=', 1)
+                            ->orderBy('blog.created_at','desc')
+                            ->get();
+            $blog_posts = [];
+            foreach ($blog_raw as $blog) {
+                array_push($blog_posts,$blog["blog_id"]);
+            }
+            return JSONResponse::response(200, $blog_posts);
         } catch (Exception $e) {
             Log::error($e->getMessage()." ".$e->getLine());
             return JSONResponse::response(500, $e->getMessage());
@@ -38,7 +56,7 @@ class BlogController extends Controller
 
     //function to get latest posts
     public function getLatestPosts(Request $request)    {
-        try {      
+        try {
             $validator = Validator::make($request->all(), [
                 'post_count' => 'required|integer'
             ]);
@@ -58,7 +76,7 @@ class BlogController extends Controller
                                             'blog.subtitle',
                                             'blog.content',
                                             'blog.image_path',
-                                            'blog.updated_at')
+                                            'blog.created_at')
                                         ->where('blog.active', '=', 1)
                                         ->orderBy('blog.created_at','desc')
                                         ->take($post_count)
@@ -70,7 +88,7 @@ class BlogController extends Controller
                 $img_data = file_get_contents($path);
                 $blog_post->image_path = 'data:image/'.$type.';base64,'.base64_encode($img_data);
             }
-            return JSONResponse::response(200, $latest_posts);                            
+            return JSONResponse::response(200, $latest_posts);
         } catch (Exception $e) {
             Log::error($e->getMessage()." ".$e->getLine());
             return JSONResponse::response(500, $e->getMessage());
@@ -78,43 +96,81 @@ class BlogController extends Controller
     }
 
     //function to return a particular blog based on blog_id
+    //if blog_id_end is supplied, it returns an array of blogs lying in that range
     public function getBlogById(Request $request)   {
-        try {
-           $validator = Validator::make($request->all(), [
-                'blog_id' => 'required|string'
+        // try {
+            $validator = Validator::make($request->all(), [
+               'blog_id' => 'required|integer',
+               'blog_id_end' => 'integer'
             ]);
 
             if($validator->fails()) {
-                $message = "Invalid parameters";    //$validator->errors()->all()
+                $message = $validator->errors()->all();
                 return JSONResponse::response(400, $message);
-            } 
+            }
 
             $blog_id = $request->input('blog_id');
-            $blog_post = Blog::join('blog_authors',
-                                         'blog_authors.author_id', '=', 'blog.author_id')
-                                        ->select(
-                                            'blog.blog_id',
-                                            'blog_authors.author_name',
-                                            'blog.title',
-                                            'blog.subtitle',
-                                            'blog.content',
-                                            'blog.image_path',
-                                            'blog.updated_at')
-                                        ->where('blog.blog_id','=', $blog_id)
-                                        ->where('blog.active', '=', 1)
-                                        ->first();
-            //return base64 encoded string for image
-            $path = storage_path('app/'.$blog_post->image_path);
-            $type = pathinfo($path, PATHINFO_EXTENSION);
-            $img_data = file_get_contents($path);
-            $blog_post->image_path = 'data:image/'.$type.';base64,'.base64_encode($img_data);
+            if(!($request->has('blog_id_end'))) {
+                $blog_post = Blog::join('blog_authors',
+                                   'blog_authors.author_id', '=', 'blog.author_id')
+                                  ->select(
+                                      'blog.blog_id',
+                                      'blog_authors.author_name',
+                                      'blog.title',
+                                      'blog.subtitle',
+                                      'blog.content',
+                                      'blog.image_path',
+                                      'blog.created_at')
+                                  ->where('blog.blog_id','=',$blog_id)
+                                  ->where('blog.active', '=', 1)
+                                  ->first();
+                $path = storage_path('app/'.$blog_post->image_path);
+                $type = pathinfo($path, PATHINFO_EXTENSION);
+                $img_data = file_get_contents($path);
+                $blog_post->image_path = 'data:image/'.$type.';base64,'.base64_encode($img_data);
 
-            return JSONResponse::response(200, $blog_post);
+                return JSONResponse::response(200, $blog_post);
 
-        } catch (Exception $e) {
-            Log::error($e->getMessage()." ".$e->getLine());
-            return JSONResponse::response(500, $e->getMessage());
-        }
+            } else {
+                $blog_id_end = $request->input('blog_id_end');
+
+                $start_time = Blog::where('blog_id','=',$blog_id)
+                                  ->first();
+
+                $end_time   = Blog::where('blog_id','=',$blog_id_end)
+                                  ->first();
+
+                $blog_posts = Blog::join('blog_authors',
+                                             'blog_authors.author_id', '=', 'blog.author_id')
+                                            ->select(
+                                                'blog.blog_id',
+                                                'blog_authors.author_name',
+                                                'blog.title',
+                                                'blog.subtitle',
+                                                'blog.content',
+                                                'blog.image_path',
+                                                'blog.created_at')
+                                            ->whereBetween('blog.created_at',[$start_time->created_at, $end_time->created_at])
+                                            ->where('blog.active', '=', 1)
+                                            ->get();
+                //return base64 encoded string for image
+
+                $final_blog_posts = [];
+                foreach ($blog_posts as $blog_post) {
+                    $path = storage_path('app/'.$blog_post->image_path);
+                    $type = pathinfo($path, PATHINFO_EXTENSION);
+                    $img_data = file_get_contents($path);
+                    $blog_post->image_path = 'data:image/'.$type.';base64,'.base64_encode($img_data);
+                    array_push($final_blog_posts,$blog_post);
+                }
+
+                return JSONResponse::response(200, $final_blog_posts);
+          }
+
+        // } catch (Exception $e) {
+        //     Log::error($e->getMessage()." ".$e->getLine());
+        //     return JSONResponse::response(500, $e->getMessage());
+        // }
     }
 
     //function to return all author names
