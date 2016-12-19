@@ -183,6 +183,7 @@ class BlogController extends Controller
                                                 'blog.created_at')
                                             ->whereBetween('blog.created_at',[$end_time->created_at, $start_time->created_at])
                                             ->where('blog.active', '=', 1)
+                                            ->orderBy('blog.created_at','desc')
                                             ->get();
                 return JSONResponse::response(200, $blog_posts);
           }
