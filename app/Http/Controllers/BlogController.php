@@ -181,7 +181,7 @@ class BlogController extends Controller
                                                 'blog.title',
                                                 'blog.subtitle',
                                                 'blog.created_at')
-                                            ->whereBetween('blog.created_at',[$start_time->created_at, $end_time->created_at])
+                                            ->whereBetween('blog.created_at',[$end_time->created_at, $start_time->created_at])
                                             ->where('blog.active', '=', 1)
                                             ->get();
                 return JSONResponse::response(200, $blog_posts);
