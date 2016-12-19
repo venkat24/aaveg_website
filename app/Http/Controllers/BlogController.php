@@ -101,7 +101,8 @@ class BlogController extends Controller
         try {
             $validator = Validator::make($request->all(), [
                'blog_id' => 'required|integer',
-               'blog_id_end' => 'integer'
+               'blog_id_end' => 'integer',
+               'only_image' => 'string'
             ]);
 
             if($validator->fails()) {
@@ -111,6 +112,7 @@ class BlogController extends Controller
 
             $blog_id = $request->input('blog_id');
             if(!($request->has('blog_id_end'))) {
+                if(!($request->has('only_image'))) {
                 $blog_post = Blog::join('blog_authors',
                                    'blog_authors.author_id', '=', 'blog.author_id')
                                   ->select(
@@ -131,6 +133,37 @@ class BlogController extends Controller
 
                 return JSONResponse::response(200, $blog_post);
 
+                } else {
+                    if($request->input("only_image") == "yes") {
+                        $blog_post = Blog::join('blog_authors',
+                                           'blog_authors.author_id', '=', 'blog.author_id')
+                                          ->select('blog.image_path')
+                                          ->where('blog.blog_id','=',$blog_id)
+                                          ->where('blog.active', '=', 1)
+                                          ->first();
+                        $path = storage_path('app/'.$blog_post->image_path);
+                        $type = pathinfo($path, PATHINFO_EXTENSION);
+                        $img_data = file_get_contents($path);
+                        $blog_post->image_path = 'data:image/'.$type.';base64,'.base64_encode($img_data);
+
+                        return JSONResponse::response(200, $blog_post);
+                    } else if ($request->input("only_image") == "no") {
+                        $blog_post = Blog::join('blog_authors',
+                                           'blog_authors.author_id', '=', 'blog.author_id')
+                                          ->select(
+                                              'blog.blog_id',
+                                              'blog_authors.author_name',
+                                              'blog.title',
+                                              'blog.subtitle',
+                                              'blog.content',
+                                              'blog.created_at')
+                                          ->where('blog.blog_id','=',$blog_id)
+                                          ->where('blog.active', '=', 1)
+                                          ->first();
+                        return JSONResponse::response(200, $blog_post);
+                }
+              }
+
             } else {
                 $blog_id_end = $request->input('blog_id_end');
 
@@ -147,24 +180,11 @@ class BlogController extends Controller
                                                 'blog_authors.author_name',
                                                 'blog.title',
                                                 'blog.subtitle',
-                                                'blog.content',
-                                                'blog.image_path',
                                                 'blog.created_at')
                                             ->whereBetween('blog.created_at',[$start_time->created_at, $end_time->created_at])
                                             ->where('blog.active', '=', 1)
                                             ->get();
-                //return base64 encoded string for image
-
-                $final_blog_posts = [];
-                foreach ($blog_posts as $blog_post) {
-                    $path = storage_path('app/'.$blog_post->image_path);
-                    $type = pathinfo($path, PATHINFO_EXTENSION);
-                    $img_data = file_get_contents($path);
-                    $blog_post->image_path = 'data:image/'.$type.';base64,'.base64_encode($img_data);
-                    array_push($final_blog_posts,$blog_post);
-                }
-
-                return JSONResponse::response(200, $final_blog_posts);
+                return JSONResponse::response(200, $blog_posts);
           }
 
         } catch (Exception $e) {
