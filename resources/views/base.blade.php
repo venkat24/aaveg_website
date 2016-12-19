@@ -5,13 +5,14 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/base.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="shortcut icon" type="text/css" href="{{asset('favicon.png')}}">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
     @yield('links')
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{asset('js/base.js')}}"></script>
     <script type="text/javascript">
-        var SITE_BASE_URL = "{{ url('/')}}"; 
+        var SITE_BASE_URL = "{{ url('/')}}";
     </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
