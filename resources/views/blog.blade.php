@@ -54,8 +54,7 @@
 						<span class="card-title grey-text text-darken-4"><div class="indigo-text text-lighten-1">@{{title}}</div><i class="material-icons right">close</i></span>
 						<span><i>@{{author_name}}</i></span>
 						<p class="teal-text text-lighten-2">@{{subtitle}}</p>
-						<p class="overflow">@{{content}}</p>
-						<p><a href="/blog/single/@{{blog_id}}">Read More!</a></p>
+						<p><a href="/blog/single/@{{blog_id}}">Click here to read!</a></p>
 					</div>
 				  </div>
 			</div>
@@ -75,8 +74,7 @@
 						<span class="card-title grey-text text-darken-4"><div class="indigo-text text-lighten-1">@{{title}}</div><i class="material-icons right">close</i></span>
 						<span><i>@{{author_name}}</i></span>
 						<p class="teal-text text-lighten-2">@{{subtitle}}</p>
-						<p class="overflow">@{{content}}</p>
-						<p><a href="/blog/single/@{{blog_id}}">Read More!</a></p>
+						<p><a href="/blog/single/@{{blog_id}}">Click here to read!</a></p>
 					</div>
 				  </div>
 			</div>
