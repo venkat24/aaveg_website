@@ -19,6 +19,21 @@ body {
 	}
 }
 
+@media (max-width: 800px) {
+	#left-bush img{
+		display: none;
+	}
+	#right-bush img{
+		display: none;
+	}
+	#tagline1 {
+		display: none;
+	}
+	#tagline2 {
+		display: none;
+	}
+}
+
 .rotation {
 	-webkit-animation: revolve 3s linear infinite;
 	animation: revolve 3s linear infinite;
@@ -215,7 +230,7 @@ div#main {
 	position: absolute;
 	bottom: 0px;
 	height: 25%;
-	width: 100%;	
+	width: 100%;
 }
 
 #base img {
@@ -226,7 +241,7 @@ div#main {
 	-webkit-animation: tower-pop-in 0.7s cubic-bezier(0.215, 0.911, 0.355, 1.000) 3.8s;
 	-webkit-animation-fill-mode: forwards;
 	animation: tower-pop-in 0.7s cubic-bezier(0.215, 0.911, 0.355, 1.000) 3.8s;
-	animation-fill-mode: forwards;	
+	animation-fill-mode: forwards;
 }
 
 
@@ -275,8 +290,8 @@ div#main {
 }
 
 #central-block, #admin-entry {
-	-webkit-animation-delay: 3.6s;	
-	animation-delay: 3.6s;	
+	-webkit-animation-delay: 3.6s;
+	animation-delay: 3.6s;
 }
 
 #tower-container #box-outline {
@@ -301,11 +316,11 @@ div#main {
 }
 
 #tower-container #left-block {
-	left: -142.4px;	
+	left: -142.4px;
 }
 
 #tower-container #right-block {
-	right: -142.4px;		
+	right: -142.4px;
 }
 
 #left-block img, #right-block img {
@@ -334,32 +349,32 @@ div#main {
 }
 
 #left-block, #admin-windows-left {
-	-webkit-animation-delay: 3.8s;		
+	-webkit-animation-delay: 3.8s;
 	animation-delay: 3.8s;
 }
 
 #right-block, #admin-windows-right {
-	-webkit-animation-delay: 3.9s;		
+	-webkit-animation-delay: 3.9s;
 	animation-delay: 3.9s;
 }
 
 
 #tower-container #spire {
 	bottom: -600px;
-	-webkit-animation-delay: 4s;		
-	animation-delay: 4s;		
+	-webkit-animation-delay: 4s;
+	animation-delay: 4s;
 }
 
 #spire img {
 	width: 120px;
-	height: 468px;	
+	height: 468px;
 }
 
 #tower-container #decor {
 	-webkit-animation: decor-pop-in 1s cubic-bezier(0.215, 0.911, 0.355, 1.000) 4s;
 	-webkit-animation-fill-mode: forwards;
 	animation: decor-pop-in 1s cubic-bezier(0.215, 0.911, 0.355, 1.000) 4s;
-	animation-fill-mode: forwards;		
+	animation-fill-mode: forwards;
 }
 
 #decor img {
@@ -372,7 +387,7 @@ div#main {
 	-webkit-animation: face-pop-in 1s cubic-bezier(0.215, 0.911, 0.355, 1.000) 4s;
 	-webkit-animation-fill-mode: forwards;
 	animation: face-pop-in 1s cubic-bezier(0.215, 0.911, 0.355, 1.000) 4s;
-	animation-fill-mode: forwards;			
+	animation-fill-mode: forwards;
 }
 
 #face img {
@@ -393,7 +408,7 @@ div#main {
     -webkit-animation: rotating 3.5s linear infinite;
     -moz-animation: rotating 3.5s linear infinite;
     -ms-animation: rotating 3.5s linear infinite;
-    -o-animation: rotating 3.5s linear infinite;		
+    -o-animation: rotating 3.5s linear infinite;
 }
 
 #tower-container #dials2 {
@@ -409,7 +424,7 @@ div#main {
     -webkit-animation: rotating 42s linear infinite;
     -moz-animation: rotating 42s linear infinite;
     -ms-animation: rotating 42s linear infinite;
-    -o-animation: rotating 42s linear infinite;		
+    -o-animation: rotating 42s linear infinite;
 }
 
 #spire, #decor, #face, #dials {
@@ -420,7 +435,7 @@ div#main {
 	-webkit-animation: tower-pop-in 1s cubic-bezier(0.215, 0.911, 0.355, 1.000);
 	-webkit-animation-fill-mode: forwards;
 	animation: tower-pop-in 1s cubic-bezier(0.215, 0.911, 0.355, 1.000);
-	animation-fill-mode: forwards;			
+	animation-fill-mode: forwards;
 }
 
 
@@ -535,7 +550,7 @@ div#bottom {
 	-webkit-animation: bush-pop-in 0.7s cubic-bezier(0.215, 0.911, 0.355, 1.000) 1.5s;
 	-webkit-animation-fill-mode: forwards;
 	animation: bush-pop-in 0.7s cubic-bezier(0.215, 0.911, 0.355, 1.000) 1.5s;
-	animation-fill-mode: forwards;	
+	animation-fill-mode: forwards;
 }
 
 #bush2 {
@@ -549,7 +564,7 @@ div#bottom {
 	-webkit-animation: bush-pop-in 0.7s cubic-bezier(0.215, 0.911, 0.355, 1.000) 1.55s;
 	-webkit-animation-fill-mode: forwards;
 	animation: bush-pop-in 0.7s cubic-bezier(0.215, 0.911, 0.355, 1.000) 1.55s;
-	animation-fill-mode: forwards;	
+	animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes bush-pop-in {

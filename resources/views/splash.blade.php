@@ -6,6 +6,8 @@
 @endsection
 
 @section('scripts')
+    <script type="text/javascript" src="{{asset('js/hammer.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('js/jquery.hammer.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/splash.js')}}"></script>
 @endsection
 
