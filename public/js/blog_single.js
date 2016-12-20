@@ -26,7 +26,7 @@ function getBlog() {
 				},
 				"Tanvi Kumar" : {
 					"image_path" : base_url + "IMG_5802.jpg",
-					"caption"	 : "Blogger. Day dreamer. <br><br Approachable, outgoing, tall wheatish person. <br><br>Writes to express. Also, I'm fluffy."
+					"caption"	 : "Blogger. Day dreamer. <br><br> Approachable, outgoing, tall wheatish person. <br><br>Writes to express. Also, I'm fluffy."
 				},
 				"Avinash Tadavarthy" : {
 					"image_path" : base_url + "IMG_5804.jpg",

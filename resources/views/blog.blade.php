@@ -31,10 +31,10 @@
 	          <p class="flow-text">Done reading? Here are some links to other parts of the website.
 	          </p>
 	        </div>
-	        <div class="card-action">
-	          <a href="/">Home</a>
-	          <a href="/scoreboard">Scores</a>
-	          <a href="/team">Team</a>
+	        <div class="card-action white-text">
+	          <a class="blue-text text-lighten-5" href="/">Home</a>
+	          <a class="blue-text text-lighten-5" href="/scoreboard">Scores</a>
+	          <a class="blue-text text-lighten-5" href="/team">Team</a>
 	        </div>
 	      </div>
 		</div>
