@@ -7,6 +7,7 @@ function addBlogLinks() {
 	var method = 'POST';
 	var body = {
 		'post_count': 5,
+        'only_titles': 'yes'
 	}
 
 	var request = $.ajax({

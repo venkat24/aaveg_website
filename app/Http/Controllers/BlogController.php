@@ -58,14 +58,15 @@ class BlogController extends Controller
     public function getLatestPosts(Request $request)    {
         try {
             $validator = Validator::make($request->all(), [
-                'post_count' => 'required|integer'
+                'post_count' => 'required|integer',
+                'only_titles' => ''
             ]);
 
             if($validator->fails()) {
                 $message = "Invalid parameters";    //$validator->errors()->all()
                 return JSONResponse::response(400, $message);
             }
-
+            if(!($request->has('only_titles'))) {
             $post_count = $request->input('post_count');
             $latest_posts = Blog::join('blog_authors',
                                          'blog_authors.author_id', '=', 'blog.author_id')
@@ -88,6 +89,20 @@ class BlogController extends Controller
                 $img_data = file_get_contents($path);
                 $blog_post->image_path = 'data:image/'.$type.';base64,'.base64_encode($img_data);
             }
+            return JSONResponse::response(200, $latest_posts);
+            } else {
+
+            $post_count = $request->input('post_count');
+            $latest_posts = Blog::join('blog_authors',
+                                         'blog_authors.author_id', '=', 'blog.author_id')
+                                        ->select(
+                                            'blog.blog_id',
+                                            'blog.title')
+                                        ->where('blog.active', '=', 1)
+                                        ->orderBy('blog.created_at','desc')
+                                        ->take($post_count)
+                                        ->get();
+            } 
             return JSONResponse::response(200, $latest_posts);
         } catch (Exception $e) {
             Log::error($e->getMessage()." ".$e->getLine());
