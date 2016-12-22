@@ -229,7 +229,7 @@ function setTeam() {
 			"image": base_url + "IMG_5864.jpg"
 		},
 		{
-			"name":  "Sanjeedha",
+			"name":  "Sanjeeda",
 			"post":  "Organizer",
 			"image": base_url + "IMG_5866.jpg"
 		},
@@ -444,7 +444,7 @@ function setTeam() {
 			"image": base_url + "IMG_5900.jpg"
 		},
 		{
-			"name":  "Abhilash",
+			"name":  "Abilash",
 			"post":  "Designer",
 			"image": base_url + "IMG_5909.jpg"
 		},
