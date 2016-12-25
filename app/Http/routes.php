@@ -31,6 +31,9 @@ Route::get('/blog/archives', function () {
 Route::get('/scoreboard', function () {
     return view('scoreboard');
 });
+Route::get('/fun', function () {
+    return view('fun');
+});
 Route::get('/admin', function () {
     return view('admin.admin_login');
 });
