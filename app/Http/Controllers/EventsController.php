@@ -75,4 +75,18 @@ class EventsController extends Controller
             return JSONResponse::response(500,$e->getMessage());
         }
     }
+    
+    public function getEventsGroupedByCluster(Request $request) {
+        try {
+            $events = EventsDetails::get(['event_name', 'event_cluster']);
+            $response = [];
+            foreach ($events as $event) {
+                $response[$event->event_cluster][] = $event->event_name;
+            }
+            return JSONResponse::response(200, $response);
+        } catch (Exception $e) {
+            return JSONResponse::response(500,$e->getMessage()." ".$e->getLine());
+        }
+    }
 }
+
