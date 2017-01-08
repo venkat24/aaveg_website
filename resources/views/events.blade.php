@@ -3,6 +3,7 @@
 @section('links')
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700" rel="stylesheet">
+    <link href="{{asset('css/events.css')}}" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -50,7 +51,27 @@
         "/>
       </filter>
     </defs>
-  </svg>
+
+   <div class="main-clusters-container">
+   </div> 
+
+    <script type="text/template" id="clusters-template">
+      @{{#each clusters}}
+        <div class="circle-cluster" style="background-color: @{{color}}">
+            <span>@{{cluster_name}}</span>
+        </div>
+      @{{/each}}
+    </script>
+
+    <script type="text/template" id="events-template">
+      @{{#each events}}
+        <div class="circle-events" style="background-color: @{{color}}">
+            <span>@{{this}}</span>
+        </div>
+      @{{/each}}
+    </script>
+
+
   <script type="text/javascript">
     (function() {
       var App,
@@ -89,9 +110,9 @@
         };
 
         App.prototype.addListeners = function() {
-          window.addEventListener("resize", this.onResize);
-          window.addEventListener("mousemove", this.onMove);
-          return window.addEventListener("touchmove", this.onMove);
+          document.body.addEventListener("resize", this.onResize);
+          document.body.addEventListener("mousemove", this.onMove);
+          return document.body.addEventListener("touchmove", this.onMove);
         };
 
         App.prototype.makeWorld = function() {
@@ -239,4 +260,5 @@
     }).call(this);
 
   </script>
+  <script src="{{asset('js/events.js')}}"></script>
 @endsection
