@@ -1,0 +1,67 @@
+html,body {
+    margin:0;
+    padding:0;
+}
+.circle-cluster {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: white;
+    opacity: 0.9;
+    color: white;
+    width: 230px;
+    height: 230px;
+    margin: 20px;
+    display: inline-block;
+    border-radius: 1000px;
+	transition: all .2s ease-in-out;
+}
+
+/*.circle-cluster:hover {*/
+    /*transform: scale(1.1);*/
+    /*transition: all .2s ease-in-out;*/
+/*}*/
+
+.circle-cluster span {
+    position: relative;
+    top: 40%;
+    width: 80%;
+}
+
+.circle-events {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: white;
+    opacity: 0.9;
+    color: white;
+    width: 230px;
+    height: 230px;
+    margin: 20px;
+    display: inline-block;
+    border-radius: 1000px;
+	transition: all .2s ease-in-out;
+}
+
+.circle-events:hover {
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+}
+
+.circle-events span {
+    position: relative;
+    top: 40%;
+    width: 80%;
+}
+
+.main-clusters-container {
+    width: 80%;
+    overflow: auto;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 0;
+    height: 80%;
+}
+
+.shrink {
+    transform: scale(0);
+    transition: all .5s ease-in-out !important;
+}
