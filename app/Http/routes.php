@@ -92,3 +92,6 @@ Route::post('/events/getclusterevents', 'EventsController@getEventsGroupedByClus
 //Admin login and logout
 Route::post('/admin/login', 'Admin\AdminAuth@adminAuthentication');
 Route::post('/admin/logout', 'Admin\AdminAuth@adminLogout');
+
+//Dubsmash Routes
+Route::post('/events/online/dubsmash', 'DubsmashController@submitDubsmash');
