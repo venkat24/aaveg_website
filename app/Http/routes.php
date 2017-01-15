@@ -43,7 +43,12 @@ Route::get('/admin', function () {
 Route::get('/admin/login', function () {
     return view('admin.admin_login');
 });
-
+Route::get('/events/online/dubsmash', function () {
+    return view('dubsmash');
+});
+Route::get('/admin/login', function () {
+    return view('admin.admin_login');
+});
 Route::group(['middleware' => 'checkSession'], function() {
 	Route::get('/admin/home', function () {
 	    return view('admin.admin_home');

@@ -1,0 +1,18 @@
+/*
+ * dubsmash.css
+ * Copyright (C) 2017 venkat
+ *
+ * Distributed under terms of the MIT license.
+ */
+
+body {
+}
+
+label {
+  font-size: 20px;
+}
+
+small {
+  font-size: 20px;
+  color: white;
+}
