@@ -45,6 +45,7 @@
         <li><a href="/about">About Aaveg<span class="sr-only"></span></a></li>
         <li><a href="/scoreboard">Scoreboard<span class="sr-only"></span></a></li>
         <li><a href="/blog">Blog</a></li>
+        <li><a href="/events/online/dubsmash">Dubsmash</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/team">The Team</a></li>
