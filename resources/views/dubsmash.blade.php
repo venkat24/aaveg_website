@@ -19,13 +19,15 @@
   Video
   -->
   <div class="jumbotron">
-    <h1 class="display-3">Dubsmash!</h1>
+    <h1 class="display-3" style="color: white">Dubsmash!</h1>
     <p class="lead">
+      <br />
       You've seen your favourite stars do it. You've laughed hard at the ones that have failed. Now is your chance to impress. It only takes a few seconds. Or does it?
       <br />
       <br />
       Own the small screen as you quote the big screen and don't forget to show who's boss with the punchlines.    
     </p>
+    <br />
     <h2>Rules</h2>
     <p class="lead">
       <ul>
