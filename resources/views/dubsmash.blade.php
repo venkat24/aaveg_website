@@ -26,23 +26,31 @@
       <br />
       <br />
       Own the small screen as you quote the big screen and don't forget to show who's boss with the punchlines.    
+      <br />
+      <br />
+      The theme for your dubsmash is <b>First Year Life!</b>
     </p>
-    <br />
     <h2>Rules</h2>
     <p class="lead">
       <ul>
       <li> The event involves a team of 1 or 2 members from the same hostel.</li>
       <li> Number of teams from each hostel is unlimited.</li>
       <li> A member can be a part of only one team.</li>
-      <li> Every team can come up with maximum of 3 entries.</li>
-      <li> Each entry is to comprise of a video which is of minimum 30 seconds and maximum of 60 seconds and should consist of minimum 4 exchanges(2 each) if 2 members per team.</li>
+      <li> Every team can come up with only one entry.</li>
+      <li> Each entry is to comprise of a video which is of minimum 30 seconds and maximum of 60 seconds.</li>
       <li> The theme of the dubsmash is First Year Life.</li>
       <li> The entry can be submitted in English, Tamil, Hindi and Telugu.</li>
-      <li> The link of the all the original dialogues involved in the entry has to be attached along with the dubsmash.</li>
-      <li> The entries are to be submitted in the website on or before 22nd January 2017.</li>
-      <li> The video file size should not exceed 30MB </li>
-      <li> The video file should be in a common file format, like .mp4 or .3gp </li>
-      <li> The judges decision are final.</li>
+      <li> The video file size should not exceed 10MB </li>
+      <li> The video file should be in a common file format like .mp4</li>
+      <li> The judges' decision is final.</li>
+      <li> The entries are to be submitted in the website on or before<b> 23:59:59 21st January 2017.</b></li>
+      <li> Judging Criteria : 
+        <ul>
+          <li>Sync</li>
+          <li>Humour</li>
+          <li>Creativity</li>
+        </ul>
+      </li>
       </ul>
     </p>
     <hr class="my-2">
@@ -75,11 +83,11 @@
   </div>
   <div class="form-group">
     <label for="dubsmash-file">Upload Dubsmash*</label>
-    <input type="hidden" name="MAX_FILE_SIZE" value="31457280">
+    <input type="hidden" name="MAX_FILE_SIZE" value="314572800">
     <input type="file" class="form-control-file" name="dubsmash-file" id="dubsmash-file">
     <small id="fileHelp" class="form-text text-muted">Please ensure that the file size is less that 30Mb</small>
   </div>
-  <button class="btn btn-primary" onclick="submitDubsmash()">SUBMIT!</button>
+  <button class="btn btn-primary" type="submit">SUBMIT!</button>
 </form>
   </div>
 </div>
