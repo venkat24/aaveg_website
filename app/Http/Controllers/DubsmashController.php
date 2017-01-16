@@ -8,9 +8,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Log;
-use Carbon;
 use Validator;
 use Exception;
+use Carbon\Carbon;
 use Sangria\JSONResponse;
 use App\Models\Dubsmash;
 
@@ -27,7 +27,8 @@ class DubsmashController extends Controller
         ]);
         if($validator->fails()) {
             $message = $validator->errors()->all();
-            return JSONResponse::response(400, $message);
+            Log::info($validator->errors()->all());
+            return 'Submission Failed. Please Try Again. Ensure the filesize of the video is less than 10Mb.';
         }
 
         $name1    = $request->input('name1');
@@ -39,20 +40,21 @@ class DubsmashController extends Controller
         $video  = $request->file('dubsmash-file');
         $extension = $video->getClientOriginalExtension();
 
-        $filename = $rollNo1.'_'.Caarbon::now();
+        $filename = $rollNo1.'_'.Carbon::now();
         $filename = str_replace(' ','',$filename);
 
-        $data = new Dubsmash;
+        $data = new Dubsmash();
         $data->name1 = $name1;
         $data->name2 = $name2;
         $data->rollNo1 = $rollNo1;
         $data->rollNo2 = $rollNo2;
         $data->hostel = $hostel;
         $data->video_path = $filename;
+        Log::info('Saving .... ');
         $data->save();
 
         $video->move(storage_path('dubsmash'), $filename);
 
-        return JSONResponse::response(200, 'Submitted Successfully');
+        return 'Submitted Successfully';
     }
 }

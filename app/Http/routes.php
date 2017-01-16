@@ -34,9 +34,9 @@ Route::get('/scoreboard', function () {
 Route::get('/fun', function () {
     return view('fun');
 });
-Route::get('/events', function () {
-    return view('events');
-});
+//Route::get('/events', function () {
+    //return view('events');
+//});
 Route::get('/admin', function () {
     return view('admin.admin_login');
 });
