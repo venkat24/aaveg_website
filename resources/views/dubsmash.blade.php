@@ -43,7 +43,7 @@
       <li> The video file size should not exceed 10MB </li>
       <li> The video file should be in a common file format like .mp4</li>
       <li> The judges' decision is final.</li>
-      <li> The entries are to be submitted in the website on or before<b> 23:59:59 21st January 2017.</b></li>
+      <li> The entries are to be submitted in the website on or before<b> 23:59:59 22nd January 2017.</b></li>
       <li> Judging Criteria : 
         <ul>
           <li>Sync</li>
