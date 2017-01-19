@@ -20,6 +20,10 @@ function getBlog() {
 	request.done(function(data){
 		if(data.status_code == 200) {
 			var author_captions = {
+        "Content Team" : {
+          "image_path" : base_url + "aaveg_icon.jpg",
+          "caption" : "<p>Hailing from every corner of the nation, the Aaveg Content Team is known for their quick wit and catchy one liners.</p><p>Whenever they're not taking power naps or working on EG Sheets, they're always out to prove that the pen truly is mightier than the sword.</p>"
+        },
 				"Gautham Kumar" : {
 					"image_path" : base_url + "IMG_6058.jpg",
 					"caption"	 : "Blogger. Day dreamer. <br><br> Approachable, outgoing, tall wheatish person. Writes to express. <br><br>Also, I'm fluffy."
