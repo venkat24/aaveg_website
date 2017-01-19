@@ -92,6 +92,7 @@ class EventsController extends Controller
     public function getFinishedEvents(Request $request) {
         try {
             $events = EventsDetails::whereNotNull('first_place')
+                                   ->where('first_place','!=','')
                                    ->orderBy('updated_at', 'desc')        
                                    ->get([
                                      'first_place',
