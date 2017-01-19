@@ -93,6 +93,7 @@ Route::post('/events/getallungrouped','EventsController@getAllEventsUngrouped');
 Route::post('/events/getallnames','EventsController@getAllEventNames');
 Route::post('/events/geteventbyname','EventsController@getEventByName');
 Route::post('/events/getclusterevents', 'EventsController@getEventsGroupedByCluster');
+Route::post('/events/getupdates', 'EventsController@getFinishedEvents');
 
 //Admin login and logout
 Route:;post('/admin/login', 'Admin\AdminAuth@adminAuthentication');

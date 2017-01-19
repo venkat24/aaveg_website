@@ -88,5 +88,22 @@ class EventsController extends Controller
             return JSONResponse::response(500,$e->getMessage()." ".$e->getLine());
         }
     }
+    
+    public function getFinishedEvents(Request $request) {
+        try {
+            $events = EventsDetails::whereNotNull('first_place')
+                                   ->orderBy('updated_at', 'desc')        
+                                   ->get([
+                                     'first_place',
+                                     'second_place',
+                                     'third_place',
+                                     'event_name',
+                                     'event_id'
+                                   ]);
+            return JSONResponse::response(200, $events);
+        } catch (Exception $e) {
+            return JSONResponse::response(500,$e->getMessage()." ".$e->getLine());
+        }
+    }
 }
 

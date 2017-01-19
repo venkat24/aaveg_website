@@ -1,9 +1,9 @@
 <IfModule mod_rewrite.c>
-    <IfModule mod_negotiation.c>
-        Options -MultiViews
-    </IfModule>
 
     RewriteEngine On
+    
+    php_value upload_max_filesize 30M
+    php_value post_max_size 30M
 
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
