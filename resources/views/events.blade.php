@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700" rel="stylesheet">
     <link href="{{asset('css/events.css')}}" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="{{asset('js/bootbox.min.js')}}"></script>
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -38,6 +39,8 @@
     </style>
 @endsection
 @section('main')
+  <div id="modal-container">
+  </div>
   <canvas></canvas>
   <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
     <defs>
@@ -57,16 +60,16 @@
 
     <script type="text/template" id="clusters-template">
       @{{#each clusters}}
-        <div class="circle-cluster" style="background-color: @{{color}}">
-            <span>@{{cluster_name}}</span>
+        <div class="circle-cluster" style="background-color: @{{color}}" id="@{{cluster_name}}">
+            <span id="@{{cluster_name}}">@{{cluster_name}}</span>
         </div>
       @{{/each}}
     </script>
 
     <script type="text/template" id="events-template">
       @{{#each events}}
-        <div class="circle-events" style="background-color: @{{color}}">
-            <span>@{{this}}</span>
+        <div class="circle-events"  data-toggle="modal" data-target="#events-modal" style="background-color: @{{color}}" id="@{{event_name}}">
+            <span id="@{{event_name}}" >@{{event_name}}</span>
         </div>
       @{{/each}}
     </script>
