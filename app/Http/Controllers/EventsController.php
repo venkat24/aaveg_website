@@ -12,6 +12,17 @@ use App\Http\Controllers\Controller;
 
 class EventsController extends Controller
 {
+    public function getSingleEventView($event_id) {
+        try {
+            $event_details = EventsDetails::where('event_id','=',$event_id)
+                                          ->first();
+            return view('event_single',[
+                'event' => $event_details
+            ]);
+        } catch (Exception $e) {
+            return $e-> getMessage();
+        }
+    }
     // Returns an object of all events along with all their properties
     // Used for main call to generate full events view
     // Events are grouped into clusters, for easy display on the frontend
