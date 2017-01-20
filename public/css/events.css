@@ -13,13 +13,13 @@ html,body {
     margin: 20px;
     display: inline-block;
     border-radius: 1000px;
-	transition: all .2s ease-in-out;
+  	transition: all .2s ease-in-out;
 }
 
-/*.circle-cluster:hover {*/
-    /*transform: scale(1.1);*/
-    /*transition: all .2s ease-in-out;*/
-/*}*/
+.circle-cluster:hover {
+    box-shadow: 0px 0px 40px #EEEEEE;
+    transition: all .2s ease-in-out;
+}
 
 .circle-cluster span {
     position: relative;
@@ -38,12 +38,13 @@ html,body {
     margin: 20px;
     display: inline-block;
     border-radius: 1000px;
-	transition: all .2s ease-in-out;
+  	transition: all .2s ease-in-out;
+    vertical-align: top;
 }
 
 .circle-events:hover {
-    transform: scale(1.1);
     transition: all .2s ease-in-out;
+    box-shadow: 0px 0px 40px #EEEEEE;
 }
 
 .circle-events span {
@@ -57,8 +58,14 @@ html,body {
     overflow: auto;
     text-align: center;
     margin: 0 auto;
-    margin-top: 0;
+    margin-top: 0px;
     height: 80%;
+		-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			 -khtml-user-select: none;
+				 -moz-user-select: none;
+					-ms-user-select: none;
+							user-select: none;
 }
 
 .shrink {

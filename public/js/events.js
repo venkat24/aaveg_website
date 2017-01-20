@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    getClusters();
+      getClusters();
 });
 
 colors = [
@@ -19,26 +19,25 @@ colors = [
     "#7E5CD4",
     "#36A2EB",
     "#7E5CD4",
-];
+    ];
 
 eventsByCluster = {};
 
 function getClusters () {
-    if(!$.isEmptyObject(eventsByCluster)){
-        return;
-    }
-	var route = SITE_BASE_URL + '/events/getclusterevents';
-	var method = 'POST';
+    //if(!$.isEmptyObject(eventsByCluster)){
+        //return;
+    //}
+    var route = SITE_BASE_URL + '/events/getclusterevents';
+    var method = 'POST';
 
-	var request = $.ajax({
-		url: route,
-		method: method
-	});
+    var request = $.ajax({
+        url: route,
+        method: method
+    });
 
-	request.done(function(data){
+    request.done(function(data){
         $('.main-clusters-container').html('');
-        console.log(data.message);
-		if(data.status_code == 200) {
+        if(data.status_code == 200) {
             eventsByCluster = data.message;
             var clusters = [];
             var newElem = {};
@@ -49,30 +48,60 @@ function getClusters () {
                 };
                 clusters.push(newElem);
             }
-			data.clusters=clusters;
-			var source = $('#clusters-template').html();
-			var template = Handlebars.compile(source);
+            data.clusters=clusters;
+            var source = $('#clusters-template').html();
+            var template = Handlebars.compile(source);
             var html = template(data);
-		    $('.main-clusters-container').append(html);
+            $('.main-clusters-container').append(html);
             $('.circle-cluster').toggleClass('expand');
             $('.circle-cluster').click(function(event) {
                 $('.circle-cluster').toggleClass('shrink');
                 window.setTimeout( function () {
-                    console.log(event.target.innerHTML);
-                    var eventName = event.target.innerHTML;
+                    var eventName = event.target.id;
                     var events = eventsByCluster[eventName];
-                    console.log(events);
+                    var events_listing = [];
+                    for (var i = 0; i < events.length; i++) {
+                    	  events_listing[i] = {};
+                    	  events_listing[i].event_name = events[i];
+                    	  events_listing[i].color = colors[i];
+                    }
+                    events_listing.push({
+                        "event_name" : "Back",
+                        "color" : "#888888",
+                    });
+                    var events_container = {
+                    	  events: events_listing
+                    };
                     $('.main-clusters-container').html('');
                     var source2 = $('#events-template').html();
                     var template2 = Handlebars.compile(source2);
-                    var html2 = template(events);
-                    $('.main-clusters-container').append(html);
+                    var html2 = template2(events_container);
+                    $('.main-clusters-container').append(html2);
                     $('.circle-events').toggleClass('expand');
                     $('.circle-events').click(function(clickEvent) {
-                        //$('.circle-events').toggleClass('shrink');
-                        console.log("Clicked on event" + clickEvent.target.innerHTML);
+                        $('.circle-events').toggleClass('shrink');
+                        window.setTimeout(function () {
+                            if(clickEvent.target.id == "Back") {
+                                getClusters();
+                                return;
+                            }
+                            var route2 = SITE_BASE_URL + '/events/geteventbyname';
+                            console.log("This is inside the event function");
+                            var method2 = 'POST';
+                            var request2 = $.ajax({
+                                url: route2,
+                                type: method2,
+                                data: {
+                                    'event_name' : clickEvent.target.id
+                                } 
+                            });
+                            console.log(request2);
+                            request2.done(function (data2) {
+                                console.log(data2);
+                                location.href = SITE_BASE_URL + "/events/" + data2.message.event_id;
+                            });
+                        },500);
                     });
-                    console.log("Function End");
                 }, 500);
             });
         } else {
@@ -93,5 +122,5 @@ function getClusters () {
             $('.circle-events').click(function() {
                 $('.circle-events').toggleClass('shrink');
             });
-	return;
+    return;
 });
