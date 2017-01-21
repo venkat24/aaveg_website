@@ -81,26 +81,32 @@ function setScores(info) {
         for (var i = info.message["Spectrum"].length - 1; i >= 0; i--)
             misc.opal+=parseInt(Math.trunc(info.message["Spectrum"][i]["opal_score"]));
     }
-    for (var i = info.message.Culturals.length - 1; i >= 0; i--) {
-        info.message.Culturals[i].diamond_score=Math.trunc(info.message.Culturals[i].diamond_score);
-        info.message.Culturals[i].agate_score=Math.trunc(info.message.Culturals[i].agate_score);
-        info.message.Culturals[i].coral_score=Math.trunc(info.message.Culturals[i].coral_score);
-        info.message.Culturals[i].jade_score=Math.trunc(info.message.Culturals[i].jade_score);
-        info.message.Culturals[i].opal_score=Math.trunc(info.message.Culturals[i].opal_score);
+    if(info.message.Culturals) {
+        for (var i = info.message.Culturals.length - 1; i >= 0; i--) {
+            info.message.Culturals[i].diamond_score=Math.trunc(info.message.Culturals[i].diamond_score);
+            info.message.Culturals[i].agate_score=Math.trunc(info.message.Culturals[i].agate_score);
+            info.message.Culturals[i].coral_score=Math.trunc(info.message.Culturals[i].coral_score);
+            info.message.Culturals[i].jade_score=Math.trunc(info.message.Culturals[i].jade_score);
+            info.message.Culturals[i].opal_score=Math.trunc(info.message.Culturals[i].opal_score);
+        }
     }
-    for (var i = info.message.Sports.length - 1; i >= 0; i--) {
-        info.message.Sports[i].diamond_score=Math.trunc(info.message.Sports[i].diamond_score);
-        info.message.Sports[i].agate_score=Math.trunc(info.message.Sports[i].agate_score);
-        info.message.Sports[i].coral_score=Math.trunc(info.message.Sports[i].coral_score);
-        info.message.Sports[i].jade_score=Math.trunc(info.message.Sports[i].jade_score);
-        info.message.Sports[i].opal_score=Math.trunc(info.message.Sports[i].opal_score);
+    if(info.message.Sports) {
+        for (var i = info.message.Sports.length - 1; i >= 0; i--) {
+            info.message.Sports[i].diamond_score=Math.trunc(info.message.Sports[i].diamond_score);
+            info.message.Sports[i].agate_score=Math.trunc(info.message.Sports[i].agate_score);
+            info.message.Sports[i].coral_score=Math.trunc(info.message.Sports[i].coral_score);
+            info.message.Sports[i].jade_score=Math.trunc(info.message.Sports[i].jade_score);
+            info.message.Sports[i].opal_score=Math.trunc(info.message.Sports[i].opal_score);
+        }
     }
-    for (var i = info.message.Spectrum.length - 1; i >= 0; i--) {
-        info.message.Spectrum[i].diamond_score=Math.trunc(info.message.Spectrum[i].diamond_score);
-        info.message.Spectrum[i].agate_score=Math.trunc(info.message.Spectrum[i].agate_score);
-        info.message.Spectrum[i].coral_score=Math.trunc(info.message.Spectrum[i].coral_score);
-        info.message.Spectrum[i].jade_score=Math.trunc(info.message.Spectrum[i].jade_score);
-        info.message.Spectrum[i].opal_score=Math.trunc(info.message.Spectrum[i].opal_score);
+    if(info.message.Spectrum) {
+        for (var i = info.message.Spectrum.length - 1; i >= 0; i--) {
+            info.message.Spectrum[i].diamond_score=Math.trunc(info.message.Spectrum[i].diamond_score);
+            info.message.Spectrum[i].agate_score=Math.trunc(info.message.Spectrum[i].agate_score);
+            info.message.Spectrum[i].coral_score=Math.trunc(info.message.Spectrum[i].coral_score);
+            info.message.Spectrum[i].jade_score=Math.trunc(info.message.Spectrum[i].jade_score);
+            info.message.Spectrum[i].opal_score=Math.trunc(info.message.Spectrum[i].opal_score);
+        }
     }
     info.message["culturals_total"]=culturals;
     info.message["sports_total"]=sports;
