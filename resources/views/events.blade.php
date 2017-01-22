@@ -12,31 +12,7 @@
       crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.6.2/custom/p2.js"></script>
     <title></title>
-    <style type="text/css">
-      * {
-        box-sizing: border-box;
-      }
 
-      html, body, canvas {
-        position: absolute;
-        overflow: hidden;
-        height: 100%;
-        width: 100%;
-        left: 0;
-        top: 0;
-      }
-
-      body {
-        background: #2B3E50;
-      }
-
-      canvas {
-        z-index: -1000;
-        -webkit-filter: url("#fluid");
-                filter: url("#fluid");
-      }
-
-    </style>
 @endsection
 @section('main')
   <div id="modal-container">
