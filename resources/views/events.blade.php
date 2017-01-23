@@ -240,19 +240,4 @@
 
   </script>
   <script src="{{asset('js/events.js')}}"></script>
-
-  <script type="text/javascript">
-        var width = window.innerWidth;
-        var height = window.innerHeight;
-        canvas = document.getElementsByTagName('canvas')[0];
-        
-        window.addEventListener('resize', function() {
-            if (width != window.innerWidth || height != window.innerHeight) {
-                var width = window.innerWidth;
-                var height = window.innerHeight;
-                canvas.style.width = width + 'px';
-                canvas.style.height = height + 'px';
-            }
-        });
-  </script>
 @endsection

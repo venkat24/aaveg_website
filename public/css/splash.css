@@ -19,18 +19,13 @@ body {
 	}
 }
 
-@media (max-width: 800px) {
-	#left-bush img{
-		display: none;
+@media (max-width: 1000px) {
+	.bush img{
+		opacity: 0;
 	}
-	#right-bush img{
-		display: none;
-	}
-	#tagline1 {
-		display: none;
-	}
-	#tagline2 {
-		display: none;
+
+	#tagline1, #tagline2 {
+		opacity: 0;
 	}
 }
 
@@ -173,6 +168,7 @@ div#top {
 	left: 50%;
 	width: inherit;
 	height: inherit;
+	transition: 0.3s;
 }
 
 #tagline-container1 {
@@ -192,6 +188,7 @@ div#top {
 	left: 50%;
 	width: inherit;
 	height: inherit;
+	transition: 0.3s;
 }
 
 #tagline-container2 {
@@ -528,6 +525,7 @@ div#bottom {
 #bottom .bush img{
 	position: absolute;
 	z-index: 200;
+	transition: 0.5s;
 }
 
 #left-bush img{
