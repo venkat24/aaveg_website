@@ -48,6 +48,10 @@ function getClusters () {
     return;
 }
 
+function select(id) {
+    document.getElementById(id).className += " select";
+}
+
 function clusterSet(data) {
     var clusters = [];
     var newElem = {};
@@ -63,9 +67,18 @@ function clusterSet(data) {
     var template = Handlebars.compile(source);
     var html = template(data);
     $('.main-clusters-container').append(html);
-    $('.circle-cluster').toggleClass('expand');
+
+    $('.circle-cluster').toggleClass('shrink');
+    setTimeout(function() {
+        $('.circle-cluster').removeClass('shrink');
+        $('.circle-cluster').removeClass('select');
+        $('.circle-cluster').toggleClass('expand');
+    }, 17);
+
     $('.circle-cluster').click(function(event) {
+        $(".circle-cluster").removeClass("expand");
         $('.circle-cluster').toggleClass('shrink');
+
         window.setTimeout( function () {
             var eventName = event.target.id;
             var events = data.message[eventName];
@@ -87,9 +100,18 @@ function clusterSet(data) {
             var template2 = Handlebars.compile(source2);
             var html2 = template2(events_container);
             $('.main-clusters-container').append(html2);
-            $('.circle-events').toggleClass('expand');
+
+            $('.circle-events').toggleClass('shrink');
+            setTimeout(function() {
+                $('.circle-events').removeClass('shrink');
+                $('.circle-events').removeClass('select');
+                $('.circle-events').toggleClass('expand');
+            }, 17);
+
             $('.circle-events').click(function(clickEvent) {
+                $(".circle-events").removeClass("expand");
                 $('.circle-events').toggleClass('shrink');
+
                 window.setTimeout(function () {
                     if(clickEvent.target.id == "Back") {
                         getClusters();
@@ -107,8 +129,8 @@ function clusterSet(data) {
                     request2.done(function (data2) {
                         location.href = SITE_BASE_URL + "/events/" + data2.message.event_id;
                     });
-                },500);
+                },350);
             });
-        }, 500);
+        }, 350);
     });
 }

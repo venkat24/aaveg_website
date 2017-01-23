@@ -36,7 +36,7 @@
 
     <script type="text/template" id="clusters-template">
       @{{#each clusters}}
-        <div class="circle-cluster" style="background-color: @{{color}}" id="@{{cluster_name}}">
+        <div class="circle-cluster" style="background-color: @{{color}}" id="@{{cluster_name}}" onclick="select(this.id)">
             <span id="@{{cluster_name}}">@{{cluster_name}}</span>
         </div>
       @{{/each}}
@@ -44,7 +44,7 @@
 
     <script type="text/template" id="events-template">
       @{{#each events}}
-        <div class="circle-events"  data-toggle="modal" data-target="#events-modal" style="background-color: @{{color}}" id="@{{event_name}}">
+        <div class="circle-events"  data-toggle="modal" data-target="#events-modal" style="background-color: @{{color}}" id="@{{event_name}}" onclick="select(this.id)">
             <span id="@{{event_name}}" >@{{event_name}}</span>
         </div>
       @{{/each}}
