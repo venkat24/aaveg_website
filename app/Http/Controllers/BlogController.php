@@ -24,6 +24,7 @@ class BlogController extends Controller
                                         'blog.blog_id',
                                         'blog_authors.author_name',
                                         'blog.title',
+                                        'blog.content',
                                         'blog.subtitle',
                                         'blog.created_at')
                                     ->where('blog.active', '=', 1)
