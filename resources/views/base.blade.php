@@ -46,8 +46,8 @@
         <li><a href="/scoreboard">Scoreboard<span class="sr-only"></span></a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/events">Events</a></li>
-        <li><a href="/images/schedule.jpg">Schedule</a></li>
-        <li><a href="/images/sportsschedule.jpg">Sports Schedule</a></li>
+        <li><a href="/schedule.jpg">Schedule</a></li>
+        <li><a href="/sportsschedule.jpg">Sports Schedule</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/team">The Team</a></li>
