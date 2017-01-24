@@ -53,6 +53,15 @@ Route::get('/events/online/dubsmash', function () {
 Route::get('/admin/login', function () {
     return view('admin.admin_login');
 });
+Route::get('/tshirt', function () {
+    if(Session::get('roll_no')) {
+        return Redirect::to('/tshirt/register');
+    } else {
+        return view('login');
+    }
+});
+Route::get('/tshirt/register','TShirtController@getTshirtPage');
+
 Route::group(['middleware' => 'checkSession'], function() {
 	Route::get('/admin/home', function () {
 	    return view('admin.admin_home');
@@ -103,3 +112,8 @@ Route::post('/events/online/photography', 'PhotographyController@submitPhoto');
 
 //Dubsmash Routes
 Route::post('/events/online/dubsmash', 'DubsmashController@submitDubsmash');
+
+//Tshirt Routes
+Route::post('/login','LoginController@tshirtLogin');
+Route::post('/logout','LoginController@tshirtLogout');
+Route::post('/tshirt/register','TShirtController@registerForTshirt');
