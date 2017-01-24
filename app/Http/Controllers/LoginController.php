@@ -26,7 +26,7 @@ class LoginController extends Controller
             //check for valid parameters
             if($validator->fails()) {
                 $response = $validator->errors()->all();
-                return JSONResponse::response(400,$response);
+                return Redirect::to('/tshirt');
             }
 
             $roll_no  = $request->input('roll_no');
@@ -34,10 +34,8 @@ class LoginController extends Controller
 
             $password = $request->input('password');
             
-            echo $username;
-            echo $password;
-
-            if(IMAPAuth::tauth($username,$password)) {
+            if(IMAPAuth::tauth($roll_no,$password)) {
+            //if(true) {
                 Log::info($roll_no." has logged in");
                 Session::put([
                     'roll_no' => $roll_no,
@@ -51,7 +49,7 @@ class LoginController extends Controller
                 Log::info($roll_no." has attempted to login and failed");
                 $status_code = 400;
                 $message = "Failure";
-                return JSONResponse::response($status_code,$message);
+                return Redirect::to('/tshirt');
             }
         } catch (Exception $e) {
             $status_code = 500;

@@ -18,11 +18,11 @@
   <label for="roll_no">Roll Number*</label>
   <input type="text" class="form-control" name="roll_no" placeholder="Roll Number" required />
   <br />
-  <label for="password">Webmail Password</label>
+  <label for="password">Webmail Password*</label>
   <input type="password" class="form-control" name="password" placeholder="Webmail Password" required />
   <br />
   <p class="lead" style="text-align: center;">
-    <button class="btn btn-primary btn-lg" role="button" type="submit">Login</button>
+    <button class="btn btn-primary btn-lg" role="button" type="submit" onclick="this.className += ' disabled'">Login</button>
   </p>
 </form>
 </div>

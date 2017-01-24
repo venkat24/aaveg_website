@@ -21,7 +21,7 @@
     <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
   </div>
   <div class="form-group">
-    <label for="hostel">hostel*</label>
+    <label for="hostel">Hostel*</label>
     <select class="form-control" id="hostel" name="hostel" required>
       <option>Agate</option>
       <option>Coral</option>
@@ -33,7 +33,6 @@
   <div class="form-group">
     <label for="size">Size*</label>
     <select class="form-control" id="size" name="size" required>
-      <option>XS</option>
       <option>S</option>
       <option>M</option>
       <option>L</option>
@@ -41,7 +40,7 @@
       <option>XXL</option>
     </select>
   </div>
-  <button class="btn btn-primary" type="submit">SUBMIT!</button>
+  <button class="btn btn-primary" type="submit" onclick="this.className += ' disabled'">Register</button>
 </form>
   </div>
 </div>
