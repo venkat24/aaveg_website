@@ -1,0 +1,18 @@
+.login-container {
+    width: 60%;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+.center-align {
+    text-align: center;
+}
+h1 {
+    text-align: center;
+}
+.login-form {
+    text-align:left;
+}
+label {
+    font-size: 1.2em;
+}
