@@ -46,6 +46,7 @@
         <li><a href="/scoreboard">Scoreboard<span class="sr-only"></span></a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/events">Events</a></li>
+        <li><a href="/events/online/photography">Photography</a></li>
         <li><a href="/culturalsschedule.jpg">Schedule</a></li>
         <li><a href="/schedule.jpg">Sports Schedule</a></li>
       </ul>
