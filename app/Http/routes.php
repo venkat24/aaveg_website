@@ -44,6 +44,9 @@ Route::get('/admin', function () {
 Route::get('/admin/login', function () {
     return view('admin.admin_login');
 });
+Route::get('/events/online/photography', function () {
+    return view('photography');
+});
 Route::get('/events/online/dubsmash', function () {
     return view('dubsmash');
 });
@@ -94,6 +97,9 @@ Route::post('/events/getupdates', 'EventsController@getFinishedEvents');
 //Admin login and logout
 Route::post('/admin/login', 'Admin\AdminAuth@adminAuthentication');
 Route::post('/admin/logout', 'Admin\AdminAuth@adminLogout');
+
+//Photography Routes
+Route::post('/events/online/photography', 'PhotographyController@submitPhoto');
 
 //Dubsmash Routes
 Route::post('/events/online/dubsmash', 'DubsmashController@submitDubsmash');
