@@ -87,7 +87,7 @@
     <input type="file" class="form-control-file" name="dubsmash-file" id="dubsmash-file">
     <small id="fileHelp" class="form-text text-muted">Please ensure that the file size is less that 30Mb</small>
   </div>
-  <button class="btn btn-primary" type="submit">SUBMIT!</button>
+  <button class="btn btn-primary disabled" type="submit">SUBMIT!</button>
 </form>
   </div>
 </div>
