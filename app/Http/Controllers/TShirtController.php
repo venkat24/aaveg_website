@@ -42,7 +42,7 @@ class TShirtController extends Controller
                     'name'    => $request->input('name'),
                 ]);
             }
-            return view('already_registered');
+            return Redirect::to('/tshirt/register');
 
         } catch (Exception $e) {
             Log::error($e->getMessage()." ".$e->getLine());
