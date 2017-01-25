@@ -8,7 +8,7 @@ function setScoreFields () {
 	var method = 'POST';
 	var body = {
 		'event_name' : $('#events-dropdown').val()
-	}
+	};
 	var request = $.ajax({
 		url: route,
 		method: method,
@@ -38,14 +38,42 @@ function setScoreFields () {
 function setScores() {
 	var route = SITE_BASE_URL + '/admin/scoreboard/newscore';
 	var method = 'POST';
+  var places = {
+    first_place : [],
+    second_place : [],
+    third_place : [],
+  };
+
+  $('.first-place').find('input').each(function(){
+    if(($(this).is(':checked'))) {
+      places.first_place.push( $('label[for="' + this.id + '"]').html());
+    }
+  });
+  $('.second-place').find('input').each(function(){
+    if(($(this).is(':checked'))) {
+      places.second_place.push( $('label[for="' + this.id + '"]').html());
+    }
+  });
+  $('.third-place').find('input').each(function(){
+    if(($(this).is(':checked'))) {
+      places.third_place.push( $('label[for="' + this.id + '"]').html());
+    }
+  });
+  
+  console.log(places);
+
+
 	var body = {
 		'event_name' : $('#events-dropdown').val(),
 		'diamond' : $('#diamond-score').val(),
 		'coral' : $('#coral-score').val(),
 		'agate' : $('#agate-score').val(),
 		'jade' : $('#jade-score').val(),
-		'opal' : $('#opal-score').val()
-	}
+		'opal' : $('#opal-score').val(),
+    'first_place' : places.first_place.join(', '),
+    'second_place' : places.second_place.join(', '),
+    'third_place' : places.third_place.join(', '),
+	};
 	console.log(body);
 	var request = $.ajax({
 		url: route,
