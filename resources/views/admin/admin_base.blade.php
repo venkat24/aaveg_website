@@ -61,7 +61,7 @@
 		  <nav>
 		    <div class="nav-wrapper teal accent-4">
 		      <img src="{{ asset('images/aaveglogo.png') }}" width="150px" style="margin:5px;" onclick="location.href = SITE_BASE_URL + '/home'">
-		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		      <ul id="nav-mobile" class="right">
 		      @foreach(Session::get('permissions', []) as $permission)
 		      	@if($permission==1)
 		        <li><a class="dropdown-button" href="#!" data-activates="oc-dropdown">Events</a></li>
