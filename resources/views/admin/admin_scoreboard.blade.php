@@ -22,7 +22,6 @@
   </script>
   <a class="waves-effect waves-light btn" onclick="setScoreFields()">Get Scores</a>
   <br><br>
-
   <div class="input-field col s6">
     <input placeholder="0" id="diamond-score" type="text" class="validate">
     <label for="diamond-score">Diamond Score</label>
@@ -43,6 +42,62 @@
     <input placeholder="0" id="opal-score" type="text" class="validate">
     <label for="opal-score">Opal Score</label>
   </div><br>
+  <div class="row">
+    <div class="input-field col s4 first-place">
+      <h4>First Place</h4>
+      <input type="checkbox" id="agate1"  />
+      <label for="agate1">Agate</label>
+      <br />
+      <input type="checkbox" id="coral1"  />
+      <label for="coral1">Coral</label>
+      <br />
+      <input type="checkbox" id="diamond1"  />
+      <label for="diamond1">Diamond</label>
+      <br />
+      <input type="checkbox" id="jade1"  />
+      <label for="jade1">Jade</label>
+      <br />
+      <input type="checkbox" id="opal1"  />
+      <label for="opal1">Opal</label>
+    </div>
+    <div class="input-field col s4 second-place">
+      <h4>Second Place</h4>
+      <input type="checkbox" id="agate2"  />
+      <label for="agate2">Agate</label>
+      <br />
+      <input type="checkbox" id="coral2"  />
+      <label for="coral2">Coral</label>
+      <br />
+      <input type="checkbox" id="diamond2"  />
+      <label for="diamond2">Diamond</label>
+      <br />
+      <input type="checkbox" id="jade2"  />
+      <label for="jade2">Jade</label>
+      <br />
+      <input type="checkbox" id="opal2"  />
+      <label for="opal2">Opal</label>
+    </div>
+    <div class="input-field col s4 third-place">
+      <h4>Third Place</h4>
+      <input type="checkbox" id="agate3"  />
+      <label for="agate3">Agate</label>
+      <br />
+      <input type="checkbox" id="coral3"  />
+      <label for="coral3">Coral</label>
+      <br />
+      <input type="checkbox" id="diamond3"  />
+      <label for="diamond3">Diamond</label>
+      <br />
+      <input type="checkbox" id="jade3"  />
+      <label for="jade3">Jade</label>
+      <br />
+      <input type="checkbox" id="opal3"  />
+      <label for="opal3">Opal</label>
+      <br />
+    </div>
+  <br>
+  </div>
+
 
   <a class="waves-effect waves-light btn" onclick="setScores()">Set Scores</a>
   <br><br>
