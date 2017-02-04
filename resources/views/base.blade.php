@@ -46,7 +46,7 @@
         <li><a href="/scoreboard">Scoreboard<span class="sr-only"></span></a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/events">Events</a></li>
-        <li><a href="/events/online/photography">Photography</a></li>
+        <li><a href="/events/online/vine">Vine</a></li>
         <li><a href="/culturalsschedule.jpg">Schedule</a></li>
         <li><a href="/schedule.jpg">Sports Schedule</a></li>
       </ul>
@@ -54,17 +54,6 @@
         <li><a href="/team">The Team</a></li>
         <li><a target="_blank" href="http://facebook.com/aaveg.nitt">Facebook Page</a></li>
         <li><a type="button" data-toggle="modal" data-target="#myModal">Contact Us</a></li>
-        @if (Session::get('roll_no'))
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome {{Session::get('roll_no')}}! <span class="caret"> </span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#" style="font-size:16px">Register for T-Shirt</a></li>
-            <li><a href="#" style="font-size:16px" onclick="logout();">Logout</a></li>
-          </ul>
-        </li>
-        @else 
-        <li><a href="/tshirt" class="bold">Login</a></li>  
-        @endif 
       </ul>
     </div>
   </div>

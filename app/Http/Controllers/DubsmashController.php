@@ -19,9 +19,7 @@ class DubsmashController extends Controller
     public function submitDubsmash(Request $request) {
         $validator = Validator::make($request->all(), [
             'name1'         => 'required|string',
-            'name2'         => '',
             'rollNo1'       => 'required|integer|digits:9',
-            'rollNo2'       => '',
             'hostel'        => 'required|string',
             'dubsmash-file' => 'required'
         ]);
@@ -32,22 +30,18 @@ class DubsmashController extends Controller
         }
 
         $name1    = $request->input('name1');
-        $name2    = $request->input('name2');
         $rollNo1  = $request->input('rollNo1');
-        $rollNo2  = $request->input('rollNo2');
         $hostel   = $request->input('hostel');
 
         $video  = $request->file('dubsmash-file');
         $extension = $video->getClientOriginalExtension();
 
-        $filename = $rollNo1.'_'.Carbon::now();
+        $filename = $rollNo1.'_'.Carbon::now().".".$extension;
         $filename = str_replace(' ','',$filename);
 
         $data = new Dubsmash();
         $data->name1 = $name1;
-        $data->name2 = $name2;
         $data->rollNo1 = $rollNo1;
-        $data->rollNo2 = $rollNo2;
         $data->hostel = $hostel;
         $data->video_path = $filename;
         Log::info('Saving .... ');

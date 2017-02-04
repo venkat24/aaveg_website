@@ -47,19 +47,19 @@ Route::get('/admin/login', function () {
 Route::get('/events/online/photography', function () {
     return view('photography');
 });
-Route::get('/events/online/dubsmash', function () {
+Route::get('/events/online/vine', function () {
     return view('dubsmash');
 });
 Route::get('/admin/login', function () {
     return view('admin.admin_login');
 });
-Route::get('/tshirt', function () {
-    if(Session::get('roll_no')) {
-        return Redirect::to('/tshirt/register');
-    } else {
-        return view('login');
-    }
-});
+//Route::get('/tshirt', function () {
+    //if(Session::get('roll_no')) {
+        //return Redirect::to('/tshirt/register');
+    //} else {
+        //return view('login');
+    //}
+//});
 Route::get('/tshirt/register','TShirtController@getTshirtPage');
 
 Route::group(['middleware' => 'checkSession'], function() {
@@ -113,12 +113,12 @@ Route:;post('/admin/login', 'Admin\AdminAuth@adminAuthentication');
 Route::post('/admin/logout', 'Admin\AdminAuth@adminLogout');
 
 //Photography Routes
-Route::post('/events/online/photography', 'PhotographyController@submitPhoto');
+//Route::post('/events/online/photography', 'PhotographyController@submitPhoto');
 
 //Dubsmash Routes
-Route::post('/events/online/dubsmash', 'DubsmashController@submitDubsmash');
+Route::post('/events/online/vine', 'DubsmashController@submitDubsmash');
 
 //Tshirt Routes
-Route::post('/login','LoginController@tshirtLogin');
-Route::post('/logout','LoginController@tshirtLogout');
-Route::post('/tshirt/register','TShirtController@registerForTshirt');
+//Route::post('/login','LoginController@tshirtLogin');
+//Route::post('/logout','LoginController@tshirtLogout');
+//Route::post('/tshirt/register','TShirtController@registerForTshirt');
