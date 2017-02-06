@@ -116,6 +116,7 @@ function setScores(info) {
     var html = template(info);
     $('#main-container').append(html);
     charts(culturals);
+    sanitizeScoreboard();
 }
 function charts(culturals) {
     $('#myChart').remove();
@@ -161,4 +162,13 @@ function charts(culturals) {
             }
         }
     });
+}
+function sanitizeScoreboard() {
+    var tds = document.getElementsByTagName('td');
+    console.log(tds);
+    for(var i = 0; i < tds.length; i++) {
+        if(tds[i].innerHTML === '0') {
+            tds[i].innerHTML = '-';
+        }
+    }
 }

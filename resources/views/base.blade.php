@@ -47,8 +47,7 @@
         <li><a href="/blog">Blog</a></li>
         <li><a href="/events">Events</a></li>
         <li><a href="/events/online/vine">Vine</a></li>
-        <li><a href="/culturalsschedule.jpg">Schedule</a></li>
-        <li><a href="/schedule.jpg">Sports Schedule</a></li>
+        <li><a href="/schedule.jpg">Schedule</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/team">The Team</a></li>
