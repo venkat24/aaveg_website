@@ -104,7 +104,7 @@ class EventsController extends Controller
         try {
             $events = EventsDetails::whereNotNull('first_place')
                                    ->where('first_place','!=','')
-                                   ->orderBy('updated_at', 'desc')        
+                                   ->orderBy('updated_at', 'asc')
                                    ->get([
                                      'first_place',
                                      'second_place',
