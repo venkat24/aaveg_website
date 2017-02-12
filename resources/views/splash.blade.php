@@ -24,7 +24,7 @@
 	</div>
 	<div id="tagline2">
 		<div id="tagline-container2">
-			for the Crest
+			Complete!
 		</div>
 	</div>
 </div>
