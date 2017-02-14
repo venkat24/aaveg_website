@@ -1,10 +1,14 @@
 .table {
-	font-size: 25px;
+  font-size: 25px;
 }
 .h-divider{
- margin-top:5px;
- margin-bottom:5px;
- height:1px;
- width:100%;
- border-top:1px solid gray;
+  margin-top:5px;
+  margin-bottom:5px;
+  height:1px;
+  width:100%;
+  border-top:1px solid gray;
+}
+.gold {
+  color: #C6B448;  
+  transition: all 0.2s ease-in-out;
 }

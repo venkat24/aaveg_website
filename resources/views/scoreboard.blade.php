@@ -16,7 +16,7 @@
     <thead class="thead-default">
       <tr>
         <th>Event Name</th>
-        <th>Diamond</th>
+        <th class="gold">Diamond</th>
         <th>Coral</th>
         <th>Jade</th>
         <th>Agate</th>
@@ -27,7 +27,7 @@
     @{{#each message.Culturals}}
       <tr>
         <td>@{{event_name}}</td>
-        <td>@{{diamond_score}}</td>
+        <td class="gold">@{{diamond_score}}</td>
         <td>@{{coral_score}}</td>
         <td>@{{jade_score}}</td>
         <td>@{{agate_score}}</td>
@@ -36,7 +36,7 @@
     @{{/each}}
       <tr>
         <td>TOTAL</td>
-        <td>@{{message.culturals_total.diamond}}</td>
+        <td class="gold">@{{message.culturals_total.diamond}}</td>
         <td>@{{message.culturals_total.coral}}</td>
         <td>@{{message.culturals_total.jade}}</td>
         <td>@{{message.culturals_total.agate}}</td>
@@ -55,7 +55,7 @@
         <th>Diamond</th>
         <th>Coral</th>
         <th>Jade</th>
-        <th>Agate</th>
+        <th class="gold">Agate</th>
       </tr>
     </thead>
     <tbody>
@@ -65,7 +65,7 @@
         <td>@{{diamond_score}}</td>
         <td>@{{coral_score}}</td>
         <td>@{{jade_score}}</td>
-        <td>@{{agate_score}}</td>
+        <td class="gold">@{{agate_score}}</td>
       </tr>
     @{{/each}}
       <tr>
@@ -73,7 +73,7 @@
         <td>@{{message.sports_total.diamond}}</td>
         <td>@{{message.sports_total.coral}}</td>
         <td>@{{message.sports_total.jade}}</td>
-        <td>@{{message.sports_total.agate}}</td>
+        <td class="gold">@{{message.sports_total.agate}}</td>
       </tr>
     </tbody>
     </table>
@@ -86,7 +86,7 @@
       <tr>
         <th>Event Name</th>
         <th>Diamond</th>
-        <th>Coral</th>
+        <th class="gold">Coral</th>
         <th>Jade</th>
         <th>Agate</th>
         <th>Opal</th>
@@ -97,7 +97,7 @@
       <tr>
         <td>@{{event_name}}</td>
         <td>@{{diamond_score}}</td>
-        <td>@{{coral_score}}</td>
+        <td class="gold">@{{coral_score}}</td>
         <td>@{{jade_score}}</td>
         <td>@{{agate_score}}</td>
         <td>@{{opal_score}}</td>
@@ -106,7 +106,7 @@
       <tr>
         <td>TOTAL</td>
         <td>@{{message.misc_total.diamond}}</td>
-        <td>@{{message.misc_total.coral}}</td>
+        <td class="gold">@{{message.misc_total.coral}}</td>
         <td>@{{message.misc_total.jade}}</td>
         <td>@{{message.misc_total.agate}}</td>
         <td>@{{message.misc_total.opal}}</td>
@@ -119,6 +119,10 @@
   <div class="jumbotron">
     <h1 class="display-3">The Standings!</h1>
     <p class="lead">This is where the heart of Aaveg lies. All of the wins and losses, triumphs and disasters, joys and sorrows are encapsulated in the numbers below. We wish the freshers the best of luck in achieving glory and making their hostels proud.</p>
+    <p class="lead">Culturals Cup - <strong>Diamond</strong></p>
+    <p class="lead">Sports Cup - <strong>Agate</strong></p>
+    <p class="lead">Spectrum Cup - <strong>Coral</strong></p>
+    <h3>Overall Trophy - <strong>Diamond</strong></h3>
   </div>
   <h3 style="text-align: center" id="caption">Culturals Cup</h3>
   <div id="chart-container">

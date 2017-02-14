@@ -47,9 +47,6 @@ Route::get('/admin/login', function () {
 Route::get('/events/online/photography', function () {
     return view('photography');
 });
-Route::get('/events/online/vine', function () {
-    return view('dubsmash');
-});
 Route::get('/admin/login', function () {
     return view('admin.admin_login');
 });
@@ -114,9 +111,6 @@ Route::post('/admin/logout', 'Admin\AdminAuth@adminLogout');
 
 //Photography Routes
 //Route::post('/events/online/photography', 'PhotographyController@submitPhoto');
-
-//Dubsmash Routes
-Route::post('/events/online/vine', 'DubsmashController@submitDubsmash');
 
 //Tshirt Routes
 //Route::post('/login','LoginController@tshirtLogin');
