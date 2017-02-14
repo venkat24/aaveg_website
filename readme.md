@@ -1,5 +1,7 @@
-# Route Documentation
-## Notes
+#Aaveg Website
+Source of the Aaveg 17 website ([aaveg.net](http://aaveg.net)) in Laravel PHP. Also serves JSON APIs for the Apps.
+
+## Route Documentation
  - All routes must be hit with the base `https://aaveg.net`. Note the `https`.
  - Every response is a JSON object, with two keys - `status_code` and `message`
  - Status codes follow standard HTTP code conventions - a `200` is a successful hit, and a `4XX` is an error.
