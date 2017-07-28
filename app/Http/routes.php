@@ -47,6 +47,9 @@ Route::get('/admin/login', function () {
 Route::get('/events/online/photography', function () {
     return view('photography');
 });
+Route::get('/freshersnight', function () {
+    return view('freshers');
+});
 Route::get('/admin/login', function () {
     return view('admin.admin_login');
 });
@@ -108,6 +111,9 @@ Route::post('/events/getupdates', 'EventsController@getFinishedEvents');
 //Admin login and logout
 Route:;post('/admin/login', 'Admin\AdminAuth@adminAuthentication');
 Route::post('/admin/logout', 'Admin\AdminAuth@adminLogout');
+
+// Fresher's Night Route
+Route::post('/freshersnight','FreshersController@submit');
 
 //Photography Routes
 //Route::post('/events/online/photography', 'PhotographyController@submitPhoto');
