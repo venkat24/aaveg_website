@@ -31,6 +31,7 @@
       <option value="Mechanical">Mechanical</option>
       <option value="Production">Production</option>
       <option value="Civil">Civil</option>
+      <option value="Chemical">Chemical</option>
       <option value="Architecture">Architecture</option>
       <option value="Metallurgy">Metallurgy</option>
     </select>
