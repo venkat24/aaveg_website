@@ -72,6 +72,9 @@
 		      	@if($permission==3)
 				<li><a href="/admin/scoreboard/newscore">Scoreboard</a></li>
 		       	@endif
+		      	@if($permission==4)
+				<li><a href="/admin/freshers">Freshers</a></li>
+		       	@endif
 		      @endforeach
 		        <li onclick=""><a href="#" onclick="logout();">Logout</a></li>
 		      </ul>

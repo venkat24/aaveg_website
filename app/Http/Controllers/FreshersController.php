@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Log;
+use Excel;
 use Validator;
 use Exception;
 use Carbon\Carbon;
@@ -51,5 +52,23 @@ class FreshersController extends Controller
         $data->save();
 
         return 'Submitted Successfully';
+    }
+
+    public function adminView(Request $request) {
+        $freshers = Freshers::get();
+        return view('admin.admin_freshers', [
+            'freshers' => $freshers,
+        ]);
+    }
+
+    public function exportToExcel(Request $request) {
+        $freshers = Freshers::get();
+        Excel::create('freshers', function($excel) use ($freshers) {
+            $excel->setTitle('Freshers');
+
+            $excel->sheet('sheet1', function($sheet) use ($freshers) {
+                $sheet->fromArray($freshers, null, 'A1', false, false);
+            });
+        })->download('xlsx');
     }
 }

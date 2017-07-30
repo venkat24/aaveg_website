@@ -78,7 +78,9 @@ Route::group(['middleware' => 'checkSession'], function() {
 	// Admin events
 	Route::post('/admin/events/newevent', 'Admin\Events@newEvent');
 	Route::post('/admin/blog/newpost', 'Admin\PanelBlog@newPost');
-	Route::post('/admin/scoreboard/newscore', 'Admin\UpdateScoreboard@updateScores');
+    Route::post('/admin/scoreboard/newscore', 'Admin\UpdateScoreboard@updateScores');
+    Route::post('/admin/freshers/getexcel', 'FreshersController@exportToExcel');
+	Route::get('/admin/freshers', 'FreshersController@adminView');
 });
 
 // Scoreboard routes
@@ -109,7 +111,7 @@ Route::post('/events/getclusterevents', 'EventsController@getEventsGroupedByClus
 Route::post('/events/getupdates', 'EventsController@getFinishedEvents');
 
 //Admin login and logout
-Route:;post('/admin/login', 'Admin\AdminAuth@adminAuthentication');
+Route::post('/admin/login', 'Admin\AdminAuth@adminAuthentication');
 Route::post('/admin/logout', 'Admin\AdminAuth@adminLogout');
 
 // Fresher's Night Route
