@@ -1,7 +1,9 @@
-#Aaveg Website
+# Aaveg Website
+
 Source of the Aaveg 17 website ([aaveg.net](http://aaveg.net)) in Laravel PHP. Also serves JSON APIs for the Apps.
 
 ## Route Documentation
+
  - All routes must be hit with the base `https://aaveg.net`. Note the `https`.
  - Every response is a JSON object, with two keys - `status_code` and `message`
  - Status codes follow standard HTTP code conventions - a `200` is a successful hit, and a `4XX` is an error.
@@ -25,12 +27,15 @@ Path                       | Description
 
 
 ### POST /scoreboard/getall
+
 > Returns scores along with event details, grouped by cup
 
-####Parameters
+#### Parameters
+
     none
 
-####Response
+#### Response
+
     {
       "status_code": Integer,
       "message": {
@@ -78,12 +83,15 @@ Path                       | Description
 
 
 ### POST /scoreboard/getallungrouped
+
 > Returns scores as an array
 
 ####Parameter
+
     none
 
-####Response
+#### Response
+
     {
       "status_code": Integer,
       "message": [
@@ -104,14 +112,17 @@ Path                       | Description
 ----------
 
 ### POST /scoreboard/geteventscores
+
 > Returns scores along with event details, given `event_name`
 
-####Parameters
+#### Parameters
+
     {
         "event_name" : String
     }
 
-####Response
+#### Response
+
     {
       "status_code": Integer,
       "message": [
@@ -138,12 +149,17 @@ Path                       | Description
 
 
 ## Event Routes
+
 ### POST /events/getall
+
 > Returns event details of all events, grouped by cluster
 
-####Parameters
+#### Parameters
+
     none
-####Response
+
+#### Response
+
     {
       "status_code": Integer,
       "message": {
@@ -166,11 +182,15 @@ Path                       | Description
 ----------
 
 ### POST /events/getallungrouped
+
 > Returns event details of all events, as an array
 
-####Parameters
+#### Parameters
+
     none
-####Response
+
+#### Response
+
     {
       "status_code": Integer,
       "message": [
@@ -193,9 +213,12 @@ Path                       | Description
 ### POST /events/getallnames
 > Returns event names of all events
 
-####Parameters
+#### Parameters
+
     none
-####Response
+
+#### Response
+
     {
       "status_code": Integer,
       "message": [
@@ -208,13 +231,17 @@ Path                       | Description
 
 
 ### POST /events/geteventbyname
+
 > Returns event details of a single event given `event_name`
 
-####Parameters
+#### Parameters
+
     {
         "event_name" : String
     }
-####Response
+
+#### Response
+
     {
       "status_code": Integer,
       "message": {
@@ -235,12 +262,17 @@ Path                       | Description
 
 
 ## Blog Routes
+
 ### POST /blog/getAllPosts
+
 > Returns all blog posts
 
-####Parameters
+#### Parameters
+
     none
-####Response
+
+#### Response
+
     {
       "status_code": Integer,
       "message": [
@@ -260,13 +292,17 @@ Path                       | Description
 
 
 ### POST /blog/getLatestPosts
+
 > Returns latest n blog posts, given `post_count`
 
-####Parameters
+#### Parameters
+
     {
         "post_count": Integer
     }
-####Response
+
+#### Response
+
     {
       "status_code": Integer,
       "message": [
@@ -287,6 +323,7 @@ Path                       | Description
 
 
 ### POST /blog/getBlogById
+
 > Returns blog post of the given `blog_id` (functions like before)
 
 > When `blog_id_end` is supplied, returns an array of blog posts
@@ -301,13 +338,16 @@ Path                       | Description
 
 > `only_image` : empty -> Everything is returned
 
-####Parameters
+#### Parameters
+
     {
         "blog_id": Integer
         "blog_id_end": Integer->Optional
         "only_image": String->Optional
     }
-####Response
+
+#### Response
+
     When only blog_id is supplied :
     {
       "status_code": Integer,
@@ -340,11 +380,15 @@ Path                       | Description
 ----------
 
 ### POST /blog/getAllBlogIds
+
 > Returns list of blog ids
 
-####Parameters
+#### Parameters
+
     none
-####Response
+
+#### Response
+
     {
       "status_code": Integer,
       "message": [
@@ -357,11 +401,15 @@ Path                       | Description
 
 
 ### POST /blog/getauthors
+
 > Returns list of authors
 
-####Parameters
+#### Parameters
+
     none
-####Response
+
+#### Response
+
     {
       "status_code": Integer,
       "message": [
@@ -374,11 +422,15 @@ Path                       | Description
 
 
 ### POST /blog/getBlogTitles
+
 > Returns list of post titles
 
-####Parameters
+#### Parameters
+
     none
-####Response
+
+#### Response
+
     {
       "status_code": Integer,
       "message": [
