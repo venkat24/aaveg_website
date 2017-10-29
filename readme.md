@@ -3,7 +3,7 @@
 Source of the Aaveg 17 website ([aaveg.net](http://aaveg.net)) in Laravel PHP. Also serves JSON APIs for the Apps.
 
 ## NOTICE
-This has now been migrated to github.com/TanviKumar/aaveg_website .
+This has now been migrated to [github.com/TanviKumar/aaveg_website](http://github.com/TanviKumar/aaveg_website)
 
 ## Route Documentation
 
